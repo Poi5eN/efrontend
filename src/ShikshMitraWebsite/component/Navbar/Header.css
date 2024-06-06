@@ -1,0 +1,167 @@
+/* 
+
+.container_nav .nav_bg{
+	background: linear-gradient(to right, #00093c, #2d0b00);
+}
+
+
+.nav_content{
+	
+    z-index: 333333;
+	width: 90%;
+	margin:0 auto;
+}
+.hearder_section{
+	width: 100%;
+   
+    background-size: cover;
+    position: absolute;
+    top: 0;
+    overflow: hidden;
+}
+
+.container_nav{
+	width: 100%;
+	margin: 0 auto;
+}
+
+.menu-toggle {
+   
+    color: #eeeeee;
+    font-size: 2rem;
+    cursor: pointer;
+    z-index: 1000;
+    display: none;
+}
+
+.home_navbar{
+	
+    height: 90px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-transform: uppercase;
+}
+
+.brand{
+	font-size: 3rem;
+	font-weight: 300;
+	transform: translateX(-100rem);
+	animation: slideIn .5s forwards;
+}
+
+.brand span{
+	color: crimson;
+}
+
+.home_navbar ul{
+	display: flex;
+} 
+
+
+.home_navbar ul li {
+	padding: 17px;
+ 
+	font-size: 14px;
+    position: relative;
+    letter-spacing: 2px;
+	font-weight: 900;
+	color: linear-gradient(to right, #07124d, #2d0b00);
+}
+
+
+.home_navbar ul li ::before,
+.home_navbar ul li ::after{
+	content: '';
+	position: absolute;
+	width: 100%;
+	height: 1px;
+	background-color: crimson;
+	color: aqua;
+	left: 0;
+	transform: scaleX(0);
+	transition: all .5s;
+}
+
+.home_navbar ul li ::before{
+	top: 0;
+	transform-origin: left;
+}
+
+.home_navbar ul li ::after{
+	bottom: 0;
+	transform-origin: right;
+}
+
+
+
+.home_navbar ul li :hover::before,
+.home_navbar ul li :hover::after{
+	transform: scaleX(1);
+}
+
+@keyframes slideIn {
+	from{
+
+	}
+	to{
+		transform: translateX(0);
+	}
+}
+
+@media screen and (max-width: 800px){
+
+	.menu-toggle{
+		display: block;
+		position: fixed;
+		background: linear-gradient(to right, #00093c, #2d0b00);
+	}
+
+	.home_navbar{
+		padding-top: 0;
+		display: none;
+		flex-direction: column;
+		align-items: center;
+	width: 100vw;
+		text-align: center;
+		background: linear-gradient(to right, #00093c, #2d0b00);
+	
+	}
+
+	.home_navbar ul{
+		flex-direction: column;
+	}
+
+	.home_navbar ul li{
+
+		color: rgb(252, 250, 250);
+	} 
+
+.home_navbar ul li a{
+		margin: 0;
+	}
+
+	.color_text{
+		color:rgb(2, 116, 108)
+	}
+
+	.brand{
+		font-size: 5rem;
+	}
+
+  .overlay.menu-open, .home_navbar.menu-open {
+	display: flex;
+    transform: scale(1);
+    opacity: 1;
+    position: fixed;
+    left: 0%;
+    width: 100%;
+    z-index: 22;
+    top: 48px;
+    height: auto;
+    padding: 20px;
+    color: white;
+    border-radius: 0px 0px 140px 0px;
+}
+ 
+}	 */
