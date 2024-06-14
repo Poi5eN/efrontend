@@ -62,7 +62,7 @@ const PieChart = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get('https://average-red-kimono.cyclic.app/api/v1/adminRoute/getAllStudents', {
+        const response = await axios.get('http://localhost:4000/api/v1/adminRoute/getAllStudents', {
           withCredentials: true,
       headers: {
         Authorization: `Bearer ${authToken}`,

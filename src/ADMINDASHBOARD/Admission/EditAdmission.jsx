@@ -55,7 +55,7 @@ const EditAdmission = () => {
   useEffect(() => {
     axios
       .get(
-        `https://average-red-kimono.cyclic.app/api/v1/adminRoute/getAllStudents?email=${email}`,
+        `http://localhost:4000/api/v1/adminRoute/getAllStudents?email=${email}`,
         {
           withCredentials: true,
           headers: {
@@ -116,7 +116,7 @@ const EditAdmission = () => {
       data.append("image", image);
     }
 
-    axios.put(`https://average-red-kimono.cyclic.app/api/v1/adminRoute/updateStudent`, data, {
+    axios.put(`http://localhost:4000/api/v1/adminRoute/updateStudent`, data, {
       withCredentials: true,
       headers: {
         Authorization: `Bearer ${authToken}`,

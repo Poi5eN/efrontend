@@ -64,7 +64,7 @@ const AboutTeacher = () => {
   useEffect(() => {
     axios
       .get(
-        `https://average-red-kimono.cyclic.app/api/v1/adminRoute/getTeachers?email=${email}`,
+        `http://localhost:4000/api/v1/adminRoute/getTeachers?email=${email}`,
         {
           withCredentials: true,
           headers: {

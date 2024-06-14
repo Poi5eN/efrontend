@@ -5,13 +5,13 @@ import { useStateContext } from "../contexts/ContextProvider";
 const authToken = Cookies.get("token");
 
 export const GET_ALL_EXAMS_API =
-  "https://average-red-kimono.cyclic.app/api/v1/exam/getAllExams";
+  "http://localhost:4000/api/v1/exam/getAllExams";
 export const GET_ALL_STUDENTS_API =
-  "https://average-red-kimono.cyclic.app/api/v1/adminRoute/getAllStudents?studentclassName=11&studentSection=A";
+  "http://localhost:4000/api/v1/adminRoute/getAllStudents?studentclassName=11&studentSection=A";
 export const CREATE_RESULTS_API =
-  "https://average-red-kimono.cyclic.app/api/v1/results/createResults";
+  "http://localhost:4000/api/v1/results/createResults";
 export const GET_RESULTS_API =
-  "https://average-red-kimono.cyclic.app/api/v1/results/getResults";
+  "http://localhost:4000/api/v1/results/getResults";
 
 const Results = () => {
 
@@ -157,7 +157,7 @@ const Results = () => {
 
       axios
         .get(
-          `https://average-red-kimono.cyclic.app/api/v1/adminRoute/getAllStudents?studentclassName=${classTeacher}&studentSection=${section}`,
+          `http://localhost:4000/api/v1/adminRoute/getAllStudents?studentclassName=${classTeacher}&studentSection=${section}`,
           {
             withCredentials: true,
             headers: {

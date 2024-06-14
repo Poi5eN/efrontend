@@ -11,7 +11,7 @@ const EarningChart = () => {
   useEffect(() => {
     axios
       .get(
-        "https://average-red-kimono.cyclic.app/api/v1/fees/feeIncomeMonths",
+        "http://localhost:4000/api/v1/fees/feeIncomeMonths",
         {
           withCredentials: true,
           headers: {
@@ -47,7 +47,7 @@ const EarningChart = () => {
   useEffect(() => {
     axios
       .get(
-        "https://average-red-kimono.cyclic.app/api/v1/employee/salaryExpensesMonths",
+        "http://localhost:4000/api/v1/employee/salaryExpensesMonths",
         {
           withCredentials: true,
           headers: {

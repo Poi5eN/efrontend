@@ -15,7 +15,7 @@ const MyKids = () => {
   useEffect(() => {
     axios
       .get(
-        `https://average-red-kimono.cyclic.app/api/v1/adminRoute/myKids`,
+        `http://localhost:4000/api/v1/adminRoute/myKids`,
         {
           withCredentials: true,
           headers: {
@@ -39,7 +39,7 @@ const MyKids = () => {
   useEffect(() => {
     axios
       .get(
-        `https://average-red-kimono.cyclic.app/api/v1/adminRoute/getAdminInfo`,
+        `http://localhost:4000/api/v1/adminRoute/getAdminInfo`,
         {
           withCredentials: true,
           headers: {

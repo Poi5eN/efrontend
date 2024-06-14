@@ -10,7 +10,7 @@ const ExpensesChart = () => {
 
   useEffect(() => {
 
-    axios.get('https://average-red-kimono.cyclic.app/api/v1/employee/salaryExpensesMonths', 
+    axios.get('http://localhost:4000/api/v1/employee/salaryExpensesMonths', 
     {
       withCredentials: true,
       headers: {

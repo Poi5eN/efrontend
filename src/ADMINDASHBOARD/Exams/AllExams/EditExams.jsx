@@ -40,7 +40,7 @@ const EditStaff = () => {
 
   useEffect(() => {
     axios.get(
-      `https://average-red-kimono.cyclic.app/api/v1/adminRoute/getAllEmployees?email=${email}`,
+      `http://localhost:4000/api/v1/adminRoute/getAllEmployees?email=${email}`,
       {
         withCredentials: true,
       headers: {
@@ -78,7 +78,7 @@ const EditStaff = () => {
       }
     }
   
-    axios.put(`https://average-red-kimono.cyclic.app/api/v1/adminRoute/updateEmployee`, data, {
+    axios.put(`http://localhost:4000/api/v1/adminRoute/updateEmployee`, data, {
       withCredentials: true,
       headers: {
         Authorization: `Bearer ${authToken}`,

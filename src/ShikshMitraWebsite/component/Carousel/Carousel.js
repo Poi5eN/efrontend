@@ -1,8 +1,5 @@
 import React from "react";
 import "./Carousel.css";
-// import s1 from "../../assets/image/s1.gif";
-// import s2 from "../../assets/image/s2.gif";
-// import s3 from "../../assets/image/s3.gif";
 const Carousel = () => {
   return (
 

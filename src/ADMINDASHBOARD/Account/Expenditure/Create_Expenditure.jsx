@@ -51,7 +51,7 @@ const Create_Expenditure = () => {
   useEffect(() => {
     axios
       .get(
-        "https://average-red-kimono.cyclic.app/api/v1/adminRoute/getAdminInfo",
+        "http://localhost:4000/api/v1/adminRoute/getAdminInfo",
         {
           withCredentials: true,
           headers: {
@@ -78,7 +78,7 @@ const Create_Expenditure = () => {
   useEffect(() => {
     axios
       .get(
-        "https://average-red-kimono.cyclic.app/api/v1/adminRoute/getTeachers",
+        "http://localhost:4000/api/v1/adminRoute/getTeachers",
         {
           withCredentials: true,
           headers: {
@@ -103,7 +103,7 @@ const Create_Expenditure = () => {
   useEffect(() => {
     axios
       .get(
-        "https://average-red-kimono.cyclic.app/api/v1/adminRoute/getAllStudents",
+        "http://localhost:4000/api/v1/adminRoute/getAllStudents",
         {
           withCredentials: true,
           headers: {
@@ -127,7 +127,7 @@ const Create_Expenditure = () => {
     // Fetch data from the server when the component mounts
     axios
       .get(
-        "https://average-red-kimono.cyclic.app/api/v1/adminRoute/getAllParents",
+        "http://localhost:4000/api/v1/adminRoute/getAllParents",
         {
           withCredentials: true,
           headers: {

@@ -14,7 +14,6 @@ import Cookies from "js-cookie";
 import { useStateContext } from "../contexts/ContextProvider";
 const authToken = Cookies.get("token");
 
-// const API_GET_DATA = "https://average-red-kimono.cyclic.app/api/v1/adminRoute/getAllStudents"
 const StudentHome = () => {
   const { currentColor } = useStateContext();
   const [data, setData] = useState([]);
@@ -32,7 +31,7 @@ const StudentHome = () => {
     // GET Request to fetch existing notices
     axios
       .get(
-        `https://average-red-kimono.cyclic.app/api/v1/adminRoute/getAllStudents?email=${email}`,
+        `http://localhost:4000/api/v1/adminRoute/getAllStudents?email=${email}`,
         {
           withCredentials: true,
           headers: {
@@ -56,7 +55,7 @@ const StudentHome = () => {
   useEffect(() => {
     axios
       .get(
-        `https://average-red-kimono.cyclic.app/api/v1/adminRoute/getAllIssuedBookStudent?bookId=${_id}`,
+        `http://localhost:4000/api/v1/adminRoute/getAllIssuedBookStudent?bookId=${_id}`,
         {
           withCredentials: true,
           headers: {
@@ -84,9 +83,10 @@ const StudentHome = () => {
   return (
     <>
       <div className="mt-12">
-        {/* <div className="grid gap-7 xl:grid-cols-4 lg:grid-cols-2 md:grid-cols-2 sm:grid-cols-1  p-3"> */}
         <div className="flex justify-around  gap-3  p-7">
-          <div className={`p-2 rounded-md text-center bg-white dark:text-white dark:bg-secondary-dark-bg text-gray-800 `}>
+          <div
+            className={`p-2 rounded-md text-center bg-white dark:text-white dark:bg-secondary-dark-bg text-gray-800 `}
+          >
             <button
               type="button"
               className="text-2xl opacity-0.9 rounded-full  p-4 hover:drop-shadow-xl bg-[#03C9D7]"
@@ -117,16 +117,16 @@ const StudentHome = () => {
 
                   <h2>IDENTITY CARD </h2>
                 </div>
-                {/* text-center text-2xl font-bold text-[#01a9ac] */}
                 <div>
-                  <h1 
-                  className="text-center text-2xl font-bold text-[#01a9ac]"
-                  >
+                  <h1 className="text-center text-2xl font-bold text-[#01a9ac]">
                     Model School
                   </h1>
                 </div>
 
-                <div className="text-center rounded-sm bg-[#01a9acc2]  "  style={ { background : currentColor }  } >
+                <div
+                  className="text-center rounded-sm bg-[#01a9acc2]  "
+                  style={{ background: currentColor }}
+                >
                   <h3 className="text-white">
                     Lorem ipsum dolor, sit amet consectetur adipisicing.
                   </h3>
@@ -135,7 +135,6 @@ const StudentHome = () => {
                 <div className="flex  mt-5">
                   <img
                     className="w-[110px] h-[140px] rounded-sm"
-                    // src="https://cdn.pixabay.com/photo/2017/09/21/19/06/woman-2773007_1280.jpg"
                     src={image}
                     alt=""
                   />

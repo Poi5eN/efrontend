@@ -1,6 +1,4 @@
 import React from "react";
-
-
 import Community from "../Community/Community";
 import Testimonial from "../Testimonial/Testimonial";
 import ContactForm from "../ContactForm/ContactForm";

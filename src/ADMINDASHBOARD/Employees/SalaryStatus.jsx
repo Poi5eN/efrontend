@@ -21,7 +21,7 @@ const EmployeeSalaryStatus = () => {
 
   useEffect(() => {
     axios
-      .get(`https://average-red-kimono.cyclic.app/api/v1/adminRoute/getAllEmployees?email=${email}`, {
+      .get(`http://localhost:4000/api/v1/adminRoute/getAllEmployees?email=${email}`, {
         withCredentials: true,
       headers: {
         Authorization: `Bearer ${authToken}`,
@@ -44,7 +44,7 @@ const EmployeeSalaryStatus = () => {
     console.log(employeeId)
     if (employeeId) {
       axios
-        .get(`https://average-red-kimono.cyclic.app/api/v1/employee/getPaymentHistory?employeeId=${employeeId}`, {
+        .get(`http://localhost:4000/api/v1/employee/getPaymentHistory?employeeId=${employeeId}`, {
           withCredentials: true,
       headers: {
         Authorization: `Bearer ${authToken}`,
@@ -105,7 +105,7 @@ const EmployeeSalaryStatus = () => {
       })),
     };
 
-    const apiUrl = `https://average-red-kimono.cyclic.app/api/v1/employee/salaryPay`;
+    const apiUrl = `http://localhost:4000/api/v1/employee/salaryPay`;
     axios
       .post(apiUrl, newSalaryData, {
         withCredentials: true,
@@ -117,7 +117,7 @@ const EmployeeSalaryStatus = () => {
         console.log("Data Posted Successfully: ", response.data);
         // setSalaryData(response.data.salaryHistory);
         axios
-          .get(`https://average-red-kimono.cyclic.app/api/v1/employee/getPaymentHistory?employeeId=${employeeId}`, {
+          .get(`http://localhost:4000/api/v1/employee/getPaymentHistory?employeeId=${employeeId}`, {
             withCredentials: true,
       headers: {
         Authorization: `Bearer ${authToken}`,

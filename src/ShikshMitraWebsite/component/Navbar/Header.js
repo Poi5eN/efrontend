@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import logo from "../../assets/SHIKSHAMITRA_logo.png";
-import "./Header.css";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 
@@ -32,7 +31,7 @@ function Header() {
   // scrole navbar
   window.addEventListener("scroll", scrollHandler);
   return (
-    <header className="hearder_section z-[99999999] sm:mb-20 md:mb-20 mb-0 ">
+    <header className="hearder_section z-[99999999] sm:mb-20 md:mb-20 mb-0">
       <div
         className={`menu-toggle ${menuOpen ? "menu-open" : ""}`}
         id="hamburger"
@@ -51,10 +50,7 @@ function Header() {
           }`}
         >
           <div className="nav_content">
-            <nav
-              className={`home_navbar  ${menuOpen ? "menu-open" : ""}`}
-              // onScroll={scrollHandler}
-            >
+            <nav className={`home_navbar  ${menuOpen ? "menu-open" : ""}`}>
               <div className={`home_navbar ${!menuOpen ? "menu-open" : ""}`}>
                 <img src={logo} className="w-28 " alt="logo" />
               </div>

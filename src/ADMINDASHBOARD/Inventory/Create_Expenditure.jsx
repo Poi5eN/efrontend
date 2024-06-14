@@ -56,7 +56,7 @@
 
 //     try {
 //       const response = await axios.post(
-//         "https://average-red-kimono.cyclic.app/api/v1/adminRoute/createItem",
+//         "http://localhost:4000/api/v1/adminRoute/createItem",
 //         formDataToSend,
 //         {
 //           headers: {

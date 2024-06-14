@@ -60,7 +60,7 @@ function CreateStudent() {
     // Fetch data from the server when the component mounts
     axios
       .get(
-        "https://average-red-kimono.cyclic.app/api/v1/adminRoute/getAllStudents",
+        "http://localhost:4000/api/v1/adminRoute/getAllStudents",
         {
           withCredentials: true,
           headers: {
@@ -126,7 +126,7 @@ function CreateStudent() {
     try {
       setLoading(true);
       const response = await axios.post(
-        "https://average-red-kimono.cyclic.app/api/v1/adminRoute/createStudentParent",
+        "http://localhost:4000/api/v1/adminRoute/createStudentParent",
         formDataToSend,
         {
           withCredentials: true,
@@ -175,7 +175,7 @@ function CreateStudent() {
   const handleDelete = (email) => {
     axios
       .put(
-        `https://average-red-kimono.cyclic.app/api/v1/adminRoute/deactivateStudent`,
+        `http://localhost:4000/api/v1/adminRoute/deactivateStudent`,
         { email },
         {
           withCredentials: true,

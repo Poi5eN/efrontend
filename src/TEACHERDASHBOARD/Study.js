@@ -19,10 +19,10 @@ const Study = () => {
 
   });
 
-const API_BASE_URL="https://average-red-kimono.cyclic.app/api/v1/teacher"
-  const API_POST_URL = "https://average-red-kimono.cyclic.app/api/v1/createStudyMaterial";
-const API_DELETE = "https://average-red-kimono.cyclic.app/api/v1/adminRoute/deleteNotice/";
-const API_GET_DATA = "https://average-red-kimono.cyclic.app/api/v1/deleteStudyMaterial";
+const API_BASE_URL="http://localhost:4000/api/v1/teacher"
+  const API_POST_URL = "http://localhost:4000/api/v1/createStudyMaterial";
+const API_DELETE = "http://localhost:4000/api/v1/adminRoute/deleteNotice/";
+const API_GET_DATA = "http://localhost:4000/api/v1/deleteStudyMaterial";
 
 // const [submittedData, setSubmittedData] = useState([]);
 

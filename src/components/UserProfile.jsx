@@ -33,7 +33,7 @@
 
 //   // const handleLogout = () => {
 //   //   axios
-//   //     .get("https://average-red-kimono.cyclic.app/api/v1/logout")
+//   //     .get("http://localhost:4000/api/v1/logout")
 //   //     .then((response) => {
 //   //       localStorage.removeItem("fullName");
 //   //       localStorage.removeItem("image");
@@ -55,7 +55,7 @@
 
 //   const handleLogout = async () => {
 //     try {
-//       await axios.get("https://average-red-kimono.cyclic.app/api/v1/logout");
+//       await axios.get("http://localhost:4000/api/v1/logout");
 //       localStorage.removeItem("fullName");
 //       localStorage.removeItem("image");
 //       localStorage.removeItem("email");
@@ -78,7 +78,7 @@
 //   useEffect(() => {
 //     axios
 //       .get(
-//         "https://average-red-kimono.cyclic.app/api/v1/adminRoute/getAdminInfo",
+//         "http://localhost:4000/api/v1/adminRoute/getAdminInfo",
 //         {
 //           withCredentials: true,
 //           headers: {
@@ -218,7 +218,7 @@ const UserProfile = () => {
   const handleLogout = () => {
     // You can make an Axios request to your server to log the user out
     axios
-      .get("https://average-red-kimono.cyclic.app/api/v1/logout")
+      .get("http://localhost:4000/api/v1/logout")
       .then((response) => {
         // Handle successful logout, such as clearing user data and redirecting to the login page
         localStorage.removeItem("fullName"); // Clear user data from localStorage
@@ -242,7 +242,7 @@ const UserProfile = () => {
   useEffect(() => {
     axios
       .get(
-        "https://average-red-kimono.cyclic.app/api/v1/adminRoute/getAdminInfo",
+        "http://localhost:4000/api/v1/adminRoute/getAdminInfo",
         {
           withCredentials: true,
           headers: {

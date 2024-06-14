@@ -1,5 +1,3 @@
-
-
 import React, { useEffect } from "react";
 import { Route, Routes, useLocation } from "react-router-dom";
 import LandingPage from "./ShikshMitraWebsite/LandingPage";
@@ -108,9 +106,16 @@ import ViewSecondary from "./ADMINDASHBOARD/Classes/Secondary/ViewSecondary";
 import EditSecondary from "./ADMINDASHBOARD/Classes/Secondary/EditSecondary";
 import PrivacyPolicy from "./ShikshMitraWebsite/component/PrivacyPolicy/PrivacyPolicy";
 import BookManagement from "./STUDENTDASHBOARD/BookManagement";
-import LocomotiveScroll from 'locomotive-scroll';
-import { motion, useMotionValue,AnimatePresence, useSpring } from "framer-motion";
-
+import LocomotiveScroll from "locomotive-scroll";
+import {
+  motion,
+  useMotionValue,
+  AnimatePresence,
+  useSpring,
+} from "framer-motion";
+import TermsAndCondition from "./ShikshMitraWebsite/component/PrivacyPolicy/TermsAndCondition";
+import StudentIdCard from "./ADMINDASHBOARD/Student/AllStudent/StudentIdCard";
+import StudentIdCardNew from "./ADMINDASHBOARD/Student/AllStudent/StudentIdCardNew";
 
 // import EmployeeSalaryStatus from './ADMINDASHBOARD/Employee/SalaryStatus';
 
@@ -121,7 +126,7 @@ function App() {
     // Initialize LocomotiveScroll
     const scroll = new LocomotiveScroll({
       el: document.querySelector("#scroll-container"),
-      smooth: true
+      smooth: true,
     });
 
     // Cleanup function to destroy LocomotiveScroll instance
@@ -133,31 +138,31 @@ function App() {
     };
   }, [location]); // Re-run effect when location changes
 
-//   const [magnetActive,setMagnetActive] = React.useState(false)
-//  const locomotiveScroll = new LocomotiveScroll();
-//   const location = useLocation(); // Get the current location
+  //   const [magnetActive,setMagnetActive] = React.useState(false)
+  //  const locomotiveScroll = new LocomotiveScroll();
+  //   const location = useLocation(); // Get the current location
 
-//   useEffect(() => {
-//     const scrollToTop = () => {
-//       const scrollStep = -window.scrollY / (500 / 15);
-//       const scrollInterval = setInterval(() => {
-//         if (window.scrollY !== 0) {
-//           window.scrollBy(0, scrollStep);
-//         } else {
-//           clearInterval(scrollInterval);
-//         }
-//       }, 15);
-//     };
-  
-//     scrollToTop(); // Scroll to the top when location changes with animation
-  
-//     return () => {
-//       // Cleanup function to clear any intervals or event listeners
-//       // that were set up in this effect
-//       clearInterval(scrollInterval);
-//     };
-//   }, [location]);
-  
+  //   useEffect(() => {
+  //     const scrollToTop = () => {
+  //       const scrollStep = -window.scrollY / (500 / 15);
+  //       const scrollInterval = setInterval(() => {
+  //         if (window.scrollY !== 0) {
+  //           window.scrollBy(0, scrollStep);
+  //         } else {
+  //           clearInterval(scrollInterval);
+  //         }
+  //       }, 15);
+  //     };
+
+  //     scrollToTop(); // Scroll to the top when location changes with animation
+
+  //     return () => {
+  //       // Cleanup function to clear any intervals or event listeners
+  //       // that were set up in this effect
+  //       clearInterval(scrollInterval);
+  //     };
+  //   }, [location]);
+
   // useEffect(() => {
   //   const scrollToTop = () => {
   //     const scrollStep = -window.scrollY / (500 / 15);
@@ -173,35 +178,22 @@ function App() {
   //   scrollToTop(); // Scroll to the top when location changes with animation
   // }, [location]);
 
-
-
   // cursor pointer start
 
-    // cursor pointer end
+  // cursor pointer end
 
   return (
     <>
-    
-   
       <Routes>
         <Route path="/" element={<LandingPage />}>
-          <Route index element={
-           
-          <Home />
-          
-          } />
-          <Route path="/login" element={
-         
-          <Login />
-         } 
-          />
+          <Route index element={<Home />} />
+          <Route path="/login" element={<Login />} />
           <Route path="/services" element={<Services />} />
-          {/* <Route path='/screenshorts' element={<ScreenShorts/>} /> */}
           <Route path="/screenshot" element={<ScreenShorts />} />
           // <Route path="/contact" element={<Contact />} />
           <Route path="/about" element={<About />} />
           <Route path="/demo" element={<Demo />} />
-          <Route path="/privacyPolicy" element={<PrivacyPolicy />} />
+          <Route path="/privacyPolicy" element={<TermsAndCondition />} />
         </Route>
         <Route path="/admin" element={<AdminDashboard />}>
           <Route index element={<DashboardHome />} />
@@ -234,7 +226,7 @@ function App() {
           <Route path="allstudent" element={<Allstudent />} />
           <Route
             path="/admin/allstudent/viewstudent/view-profile/:email"
-            element={<ViewStudent />}
+            element={<StudentIdCard />}
           />
           <Route
             path="/admin/allstudent/editstudent/edit-profile/:email"
@@ -389,7 +381,6 @@ function App() {
           <Route path="queries" element={<Queries />} />
         </Route>
       </Routes>
-      
     </>
   );
 }

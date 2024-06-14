@@ -62,7 +62,7 @@ const modalStyle = {
 
   const fetchData = async () => {
     try {
-      const response = await axios.get('https://average-red-kimono.cyclic.app/api/v1/adminRoute/getTeachers', {
+      const response = await axios.get('http://localhost:4000/api/v1/adminRoute/getTeachers', {
         withCredentials: true,
       headers: {
         Authorization: `Bearer ${authToken}`,
@@ -103,7 +103,7 @@ const modalStyle = {
     try {
       setLoading(true);
       const response = await axios.post(
-        "https://average-red-kimono.cyclic.app/api/v1/adminRoute/createTeacher",
+        "http://localhost:4000/api/v1/adminRoute/createTeacher",
         formDataToSend,
         {
           withCredentials: true,
@@ -131,7 +131,7 @@ const modalStyle = {
   };
 
   const handleDelete = (email) => {
-    axios.put(`https://average-red-kimono.cyclic.app/api/v1/adminRoute/deactivateTeacher`, { email }, {
+    axios.put(`http://localhost:4000/api/v1/adminRoute/deactivateTeacher`, { email }, {
       withCredentials: true,
       headers: {
         Authorization: `Bearer ${authToken}`,

@@ -31,7 +31,7 @@ const ViewResultCard = () => {
   useEffect(() => {
     axios
       .get(
-        `https://average-red-kimono.cyclic.app/api/v1/adminRoute/getAllStudents?email=${email}`,
+        `http://localhost:4000/api/v1/adminRoute/getAllStudents?email=${email}`,
         {
           withCredentials: true,
           headers: {
@@ -69,7 +69,7 @@ const ViewResultCard = () => {
   useEffect(() => {
     axios
       .get(
-        "https://average-red-kimono.cyclic.app/api/v1/adminRoute/getAdminInfo",
+        "http://localhost:4000/api/v1/adminRoute/getAdminInfo",
         {
           withCredentials: true,
           headers: {
@@ -93,7 +93,7 @@ const ViewResultCard = () => {
   useEffect(() => {
     axios
       .get(
-        "https://average-red-kimono.cyclic.app/api/v1/exam/getAllExams",
+        "http://localhost:4000/api/v1/exam/getAllExams",
         {
           withCredentials: true,
           headers: {
@@ -141,7 +141,7 @@ const ViewResultCard = () => {
       }
       axios
         .get(
-          `https://average-red-kimono.cyclic.app/api/v1/results/getResults?examName=${selectedExam}&studentId=${userId}`,
+          `http://localhost:4000/api/v1/results/getResults?examName=${selectedExam}&studentId=${userId}`,
           {
             withCredentials: true,
             headers: {

@@ -12,7 +12,7 @@
 //     const handleSubmit=(e)=>{
 //       e.preventDefault(
 //         axios.post("http://localhost:3030/users",inputData)
-//         // axios.post("https://average-red-kimono.cyclic.app/api/v1/adminRoute/createBook",inputData)
+//         // axios.post("http://localhost:4000/api/v1/adminRoute/createBook",inputData)
 //         .then(res=>{
 //             alert("data post seccessfully!")
 //             navigate("/allstudent")

@@ -15,7 +15,7 @@ const ViewStaff = () => {
   useEffect(() => {
     axios
       .get(
-        `https://average-red-kimono.cyclic.app/api/v1/adminRoute/getAllEmployees?email=${email}`,
+        `http://localhost:4000/api/v1/adminRoute/getAllEmployees?email=${email}`,
         {
           withCredentials: true,
           headers: {

@@ -25,7 +25,7 @@ const AllExams = () => {
     console.log("use effect");
 
     axios
-      .get(`https://average-red-kimono.cyclic.app/api/v1/exam/getAllExams`, {
+      .get(`http://localhost:4000/api/v1/exam/getAllExams`, {
         withCredentials: true,
         headers: {
           Authorization: `Bearer ${authToken}`,
@@ -45,7 +45,7 @@ const AllExams = () => {
       const examId = examData[index]._id;
 
       const response = await axios.delete(
-        `https://average-red-kimono.cyclic.app/api/v1/exam/deleteExam/${examId}`,
+        `http://localhost:4000/api/v1/exam/deleteExam/${examId}`,
         {
           withCredentials: true,
           headers: {

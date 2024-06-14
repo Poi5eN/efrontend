@@ -2,8 +2,7 @@ import React, { useState } from "react";
 import axios from "axios";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-const API_BASE_URL =
-  "https://average-red-kimono.cyclic.app/api/v1/ContactUs";
+const API_BASE_URL = "http://localhost:4000/api/v1/ContactUs";
 const Contact = () => {
   const [formSubmitted, setFormSubmitted] = useState([]);
   const [formData, setFormData] = useState({
@@ -17,7 +16,7 @@ const Contact = () => {
     toast.error(message, {
       position: toast.POSITION.TOP_RIGHT,
       autoClose: 3000, // Auto-close the notification after 3 seconds
-      style: { marginTop: "50px" }, // Add margin-top
+      style: { marginTop: "50px" },
     });
   };
   const showSuccessToast = (message) => {
@@ -29,7 +28,7 @@ const Contact = () => {
   };
   const handleOnChange = (e) => {
     const { name, value } = e.target;
-    
+
     setFormData({ ...formData, [name]: value });
   };
 
@@ -47,7 +46,7 @@ const Contact = () => {
         email: "",
         message: "",
       });
-     
+
       showSuccessToast("Message Sent successfully!!!");
     } catch (error) {
       showErrorToast("Error on Contact Us");
@@ -59,13 +58,17 @@ const Contact = () => {
       <div className="md:justify-center md:mx-auto">
         <section className="bg-white  lg:py-[120px] overflow-hidden relative z-10  ">
           <div className="">
-            {/* <div className="flex flex-wrap -mx-4 lg:justify-between "> */}
             <div className="grid md:grid-cols-2 grid-cols-1 gap-2 ">
               <div className="w-full px-4  md:mx-auto sm:mx-auto">
-              {/* <div className="w-full px-4 lg:w-1/2 xl:w-6/12 md:mx-auto sm:mx-auto"> */}
                 <div className="mb-12 max-w-[570px] lg:mb-0">
-                  <div id="text" className="md:text-2xl text-center uppercase bg-clip-text text-transparent bg-gradient-to-r from-green-300 via-blue-500 to-[#0e7490] text-5xl font-black py-5"> GET IN TOUCH WITH US</div>
-      
+                  <div
+                    id="text"
+                    className="md:text-2xl text-center uppercase bg-clip-text text-transparent bg-gradient-to-r from-green-300 via-blue-500 to-[#0e7490] text-5xl font-black py-5"
+                  >
+                    {" "}
+                    GET IN TOUCH WITH US
+                  </div>
+
                   <p className="text-base leading-relaxed mb-9 pl-5 text-body-color">
                     Feel free to get in touch with us. We are always to
                     discussing new projects, creative ideas or opportunities to
@@ -89,8 +92,7 @@ const Contact = () => {
                       <p className="text-base text-body-color">
                         Corplyx Technologies Pvt.Ltd
                         <p>
-                          Our Office Unit-930,I-thum Tower, Noida, Uttar
-                          Pradesh
+                          Our Office Unit-930,I-thum Tower, Noida, Uttar Pradesh
                         </p>
                       </p>
                     </div>
@@ -113,7 +115,10 @@ const Contact = () => {
                         Phone Number
                       </h4>
                       <p className="text-base text-body-color">
-                        <a href="tel:+919650388201" style={{ textDecoration: 'none', color: 'inherit' }}>
+                        <a
+                          href="tel:+919650388201"
+                          style={{ textDecoration: "none", color: "inherit" }}
+                        >
                           +919650388201
                         </a>
                       </p>
@@ -135,11 +140,13 @@ const Contact = () => {
                         Email Address
                       </h4>
                       <p className="text-base text-body-color">
-                        <a href="mailto:corplyxtechnologies000@gmail.com" style={{ textDecoration: 'none', color: 'inherit' }}>
-                        info.eshikshamitra@gmail.com
+                        <a
+                          href="mailto:corplyxtechnologies000@gmail.com"
+                          style={{ textDecoration: "none", color: "inherit" }}
+                        >
+                          info.eshikshamitra@gmail.com
                         </a>
                       </p>
-
                     </div>
                   </div>
                 </div>

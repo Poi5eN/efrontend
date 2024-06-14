@@ -1,14 +1,10 @@
 import React, { useEffect, useState, useRef } from "react";
 import axios from "axios";
-// import { useReactToPdf } from 'react-to-pdf';
-import { useStateContext } from "../contexts/ContextProvider";
-// import html2canvas from 'html2canvas';
-import { usePDF } from "react-to-pdf";
+import { useStateContext } from "../contexts/ContextProvider";import { usePDF } from "react-to-pdf";
 import Cookies from "js-cookie";
 const authToken = Cookies.get("token");
 
 const StudentResults = () => {
-  // const targetPDF = useRef();
   const {currentColor} = useStateContext();
   const { toPDF, targetRef } = usePDF({ filename: "Student Results" });
 
@@ -30,7 +26,7 @@ const StudentResults = () => {
   useEffect(() => {
     axios
       .get(
-        "https://average-red-kimono.cyclic.app/api/v1/adminRoute/getAdminInfo",
+        "http://localhost:4000/api/v1/adminRoute/getAdminInfo",
         {
           withCredentials: true,
           headers: {
@@ -54,7 +50,7 @@ const StudentResults = () => {
   useEffect(() => {
     axios
       .get(
-        "https://average-red-kimono.cyclic.app/api/v1/exam/getAllExams",
+        "http://localhost:4000/api/v1/exam/getAllExams",
         {
           withCredentials: true,
           headers: {
@@ -98,30 +94,13 @@ const StudentResults = () => {
     setSelectedExam(e.target.value);
   };
 
-  // useEffect(() => {
-  //   axios.get("https://average-red-kimono.cyclic.app/api/v1/results/getResults", {
-  //     withCredentials: true,
-  // headers: {
-  //   Authorization: Bearer ${authToken},
-  // },
-  //   })
-  //   .then((response) => {
-  //     const data = response.data.data; // Assuming 'data' is the property containing the array
-  //     // setResultData(data);
-  //     console.log("Parent---ResultData--->", data)
-  //   })
-  //   .catch((error) => {
-  //     console.log(error.message);
-  //   });
-
-  // }, [])
-
+  
   useEffect(() => {
     console.log(selectedExam, userId, "Done");
     if (selectedExam && userId) {
       axios
         .get(
-          `https://average-red-kimono.cyclic.app/api/v1/results/getResults?examName=${selectedExam}&studentId=${userId}`,
+          `http://localhost:4000/api/v1/results/getResults?examName=${selectedExam}&studentId=${userId}`,
           {
             withCredentials: true,
             headers: {
@@ -133,7 +112,6 @@ const StudentResults = () => {
           const data = response.data.data;
           console.log(data);
           setResultData(data);
-          // console.log("ResultData--->", data)
           const newStudentMarks = {};
 
           // Iterate through the response data and populate newStudentMarks
@@ -291,13 +269,11 @@ const StudentResults = () => {
         </button>
       </div>
 
-      {/* p-4 border border-gray-300 rounded-lg max-w-xl mx-auto bg-white shadow-md */}
       <div
         ref={targetRef}
         className="  dark:text-white dark:bg-secondary-dark-bg text-gray-800 p-4 border border-gray-300 rounded-lg max-w-xl mx-auto bg-white shadow-md"
       >
         <div className="text-center mb-4">
-          {/* <img src={school} alt="School Logo" className="w-16 h-16 mx-auto" /> */}
           <h1 className="text-3xl font-semibold mt-2">
             {schoolData.schoolName}
           </h1>
@@ -305,10 +281,8 @@ const StudentResults = () => {
         </div>
         <div className="flex justify-between">
           <div>
-            {/* <p className="text-sm text-gray-600">Sr. No: 12345</p> */}
           </div>
           <div>
-            {/* <p className="text-sm text-gray-600">Date: Exam Date</p> */}
           </div>
         </div>
         <div className="mt-4 text-center">

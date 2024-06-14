@@ -73,7 +73,7 @@ function Create_Promotion() {
 
     try {
       const response = await axios.post(
-        "https://average-red-kimono.cyclic.app/api/v1/adminRoute/createTeacher",
+        "http://localhost:4000/api/v1/adminRoute/createTeacher",
         formDataToSend,
         {
           headers: {

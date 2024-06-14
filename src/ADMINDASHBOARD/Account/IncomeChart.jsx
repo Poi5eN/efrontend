@@ -11,7 +11,7 @@ const IncomeChart = () => {
 
   useEffect(() => {
     axios
-      .get("https://average-red-kimono.cyclic.app/api/v1/adminRoute/getAllItems", {
+      .get("http://localhost:4000/api/v1/adminRoute/getAllItems", {
         withCredentials: true,
       headers: {
         Authorization: `Bearer ${authToken}`,

@@ -66,7 +66,7 @@ const ParentFees = () => {
   useEffect(() => {
     axios
       .get(
-        `https://average-red-kimono.cyclic.app/api/v1/adminRoute/myKids`,
+        `http://localhost:4000/api/v1/adminRoute/myKids`,
         {
           withCredentials: true,
           headers: {
@@ -91,7 +91,7 @@ const ParentFees = () => {
   useEffect(() => {
     axios
       .get(
-        `https://average-red-kimono.cyclic.app/api/v1/adminRoute/getAdminInfo`,
+        `http://localhost:4000/api/v1/adminRoute/getAdminInfo`,
         {
           withCredentials: true,
           headers: {
@@ -116,7 +116,7 @@ const ParentFees = () => {
   useEffect(() => {
     axios
       .get(
-        `https://average-red-kimono.cyclic.app/api/v1/fees/getFeeStatus?studentId=${studentData._id}`,
+        `http://localhost:4000/api/v1/fees/getFeeStatus?studentId=${studentData._id}`,
         {
           withCredentials: true,
           headers: {

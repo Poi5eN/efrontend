@@ -1,14 +1,9 @@
 import React, { useEffect } from "react";
 import "./Community.css";
 
-// import { ScrollTrigger } from "gsap/ScrollTrigger";
-// import { gsap } from "gsap-trial";
-
 import { gsap, ScrollTrigger } from "gsap/all";
 
-
 const Community = () => {
- 
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
 
@@ -33,7 +28,6 @@ const Community = () => {
     };
   }, []); // Empty dependency array for componentDidMount behavior
 
-
   return (
     <>
       <div className=" bg-[#1f2937]">
@@ -56,7 +50,6 @@ const Community = () => {
       <main id="container">
         {/* ---------- section 01 ---------- */}
         <section className="horizontal-section">
-          {/* <h1 className="heading">Horizontal Scroll</h1> */}
           <div className="flex flex-wrap items-center mt-32">
             <div className="w-full md:w-5/12 px-4 mr-auto ml-auto">
               <div className="text-gray-600 p-3 text-center inline-flex items-center justify-center w-16 h-16 mb-6 shadow-lg rounded-full bg-gray-100">
@@ -98,13 +91,14 @@ const Community = () => {
                     ></polygon>
                   </svg>
                   <h4 className="text-xl font-bold text-white">
-                   
                     Innovate, Collaborate, Inspire
                   </h4>
                   <p className="text-md font-light mt-2 text-white">
-                 
-Discover new teaching methods to innovate your lessons, collaborate with fellow educators to share ideas and resources, and inspire your students to reach new heights. Let's empower you to create an enriching learning experience for every student.
-
+                    Discover new teaching methods to innovate your lessons,
+                    collaborate with fellow educators to share ideas and
+                    resources, and inspire your students to reach new heights.
+                    Let's empower you to create an enriching learning experience
+                    for every student.
                   </p>
                 </blockquote>
               </div>
@@ -114,7 +108,6 @@ Discover new teaching methods to innovate your lessons, collaborate with fellow 
 
         {/* ---------- section 02 ---------- */}
         <section className="horizontal-section">
-          {/* <h1 className="heading">01</h1> */}
           <section className="relative py-20">
             <div className="bottom-auto h-[80px] transform translate-z-0 top-0 left-0 right-0 w-full absolute pointer-events-none overflow-hidden -mt-20">
               <svg
@@ -165,8 +158,7 @@ Discover new teaching methods to innovate your lessons, collaborate with fellow 
                           </div>
                           <div>
                             <h4 className="text-gray-600">
-                            Immerse in interactive experience.
-
+                              Immerse in interactive experience.
                             </h4>
                           </div>
                         </div>
@@ -179,8 +171,9 @@ Discover new teaching methods to innovate your lessons, collaborate with fellow 
                             </span>
                           </div>
                           <div>
-                            <h4 className="text-gray-600">Fostering creativity and critical thinking.
-</h4>
+                            <h4 className="text-gray-600">
+                              Fostering creativity and critical thinking.
+                            </h4>
                           </div>
                         </div>
                       </li>
@@ -192,7 +185,9 @@ Discover new teaching methods to innovate your lessons, collaborate with fellow 
                             </span>
                           </div>
                           <div>
-                            <h4 className="text-gray-600">Empowering academic and Institutions's growth</h4>
+                            <h4 className="text-gray-600">
+                              Empowering academic and Institutions's growth
+                            </h4>
                           </div>
                         </div>
                       </li>
@@ -206,7 +201,6 @@ Discover new teaching methods to innovate your lessons, collaborate with fellow 
 
         {/* ---------- section 02 ---------- */}
         <section className="horizontal-section">
-          {/* <h1 className="heading">02</h1> */}
           <div className="flex flex-wrap items-center mt-32">
             <div className="w-full md:w-5/12 px-4 mr-auto ml-auto">
               <div className="text-gray-600 p-3 text-center inline-flex items-center justify-center w-16 h-16 mb-6 shadow-lg rounded-full bg-gray-100">
@@ -239,7 +233,6 @@ Discover new teaching methods to innovate your lessons, collaborate with fellow 
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 583 95"
                     className="absolute left-0 w-full block h-[95px] top-[-94px]"
-                    // style="height: 95px; top: -94px;"
                   >
                     <polygon
                       points="-30,95 583,95 583,65"
@@ -247,12 +240,14 @@ Discover new teaching methods to innovate your lessons, collaborate with fellow 
                     ></polygon>
                   </svg>
                   <h4 className="text-xl font-bold text-white">
-                  Streamline, Manage, Analyze
+                    Streamline, Manage, Analyze
                   </h4>
                   <p className="text-md font-light mt-2 text-white">
-                  
- Streamline administrative processes to save time and resources, manage staff and student data effectively, and analyze key metrics to make informed decisions. Let's work together to ensure smooth operations and continuous improvement across the institution.
-
+                    Streamline administrative processes to save time and
+                    resources, manage staff and student data effectively, and
+                    analyze key metrics to make informed decisions. Let's work
+                    together to ensure smooth operations and continuous
+                    improvement across the institution.
                   </p>
                 </blockquote>
               </div>
@@ -305,7 +300,6 @@ Discover new teaching methods to innovate your lessons, collaborate with fellow 
                       and embrace a digital solution that enhances the
                       educational journey.
                     </p>
-                    
                   </div>
                 </div>
               </div>

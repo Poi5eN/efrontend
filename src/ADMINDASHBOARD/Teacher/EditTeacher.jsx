@@ -46,7 +46,7 @@ const EditTeacher = () => {
 
   useEffect(() => {
     axios.get(
-      `https://average-red-kimono.cyclic.app/api/v1/adminRoute/getTeachers?email=${email}`,
+      `http://localhost:4000/api/v1/adminRoute/getTeachers?email=${email}`,
       {
         withCredentials: true,
       headers: {
@@ -84,7 +84,7 @@ const EditTeacher = () => {
       }
     }
   
-    axios.put(`https://average-red-kimono.cyclic.app/api/v1/adminRoute/updateTeacher`, data, {
+    axios.put(`http://localhost:4000/api/v1/adminRoute/updateTeacher`, data, {
       withCredentials: true,
       headers: {
         Authorization: `Bearer ${authToken}`,

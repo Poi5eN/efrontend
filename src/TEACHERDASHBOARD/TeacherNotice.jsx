@@ -10,10 +10,10 @@ import { TiDelete } from "react-icons/ti";
 // Ensure that the modal is accessible to screen readers
 Modal.setAppElement("#root");
 
-const API_BASE_URL = "https://average-red-kimono.cyclic.app/api/v1/adminRoute/createNotice";
-const API_EDIT = "https://average-red-kimono.cyclic.app/api/v1/adminRoute/updateNotice/";
-const API_DELETE = "https://average-red-kimono.cyclic.app/api/v1/adminRoute/deleteNotice/";
-const API_GET_DATA = "https://average-red-kimono.cyclic.app/api/v1/adminRoute/getAllNotice";
+const API_BASE_URL = "http://localhost:4000/api/v1/adminRoute/createNotice";
+const API_EDIT = "http://localhost:4000/api/v1/adminRoute/updateNotice/";
+const API_DELETE = "http://localhost:4000/api/v1/adminRoute/deleteNotice/";
+const API_GET_DATA = "http://localhost:4000/api/v1/adminRoute/getAllNotice";
 const authToken = Cookies.get('token');
 
 const TeacherNotice = () => {

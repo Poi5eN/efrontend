@@ -19,7 +19,7 @@ const ViewPrimary = () => {
     // Fetch teacher data based on the email parameter
     axios
       .get(
-        `https://average-red-kimono.cyclic.app/api/v1/adminRoute/getAllClass?className=${className}`,
+        `http://localhost:4000/api/v1/adminRoute/getAllClass?className=${className}`,
         { withCredentials: true,
           headers: {
             Authorization: `Bearer ${authToken}`,

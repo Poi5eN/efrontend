@@ -6,8 +6,8 @@ import { useStateContext } from "../contexts/ContextProvider";
 import Cookies from 'js-cookie';
 const authToken = Cookies.get('token');
 
-const Api_GetAll = "https://average-red-kimono.cyclic.app/api/v1/adminRoute/getAllCurriculum";
-const Delete_API ="https://average-red-kimono.cyclic.app/api/v1/adminRoute/deleteCurriculum";
+const Api_GetAll = "http://localhost:4000/api/v1/adminRoute/getAllCurriculum";
+const Delete_API ="http://localhost:4000/api/v1/adminRoute/deleteCurriculum";
 
 const Curriculum = () => {
   const { currentColor} = useStateContext();
@@ -56,7 +56,7 @@ const Curriculum = () => {
     formDataToSend.append("image", formData.image);
 
     axios
-      .post("https://average-red-kimono.cyclic.app/api/v1/adminRoute/createCurriculum", formDataToSend, {
+      .post("http://localhost:4000/api/v1/adminRoute/createCurriculum", formDataToSend, {
         withCredentials: true,
       headers: {
         Authorization: `Bearer ${authToken}`,
@@ -75,7 +75,7 @@ const Curriculum = () => {
   };
  
   useEffect(() => {
-    axios.get("https://average-red-kimono.cyclic.app/api/v1/adminRoute/getAllCurriculum", {
+    axios.get("http://localhost:4000/api/v1/adminRoute/getAllCurriculum", {
       withCredentials: true,
       headers: {
         Authorization: `Bearer ${authToken}`,
@@ -95,7 +95,7 @@ const Curriculum = () => {
  
  
   useEffect(() => {
-    axios.get("https://average-red-kimono.cyclic.app/api/v1/adminRoute/getAllClass", {
+    axios.get("http://localhost:4000/api/v1/adminRoute/getAllClass", {
       withCredentials: true,
       headers: {
         Authorization: `Bearer ${authToken}`,
@@ -114,7 +114,7 @@ const Curriculum = () => {
   const handleDeleteCurriculum = (index) => {
     const curriculumId = curriculumData[index]._id; 
     axios
-      .delete("https://average-red-kimono.cyclic.app/api/v1/adminRoute/deleteCurriculum/" + curriculumId, {
+      .delete("http://localhost:4000/api/v1/adminRoute/deleteCurriculum/" + curriculumId, {
         withCredentials: true,
       headers: {
         Authorization: `Bearer ${authToken}`,

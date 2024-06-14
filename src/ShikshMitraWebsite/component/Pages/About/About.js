@@ -60,13 +60,11 @@ function About() {
             educational institutions to manage their operations efficiently.
           </p>
         </div>
-      
-        <div
-          id="wrapper"
-          className=" flex justify-center items-center"  >
+
+        <div id="wrapper" className=" flex justify-center items-center">
           <div id="content" className="text-white text-center">
             <div className="accordions flex flex-col items-center ">
-              <div className="accordion  bg-gradient-to-r from-cyan-600 to-cyan-800 rounded-lg w-full max-w-lg p-6 mb-8 shadow-xl"  >
+              <div className="accordion  bg-gradient-to-r from-cyan-600 to-cyan-800 rounded-lg w-full max-w-lg p-6 mb-8 shadow-xl">
                 <div className="title text-2xl pb-1">Admin Dashboard</div>
                 <div className="text text-base opacity-70 ">
                   The Admin dashboard provides school administrators with a
@@ -106,13 +104,12 @@ function About() {
                 </div>
               </div>
             </div>
-            {/* <div className="spacer h-screen"></div> */}
           </div>
         </div>
       </div>
       <div className="">
-          <Team />
-        </div>
+        <Team />
+      </div>
     </>
   );
 }

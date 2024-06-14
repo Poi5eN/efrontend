@@ -7,15 +7,15 @@ const authToken = Cookies.get("token");
 
 
 const Api_Create =
-  "https://average-red-kimono.cyclic.app/api/v1/adminRoute/createAssignment";
+  "http://localhost:4000/api/v1/adminRoute/createAssignment";
 const Api_Update =
-  "https://average-red-kimono.cyclic.app/api/v1/adminRoute/updateAssignment/";
+  "http://localhost:4000/api/v1/adminRoute/updateAssignment/";
 const Api_GetAssiignment =
-  "https://average-red-kimono.cyclic.app/api/v1/adminRoute/getAllAssignment";
+  "http://localhost:4000/api/v1/adminRoute/getAllAssignment";
 const Api_GetAll =
-  "https://average-red-kimono.cyclic.app/api/v1/adminRoute/getAllClass";
+  "http://localhost:4000/api/v1/adminRoute/getAllClass";
 const API_DELETE =
-  "https://average-red-kimono.cyclic.app/api/v1/adminRoute/deleteAssignment/6538e0fb0c6aa38bbddec27b";
+  "http://localhost:4000/api/v1/adminRoute/deleteAssignment/6538e0fb0c6aa38bbddec27b";
 
 const Assignments = () => {
   const { currentColor} = useStateContext();
@@ -105,7 +105,7 @@ const Assignments = () => {
   useEffect(() => {
     axios
       .get(
-        "https://average-red-kimono.cyclic.app/api/v1/adminRoute/getAllClass",
+        "http://localhost:4000/api/v1/adminRoute/getAllClass",
         {
           withCredentials: true,
           headers: {
@@ -127,7 +127,7 @@ const Assignments = () => {
   useEffect(() => {
     axios
       .get(
-        "https://average-red-kimono.cyclic.app/api/v1/adminRoute/getAllAssignment",
+        "http://localhost:4000/api/v1/adminRoute/getAllAssignment",
         {
           withCredentials: true,
           headers: {
@@ -150,7 +150,7 @@ const Assignments = () => {
     const assignmentId = assignmentData[index]._id;
     axios
       .delete(
-        "https://average-red-kimono.cyclic.app/api/v1/adminRoute/deleteAssignment/" +
+        "http://localhost:4000/api/v1/adminRoute/deleteAssignment/" +
           assignmentId,
         {
           withCredentials: true,

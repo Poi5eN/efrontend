@@ -3,7 +3,7 @@ import axios from 'axios';
 import Cookies from 'js-cookie';
 const authToken = Cookies.get('token');
 
-const API_GET_DATA = "https://average-red-kimono.cyclic.app/api/v1/adminRoute/getAllNotice";
+const API_GET_DATA = "http://localhost:4000/api/v1/adminRoute/getAllNotice";
 
 
 const ParentNotice = () => {

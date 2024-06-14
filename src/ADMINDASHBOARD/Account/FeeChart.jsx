@@ -13,7 +13,7 @@ const FeeChart = () => {
   useEffect(() => {
     axios
       .get(
-        `https://average-red-kimono.cyclic.app/api/v1/fees/getFeeStatus`,
+        `http://localhost:4000/api/v1/fees/getFeeStatus`,
         {
           withCredentials: true,
       headers: {

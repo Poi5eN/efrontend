@@ -48,7 +48,7 @@ const TeacherHome = () => {
   useEffect(() => {
     axios
       .get(
-        "https://average-red-kimono.cyclic.app/api/v1/adminRoute/getTeachers",
+        "http://localhost:4000/api/v1/adminRoute/getTeachers",
         {
           withCredentials: true,
           headers: {
@@ -73,7 +73,7 @@ const TeacherHome = () => {
   useEffect(() => {
     axios
       .get(
-        "https://average-red-kimono.cyclic.app/api/v1/adminRoute/getAllStudents",
+        "http://localhost:4000/api/v1/adminRoute/getAllStudents",
         {
           withCredentials: true,
           headers: {
@@ -99,7 +99,7 @@ const TeacherHome = () => {
     // Fetch data from the server when the component mounts
     axios
       .get(
-        "https://average-red-kimono.cyclic.app/api/v1/adminRoute/getAllParents",
+        "http://localhost:4000/api/v1/adminRoute/getAllParents",
         {
           withCredentials: true,
           headers: {

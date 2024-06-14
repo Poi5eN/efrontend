@@ -1,4 +1,3 @@
-// import "./Admin.css";
 import { useNavigate } from 'react-router-dom';
 import adminimg from '../../../assets/images/adminimg.jpg';
 const Admin = () => {
@@ -12,11 +11,6 @@ const Admin = () => {
     <div className='h-screen'>
       <h1 className=" text-xl sm:text-2xl md:text-3xl 
          font-semibold uppercase text-center"> Admin</h1>
-      {/* <div className="flex justify-center items-center pt-2 flex-col ">
-        <h1 className="inline-block text-xl sm:text-2xl md:text-3xl 
-         font-semibold uppercase"> Admin</h1>
-
-      </div> */}
 
       <div className='grid grid-rows-1 '>
 
@@ -70,11 +64,7 @@ const Admin = () => {
         <button onClick={goBack} className="text-[1.2rem] bg-blue-400 mt-1 px-5 
            py-1 rounded-full hover:shadow-lg hover:shadow-sky-400 ">Go Back</button>
       </div>
-      {/* <div className="flex align-item justify-center">
-       
-       <button onClick={goBack} className="text-[1.2rem] bg-blue-400 mt-1 px-5 
-          py-1 rounded-full hover:shadow-lg hover:shadow-sky-400 ">Go Back</button>
-     </div> */}
+     
 
 
     </div>

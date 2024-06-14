@@ -10,7 +10,7 @@ const AllIncomeChart = () => {
 
   useEffect(() => {
 
-    axios.get('https://average-red-kimono.cyclic.app/api/v1/fees/feeIncomeMonths', 
+    axios.get('http://localhost:4000/api/v1/fees/feeIncomeMonths', 
     {
       withCredentials: true,
       headers: {

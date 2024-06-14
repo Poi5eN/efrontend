@@ -3,16 +3,15 @@ import axios from "axios";
 import { usePDF } from "react-to-pdf";
 import { useStateContext } from "../contexts/ContextProvider";
 import { Page, Text, View, doc } from "@react-pdf/renderer";
-import Cookies from 'js-cookie';
-const authToken = Cookies.get('token');
-// import { FcLeft } from "react-icons/fc";
+import Cookies from "js-cookie";
+const authToken = Cookies.get("token");
 
 const theader = {
   exam: "Exam",
   date: "Date",
   day: "Day",
   startTime: "Start Time",
-  endTime: "End Time"
+  endTime: "End Time",
 };
 
 const StudentAdmitCard = () => {
@@ -29,12 +28,15 @@ const StudentAdmitCard = () => {
 
   useEffect(() => {
     axios
-      .get("https://average-red-kimono.cyclic.app/api/v1/adminRoute/getAdminInfo", {
-        withCredentials: true,
-      headers: {
-        Authorization: `Bearer ${authToken}`,
-      },
-      })
+      .get(
+        "http://localhost:4000/api/v1/adminRoute/getAdminInfo",
+        {
+          withCredentials: true,
+          headers: {
+            Authorization: `Bearer ${authToken}`,
+          },
+        }
+      )
 
       .then((response) => {
         const data = response.data.admin;
@@ -50,11 +52,11 @@ const StudentAdmitCard = () => {
 
   useEffect(() => {
     axios
-      .get("https://average-red-kimono.cyclic.app/api/v1/exam/getAllExams", {
+      .get("http://localhost:4000/api/v1/exam/getAllExams", {
         withCredentials: true,
-      headers: {
-        Authorization: `Bearer ${authToken}`,
-      },
+        headers: {
+          Authorization: `Bearer ${authToken}`,
+        },
       })
       .then((response) => {
         const classTeacher = JSON.parse(localStorage.response).class;
@@ -64,7 +66,6 @@ const StudentAdmitCard = () => {
         );
         const name = filteredData[0].examName;
         console.log("filter", name);
-        // const examData = response.data.examData;
         setExamName(name);
         setExamData(filteredData);
         const examName = filteredData[0].examName;
@@ -79,7 +80,6 @@ const StudentAdmitCard = () => {
   const handleExamChange = (e) => {
     setSelectedExam(e.target.value);
     setExamName(e.target.value);
-
   };
 
   const selectedExamData = examData.find(
@@ -143,9 +143,11 @@ const StudentAdmitCard = () => {
               width: 150,
             }}
           >
-            <div className="p-4 border border-gray-300 rounded-lg max-w-xl mx-auto bg-white shadow-md
+            <div
+              className="p-4 border border-gray-300 rounded-lg max-w-xl mx-auto bg-white shadow-md
             dark:text-white dark:bg-secondary-dark-bg    
-            ">
+            "
+            >
               <div className="text-center">
                 <h1 className="text-3xl font-semibold">
                   {schoolData.schoolName}
@@ -169,7 +171,6 @@ const StudentAdmitCard = () => {
                   <p>Name: {studentData.fullName}</p>
                   <p>Class:{studentData.class} Grade</p>
                   <p>Section: {studentData.section}</p>
-                  {/* <p>Admission Number: {studentData.fullName}</p> */}
                   <p>Roll Number: {studentData.rollNo}</p>
                 </div>
               </div>
@@ -178,9 +179,7 @@ const StudentAdmitCard = () => {
 
                 <table className="w-full border border-gray-300 mt-2">
                   <thead className="bg-gray-100">
-                    <tr 
-                    style={{background : currentColor}}
-                    >
+                    <tr style={{ background: currentColor }}>
                       {Object.keys(theader).map((key) => (
                         <th key={key} className="border border-gray-300 p-2">
                           {theader[key]}
@@ -207,7 +206,6 @@ const StudentAdmitCard = () => {
                           <td className="border border-gray-300 p-2">
                             {data.endTime}
                           </td>
-                          {/* {studentData.studentDateOfBirth ? studentData.studentDateOfBirth.split('T')[0] : ''} */}
                         </tr>
                       ))}
                   </tbody>
@@ -222,7 +220,6 @@ const StudentAdmitCard = () => {
                   <li>
                     Bring this admit card and a valid ID for verification.
                   </li>
-                  {/* Add more instructions as needed */}
                 </ul>
               </div>
               <div className="mt-4">

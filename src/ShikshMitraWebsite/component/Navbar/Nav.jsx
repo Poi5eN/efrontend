@@ -1,25 +1,18 @@
 import React, { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { FaAngleDown } from "react-icons/fa6";
 import { FiX } from "react-icons/fi";
-
 import { FaBars } from "react-icons/fa6";
 import Whitelogo from "../../assets/SHIKSHAMITRA_logo.png";
-
-import { IoMdSearch } from "react-icons/io";
-import { motion } from 'framer-motion';
+import { motion } from "framer-motion";
 import "./Nav.css";
 
-
 const Nav = () => {
-
   const [isScrolled, setScrolled] = useState(false);
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
   const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const navigate = useNavigate();
- 
-  
+
   const [formData, setFormData] = useState({
     productName: "",
   });
@@ -31,14 +24,6 @@ const Nav = () => {
     });
   };
 
- 
-
- 
-
-  // const fadeIn = {
-  //   hidden: { opacity: 0 },
-  //   visible: { opacity: 1 },
-  // };
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 0);
@@ -82,12 +67,11 @@ const Nav = () => {
       setPrevScrollPos(currentScrollPos);
     };
 
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
     return () => {
-      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener("scroll", handleScroll);
     };
   }, [prevScrollPos]);
-  
 
   return (
     <motion.nav
@@ -95,32 +79,25 @@ const Nav = () => {
       animate={{ y: isVisible ? 0 : -100 }}
       transition={{ y: { duration: 0.7 } }}
       style={{
-        position: 'fixed',
+        position: "fixed",
         // top: 0,
-        top:"15px",
+        top: "15px",
         left: 0,
         right: 0,
         zIndex: 999,
-
       }}
-      className="w-fulll nav-font " >
-        {/* <body className="welcome">
-  <span id="splash-overlay" className="splash"></span>
-  <span id="welcome" className="z-depth-4"></span>
-  </body> */}
-
+      className="w-fulll nav-font "
+    >
       <div className="nav-font  w-[95%] mx-auto flex justify-around  items-center  px-3   ">
-    
-          <Link to="/">
-           <div className="h-[80px] ">
-           <img
+        <Link to="/">
+          <div className="h-[80px] ">
+            <img
               src={Whitelogo}
               alt="Logo"
               className=" w-full h-full scale-110 cursor-pointer  rounded-sm"
             />
-           </div>
-          </Link>
-      
+          </div>
+        </Link>
 
         {isMobile ? (
           <div className="flex items-center   duration-1000">
@@ -154,10 +131,9 @@ const Nav = () => {
                     isScrolled ? "" : ""
                   }`}
                 >
-                SERVICES
+                  SERVICES
                 </Link>
 
-                
                 <Link
                   to="/screenshot"
                   onClick={handleMobileMenuToggle}
@@ -165,7 +141,7 @@ const Nav = () => {
                     isScrolled ? "" : ""
                   }`}
                 >
-                    SCREENSHOT
+                  SCREENSHOT
                 </Link>
                 <Link
                   to="/contact"
@@ -174,7 +150,7 @@ const Nav = () => {
                     isScrolled ? "" : ""
                   }`}
                 >
-                    CONTACT
+                  CONTACT
                 </Link>
                 <Link
                   to="/about"
@@ -183,7 +159,7 @@ const Nav = () => {
                     isScrolled ? "" : ""
                   }`}
                 >
-                    ABOUT
+                  ABOUT
                 </Link>
                 <Link
                   to="/demo"
@@ -192,89 +168,78 @@ const Nav = () => {
                     isScrolled ? "" : ""
                   }`}
                 >
-                    DEMO
+                  DEMO
                 </Link>
                 <Link
                   to="/login"
                   onClick={handleMobileMenuToggle}
                   className={`  group  sm:block bg-cyan-700 text-[13px]  px-4 py-3 rounded-lg `}
                 >
-                    LOGIN
+                  LOGIN
                 </Link>
-
-{/*              
-                <div className="relative group hidden sm:block">
-                <Link to="/login">
-          <div className="relative text-white group hidden sm:block bg-cyan-700 text-[13px]  px-4 py-3 rounded-lg">
-         LOGIN
-            
-          </div>
-         </Link>
-                   </div> */}
               </div>
             )}
           </div>
         ) : (
-            <div
-            // style={{marginRight:" 110px"}}
-              className={`z-50 nav-font    mx-auto bg-[#192a3a] px-10   space-x-10  rounded-lg p-1  text-black" `}>
-              <Link
-                to="/"
-                onClick={scrollToTop}
-                className={`hover_animation nav-font  text-[13px] text-gray-100  cursor-pointer hover:text-gray-100 hover:duration-700    p-1 rounded-md ${
-                  isScrolled ? "" : ""
-                }`}
-              >
-                HOME
-              </Link>
-              <Link
-                to="/services"
-                onClick={scrollToTop}
-                className={`hover_animation nav-font  text-[13px] cursor-pointer text-gray-100 hover:text-gray-100 hover:duration-700    p-1 rounded-md ${
-                  isScrolled ? "text-white" : ""
-                }`}
-              >
-               SERVICES
-              </Link>
-              
-              <Link
-                to="/screenshot"
-                onClick={scrollToTop}
-                className={` hover_animation nav-font text-gray-100   text-[13px] cursor-pointer  hover:text-gray-100 hover:duration-700    p-1 rounded-md  ${
-                  isScrolled ? "text-white" : ""
-                }`}
-              >
-               SCREENSHOT
-              </Link>
-              <Link
-                to="/contact"
-                onClick={scrollToTop}
-                className={` hover_animation nav-font text-gray-100   text-[13px] cursor-pointer  hover:text-gray-100 hover:duration-700    p-1 rounded-md  ${
-                  isScrolled ? "text-white" : ""
-                }`}
-              >
-                CONTACT
-              </Link>
-              <Link
-                to="/about"
-                onClick={scrollToTop}
-                className={` hover_animation text-gray-100 nav-font  text-[13px] cursor-pointer  hover:text-gray-100 hover:duration-700    p-1 rounded-md  ${
-                  isScrolled ? "text-white" : ""
-                }`}
-              >
+          <div
+            className={`z-50 nav-font    mx-auto bg-[#192a3a] px-10   space-x-10  rounded-lg p-1  text-black" `}
+          >
+            <Link
+              to="/"
+              onClick={scrollToTop}
+              className={`hover_animation nav-font  text-[13px] text-gray-100  cursor-pointer hover:text-gray-100 hover:duration-700    p-1 rounded-md ${
+                isScrolled ? "" : ""
+              }`}
+            >
+              HOME
+            </Link>
+            <Link
+              to="/services"
+              onClick={scrollToTop}
+              className={`hover_animation nav-font  text-[13px] cursor-pointer text-gray-100 hover:text-gray-100 hover:duration-700    p-1 rounded-md ${
+                isScrolled ? "text-white" : ""
+              }`}
+            >
+              SERVICES
+            </Link>
+
+            <Link
+              to="/screenshot"
+              onClick={scrollToTop}
+              className={` hover_animation nav-font text-gray-100   text-[13px] cursor-pointer  hover:text-gray-100 hover:duration-700    p-1 rounded-md  ${
+                isScrolled ? "text-white" : ""
+              }`}
+            >
+              SCREENSHOT
+            </Link>
+            <Link
+              to="/contact"
+              onClick={scrollToTop}
+              className={` hover_animation nav-font text-gray-100   text-[13px] cursor-pointer  hover:text-gray-100 hover:duration-700    p-1 rounded-md  ${
+                isScrolled ? "text-white" : ""
+              }`}
+            >
+              CONTACT
+            </Link>
+            <Link
+              to="/about"
+              onClick={scrollToTop}
+              className={` hover_animation text-gray-100 nav-font  text-[13px] cursor-pointer  hover:text-gray-100 hover:duration-700    p-1 rounded-md  ${
+                isScrolled ? "text-white" : ""
+              }`}
+            >
               ABOUT
-              </Link>
-              <Link
-                to="/demo"
-                onClick={scrollToTop}
-                className={` hover_animation nav-font text-gray-100 bg-[#29435b] px-3 py-2 rounded-lg  text-[13px] cursor-pointer  hover:text-gray-100 hover:duration-700  ${
-                  isScrolled ? "text-white" : ""
-                }`}
-              >
+            </Link>
+            <Link
+              to="/demo"
+              onClick={scrollToTop}
+              className={` hover_animation nav-font text-gray-100 bg-[#29435b] px-3 py-2 rounded-lg  text-[13px] cursor-pointer  hover:text-gray-100 hover:duration-700  ${
+                isScrolled ? "text-white" : ""
+              }`}
+            >
               DEMO
-              </Link>
-            </div>
-         
+            </Link>
+          </div>
         )}
 
         {isMobileMenuOpen && isMobile && (
@@ -283,17 +248,14 @@ const Nav = () => {
             <div></div>
           </div>
         )}
-       {!isMobile && (
-        
-         <Link to="/login">
-          <div className="relative text-white group hidden sm:block bg-cyan-700 text-[13px]  px-4 py-3 rounded-lg">
-         LOGIN
-            
-          </div>
-         </Link>
+        {!isMobile && (
+          <Link to="/login">
+            <div className="relative text-white group hidden sm:block bg-cyan-700 text-[13px]  px-4 py-3 rounded-lg">
+              LOGIN
+            </div>
+          </Link>
         )}
       </div>
-      {/* </body> */}
     </motion.nav>
   );
 };

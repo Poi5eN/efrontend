@@ -1,13 +1,12 @@
-
-import React, { useState } from 'react';
-import v1 from './demo.mp4';
+import React, { useState } from "react";
+import v1 from "./demo.mp4";
 
 const App = () => {
   const VIDEOS = {
     ITS: v1,
-    landing: 'https://www.youtube.com/embed/4jEz03Z8azc',
-    grassHopper: 'https://www.youtube.com/embed/ZwwS4YOTbbw',
-    story: 'https://www.youtube.com/embed/tU1b1H2EWU4',
+    landing: "https://www.youtube.com/embed/4jEz03Z8azc",
+    grassHopper: "https://www.youtube.com/embed/ZwwS4YOTbbw",
+    story: "https://www.youtube.com/embed/tU1b1H2EWU4",
   };
 
   const [src, setSrc] = useState(VIDEOS.ITS);
@@ -18,10 +17,10 @@ const App = () => {
 
   return (
     <div className="bg-[#19212c] min-h-screen flex flex-col justify-center items-center md:pt-24">
-     
       <div className="w-full  lg:w-1/2 relative mb-8">
-        <div className="relative overflow-hidden" 
-        style={{ paddingTop: '56.25%' }}
+        <div
+          className="relative overflow-hidden"
+          style={{ paddingTop: "56.25%" }}
         >
           <iframe
             title="video"
@@ -35,9 +34,13 @@ const App = () => {
       </div>
 
       {/* Radio Inputs Section */}
-      <form className="w-full md:flex gap-5 lg:w-1/2" onChange={(e) => handleMenuClick(e.target.value)}>
+      <form
+        className="w-full md:flex gap-5 lg:w-1/2"
+        onChange={(e) => handleMenuClick(e.target.value)}
+      >
         <label className="block text-white mb-2">
-          <input type="radio" name="src" value={VIDEOS.ITS} defaultChecked /> ADMIN
+          <input type="radio" name="src" value={VIDEOS.ITS} defaultChecked />{" "}
+          ADMIN
         </label>
         <label className="block text-white mb-2">
           <input type="radio" name="src" value={VIDEOS.landing} /> TEACHER

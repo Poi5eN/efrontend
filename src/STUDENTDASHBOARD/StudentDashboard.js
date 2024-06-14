@@ -50,8 +50,6 @@ const StudentDashboard = () => {
 
   return (
     <div className={currentMode === "Dark" ? "dark" : ""}>
-      {/* (isLoggedIn || singleLog ) && */}
-      {/* {  (isLoggedIn == 'student')   && ( */}
       {isLoggedIn == "student" && singleLog == "student" && (
         <>
           <div className="flex relative dark:bg-main-dark-bg">
@@ -89,17 +87,6 @@ const StudentDashboard = () => {
               <div>
                 {themeSettings && <ThemeSettings />}
                 <Outlet />
-                {/* <Routes>
-                  <Route path="/Student" element={<DashBoard/>}/>
-                 <Route path="/subjects" element={<Subjects/>} />
-                 <Route path="/assigments" element={<Assigments/>} />
-                 <Route path="/lectures" element={<Lectures/>} />
-                 <Route path="/results" element={<Results/>} />
-                 <Route path="/syllabus" element={<Syllabus/>} />
-                 <Route path="/timetable" element={<TimeTable/>} />
-
-                
-                </Routes> */}
               </div>
               <Footer />
             </div>

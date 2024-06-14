@@ -37,7 +37,7 @@ function EditAdditional() {
 
     try {
       const response = await axios.put(
-        `https://average-red-kimono.cyclic.app/api/v1/adminRoute/updateFees/${_id}`,
+        `http://localhost:4000/api/v1/adminRoute/updateFees/${_id}`,
         formDataToSend,
         {
           withCredentials: true,
@@ -60,7 +60,7 @@ function EditAdditional() {
   useEffect(() => {
     axios
       .get(
-        `https://average-red-kimono.cyclic.app/api/v1/adminRoute/getAdditionalFees?_id=${_id}`,
+        `http://localhost:4000/api/v1/adminRoute/getAdditionalFees?_id=${_id}`,
         {
           withCredentials: true,
           headers: {

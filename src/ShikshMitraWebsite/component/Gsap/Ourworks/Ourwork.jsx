@@ -30,7 +30,6 @@ const Ourwork = () => {
         ".our-work-text-div",
         {
           height: "100vh",
-          // height:"60vh",
         },
         "height"
       );
@@ -38,7 +37,6 @@ const Ourwork = () => {
         ".our-work-txt",
         {
           height: "70vh",
-          // height:"60vh",
         },
         "height"
       );
@@ -56,7 +54,6 @@ const Ourwork = () => {
         {
           position: "absolute",
           right: "-130%",
-          // button:"0%"
         },
         "height"
       );
@@ -65,7 +62,6 @@ const Ourwork = () => {
         ".scroll-img",
         {
           marginTop: "-250%",
-          // marginTop:"-300%",
         },
         "height"
       );
@@ -81,7 +77,10 @@ const Ourwork = () => {
 
         // data-scroll data-scroll-section data-scroll-speed=".3"
       >
-        <h1 className="text-gray-400 text-center ">Our platform offers a range of features and dashboards that empower educational institutions to manage their operations efficiently.</h1>
+        <h1 className="text-gray-400 text-center ">
+          Our platform offers a range of features and dashboards that empower
+          educational institutions to manage their operations efficiently.
+        </h1>
         <div className="part-7 bg-[#1f2937] ">
           <div className="our-work-txt">
             <h1 id="our">Our</h1>
@@ -102,9 +101,7 @@ const Ourwork = () => {
               </div>
             </div>
           </div>
-          {/* <Link to="/demo"> */}
-            <button id="demo"> DEMO</button>
-          {/* </Link> */}
+          <button id="demo"> DEMO</button>
         </div>
       </div>
     </>

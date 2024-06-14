@@ -26,7 +26,7 @@ const ViewAdmitCard = () => {
   useEffect(() => {
     axios
       .get(
-        `https://average-red-kimono.cyclic.app/api/v1/adminRoute/getAllStudents?email=${email}`,
+        `http://localhost:4000/api/v1/adminRoute/getAllStudents?email=${email}`,
         {
           withCredentials: true,
           headers: {
@@ -46,7 +46,7 @@ const ViewAdmitCard = () => {
   useEffect(() => {
     axios
       .get(
-        "https://average-red-kimono.cyclic.app/api/v1/exam/getAllExams",
+        "http://localhost:4000/api/v1/exam/getAllExams",
         {
           withCredentials: true,
           headers: {

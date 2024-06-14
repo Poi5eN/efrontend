@@ -2,21 +2,19 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { DataGrid } from "@mui/x-data-grid";
 import Cookies from "js-cookie";
-import { format } from "date-fns"; // Import the format function
+import { format } from "date-fns";
 import { useStateContext } from "../contexts/ContextProvider";
-
 
 const authToken = Cookies.get("token");
 
 const BookManagement = () => {
-
   const { currentColor } = useStateContext();
   const [submittedData, setSubmittedData] = useState([]);
 
   useEffect(() => {
     axios
       .get(
-        `https://average-red-kimono.cyclic.app/api/v1/adminRoute/getIssueBookToMe`,
+        `http://localhost:4000/api/v1/adminRoute/getIssueBookToMe`,
         {
           withCredentials: true,
           headers: {
@@ -59,9 +57,10 @@ const BookManagement = () => {
   const getRowId = (row) => row._id; // Use the _id property as the row id
 
   return (
-    <div 
-      className="dark:text-white dark:bg-secondary-dark-bg " 
-     style={{ height: "90vh", width: "100%" }}>
+    <div
+      className="dark:text-white dark:bg-secondary-dark-bg "
+      style={{ height: "90vh", width: "100%" }}
+    >
       <DataGrid
         rows={submittedData}
         columns={columns}

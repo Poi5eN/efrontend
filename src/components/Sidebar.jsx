@@ -82,7 +82,7 @@ const Sidebar = () => {
                   </button>
                 </TooltipComponent>
               </div>
-              <div className="mt-10 ">
+              <div className="mt-10 overflow-x-scroll">
                 {Studentlinks.map((item) => (
                   <div key={item.title}>
                     <Link

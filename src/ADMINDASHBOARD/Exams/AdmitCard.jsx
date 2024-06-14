@@ -26,7 +26,7 @@ const AdmitCard = () => {
   const [submittedData, setSubmittedData] = useState([]);
 
   useEffect(() => {
-    axios.get("https://average-red-kimono.cyclic.app/api/v1/adminRoute/getAllStudents", {
+    axios.get("http://localhost:4000/api/v1/adminRoute/getAllStudents", {
 
       withCredentials: true,
       headers: {
