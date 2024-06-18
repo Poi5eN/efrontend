@@ -35,7 +35,6 @@ const ViewAdmission = () => {
       });
   }, []);
 
-  // console.log(studentData)
   return (
     <>
           <div className=" w-full h-screen  flex items-center justify-center pt-10 modal-blur">

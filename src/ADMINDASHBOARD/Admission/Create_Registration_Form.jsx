@@ -386,14 +386,14 @@ function Create_Registration_Form() {
     className="text-4xl font-bold mb-4 uppercase text-center  hover-text "
     style={{color:currentColor}}
     >
-        New Registration
+        New Admission
       </h1>
       <button
         onClick={openModal}
         className="dark:text-white dark:bg-secondary-dark-bg text-gray-800  neu-btn border-2 "
         style={{border:`2px solid ${currentColor} `,color:currentColor}}
       >
-        Create Registration
+        Create Admission
       </button>
 
       {/* Modal */}
@@ -409,7 +409,7 @@ function Create_Registration_Form() {
         className="text-xl font-bold mb-4 uppercase text-center  hover-text "
         style={{color:currentColor}}
         >
-          Create Registration
+          Create Admission
         </h1>
         <InputForm
           fields={formFields}
@@ -460,7 +460,7 @@ function Create_Registration_Form() {
       </Modal>
 
       <div className=" items-center">
-        <h2 className="text-xl font-semibold mt-4">New Registration</h2>
+        <h2 className="text-xl font-semibold mt-4">New Admission</h2>
         <select id="yearDropdown" className="m-2 w-[100px] md:mb-0 ">
           {/* Populate the dropdown with 5 years starting from 2024 */}
           {[...Array(5).keys()].map((index) => (

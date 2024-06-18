@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useLocation, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { DropDownListComponent } from "@syncfusion/ej2-react-dropdowns";
 import { dropdownData } from "../data/dummy";
 import PieChart from "../pages/Charts/PieChart";
@@ -225,6 +225,7 @@ const DashboardHome = () => {
         iconColor: "#fff",
         iconBg: "rgb(254, 201, 15)",
         pcColor: "red-600",
+        redirect:"allstudent"
       },
       {
         icon: <FcBusinesswoman />,
@@ -233,22 +234,25 @@ const DashboardHome = () => {
         iconColor: "#fff",
         iconBg: "rgb(254, 201, 15)",
         pcColor: "green-600",
+        redirect:"allteachers"
       },
       {
         icon: <FcCurrencyExchange />,
         amount: `${totalSellAmount + totalPaidAmount}`,
-        title: "Earning",
+        title: "Fee",
         iconColor: "#fff",
         iconBg: "rgb(254, 201, 15)",
         pcColor: "green-600",
+        redirect:"allstudent"
       },
       {
         icon: <BiMaleFemale />,
         amount: `${parentCount}`,
-        title: "Parents",
+        title: "Admission",
         iconColor: "#fff",
         iconBg: "rgb(254, 201, 15)",
         pcColor: "red-600",
+        redirect:"registration"
       },
     ];
 
@@ -280,7 +284,7 @@ const DashboardHome = () => {
         {earningData.map((item) => (
           <div class="w-1/2 sm:w-1/4 float-left">
             <div class="bg-white  dark:text-gray-200 dark:bg-secondary-dark-bg  p-1 m-2 flex justify-center rounded-2xl">
-              <div
+              <Link to={item.redirect}
                 key={item.title}
                 className="bg-white h-44 dark:text-dark dark:bg-secondary-dark-bg md:w-56 p-4 pt-9 rounded-2xl text-center text-red font-semibold"
               >
@@ -300,12 +304,12 @@ const DashboardHome = () => {
                     {item.percentage}
                   </span>
                 </p>
-                <p className="text-sm  font-semibold  mt-1"
+                <p className="text-xl  font-semibold  mt-1"
                 style={{color:currentColor}}
                 >
                   {item.title}
                 </p>
-              </div>
+              </Link>
             </div>
           </div>
         ))}
