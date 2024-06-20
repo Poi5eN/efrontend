@@ -3,10 +3,10 @@ import { Link, useParams } from "react-router-dom";
 import axios from "axios";
 import Select from "react-select"; // Import the Select component
 import { useStateContext } from "../../../contexts/ContextProvider";
-import Cookies from 'js-cookie';
-const authToken = Cookies.get('token');
+import Cookies from "js-cookie";
+const authToken = Cookies.get("token");
 const StudentFeeStatus = () => {
-  const { currentColor} = useStateContext();
+  const { currentColor } = useStateContext();
   const { email } = useParams();
   const [studentData, setStudentData] = useState({});
   const [dues, setDues] = useState([]);
@@ -27,12 +27,12 @@ const StudentFeeStatus = () => {
   useEffect(() => {
     axios
       .get(
-        `http://localhost:4000/api/v1/adminRoute/getAllStudents?email=${email}`,
+        `https://ebackend-iasf.onrender.com/api/v1/adminRoute/getAllStudents?email=${email}`,
         {
           withCredentials: true,
-      headers: {
-        Authorization: `Bearer ${authToken}`,
-      },
+          headers: {
+            Authorization: `Bearer ${authToken}`,
+          },
         }
       )
       .then((response) => {
@@ -69,11 +69,11 @@ const StudentFeeStatus = () => {
 
   const handleModalOpen = () => {
     axios
-      .get(`http://localhost:4000/api/v1/adminRoute/getFees`, {
+      .get(`https://ebackend-iasf.onrender.com/api/v1/adminRoute/getFees`, {
         withCredentials: true,
-      headers: {
-        Authorization: `Bearer ${authToken}`,
-      },
+        headers: {
+          Authorization: `Bearer ${authToken}`,
+        },
       })
       .then((response) => {
         const data = response.data;
@@ -167,25 +167,26 @@ const StudentFeeStatus = () => {
       dues: dues,
     };
 
-    const apiUrl = "http://localhost:4000/api/v1/fees/createFeeStatus";
+    const apiUrl =
+      "https://ebackend-iasf.onrender.com/api/v1/fees/createFeeStatus";
     axios
       .post(apiUrl, newExamData, {
         withCredentials: true,
-      headers: {
-        Authorization: `Bearer ${authToken}`,
-      },
+        headers: {
+          Authorization: `Bearer ${authToken}`,
+        },
       })
       .then((response) => {
         console.log("Data Posted Successfully: ", response.data);
 
         axios
           .get(
-            `http://localhost:4000/api/v1/fees/getFeeStatus?studentId=${studentId}`,
+            `https://ebackend-iasf.onrender.com/api/v1/fees/getFeeStatus?studentId=${studentId}`,
             {
               withCredentials: true,
-      headers: {
-        Authorization: `Bearer ${authToken}`,
-      },
+              headers: {
+                Authorization: `Bearer ${authToken}`,
+              },
             }
           )
           .then((response) => {
@@ -219,12 +220,12 @@ const StudentFeeStatus = () => {
     if (studentId && Object.keys(studentData).length > 0) {
       axios
         .get(
-          `http://localhost:4000/api/v1/fees/getFeeStatus?studentId=${studentId}`,
+          `https://ebackend-iasf.onrender.com/api/v1/fees/getFeeStatus?studentId=${studentId}`,
           {
             withCredentials: true,
-      headers: {
-        Authorization: `Bearer ${authToken}`,
-      },
+            headers: {
+              Authorization: `Bearer ${authToken}`,
+            },
           }
         )
         .then((response) => {
@@ -266,12 +267,15 @@ const StudentFeeStatus = () => {
   useEffect(() => {
     // Fetch data from the server when the component mounts
     axios
-      .get("http://localhost:4000/api/v1/adminRoute/getAdditionalFees", {
-        withCredentials: true,
-      headers: {
-        Authorization: `Bearer ${authToken}`,
-      },
-      })
+      .get(
+        "https://ebackend-iasf.onrender.com/api/v1/adminRoute/getAdditionalFees",
+        {
+          withCredentials: true,
+          headers: {
+            Authorization: `Bearer ${authToken}`,
+          },
+        }
+      )
       .then((response) => {
         // Assuming response.data is an array of fees
         const feesData = response.data.map((fee) => {
@@ -287,41 +291,47 @@ const StudentFeeStatus = () => {
           };
         });
 
-        // console.log("Fetched Additional Fees:", response.data); // Log the fetched data
-        // console.log("Mapped Additional Fees:", feesData); // Log the mapped data
-
         setAdditionalFees(feesData);
-        // console.log(" Additional Fees:", AdditionalFees); // Log the mapped data
       })
       .catch((error) => {
         console.error("Error fetching data:", error);
       });
   }, [isModalOpen]);
+  {
+    console.log("studentData", studentData);
+    console.log("examData", examData);
+  }
+
+  // console.log("dataaaa",typeof(getTotalFeesAmount() - formData.amountSubmitted))
+  const dueAmount=examData.map((data)=>{
+    return +(getFee-data.paidAmount)
+})
+console.log("dueAmount",dueAmount)
+// const dueAmount = examData.map((data) => {
+//   const getFeeNumber =Number(getFee); 
+//   const paidAmountNumber = Number(data.paidAmount);
+//   return getFeeNumber - paidAmountNumber;
+// });
+
+console.log("dueAmount", dueAmount);
+
+  // const sumOfDues=(dueAmount.reduce((acc,curr)=>{
+  //    return acc+curr
+  // }));
+  // console.log("summm",sum)
+
+  // console.log("ssss",d)
+
+  const schoolName = localStorage.getItem("schoolName");
+  const schoolContact = localStorage.getItem("schoolContact");
+  const schoolAddress = localStorage.getItem("schooladdress");
+
 
   return (
-    <div className="py-8 px-4 md:px-8">
-      <div className=" flex justify-center mt-4">
-        {studentData.image && studentData.image.url ? (
-          <img
-            className="w-[80px] h-[80px] rounded-full"
-            src={studentData.image.url}
-            alt="Image"
-          />
-        ) : (
-          <p>No image available</p>
-        )}
-      </div>
-
-      <div className=" ">
-        <h1 className="text-cyan-700 font-bold uppercase text-2xl">Student</h1>
-        <h2 className="  text-xl text-cyan-700 font-semibold">Name : {studentData.fullName}</h2>
-        <h2 className="  text-xl text-cyan-700 font-semibold">Email : {studentData.email}</h2>
-        <h2 className="  text-xl text-cyan-700 font-semibold">Class : {studentData.class}</h2>
-        <h2 className="  text-xl text-red-600 font-semibold ">Dues : {dues}</h2>
-      </div>
-      <div className="flex justify-center">
+    <div>
+      <div className="flex justify-start ms-7">
         <button
-          className="bg-blue-500 hover-bg-blue-700 text-white font-semibold py-2 px-4 rounded"
+          className="bg-gray-400 mb-8 hover-bg-blue-700 text-white font-semibold py-2 px-4 rounded"
           onClick={handleModalOpen}
         >
           Create Fee
@@ -391,8 +401,7 @@ const StudentFeeStatus = () => {
             </div>
             <div className="grid grid-cols-2 gap-4 mt-4">
               <div className="mb-4">
-                <label className="block text-gray-600"
-                >Fee Status</label>
+                <label className="block text-gray-600">Fee Status</label>
                 <select
                   className="w-full border rounded-lg p-2"
                   value={formData.feeStatus || "Unpaid"} // Use formData.feeStatus or set it to "Unpaid" by default
@@ -448,34 +457,331 @@ const StudentFeeStatus = () => {
           </div>
         </div>
       )}
+      <div className=" w-full overflow-scroll ">
+        <div className="w-full flex mx-auto px-3   gap-3">
+          <div className=" border-dashed border-e-2 pe-5 border-gray-800   rounded-sm p-2">
+            <div className="flex justify-between border-b-2 border-red-600 mb-1 ">
+              <div className=" h-24 w-24 ">
+                <img className="h-[100%] w-[100%]" src={""} alt="logo" />
+              </div>
+              <div className="text-end  ">
+                <h1 className="font-semibold">{schoolName}</h1>
+                <p className="text-sm">Address: {schoolAddress} </p>
+                <p className="text-sm">Contact: {schoolContact}</p>
+             
+                <p className="mb-2 text-sm">
+                  <span className="border-e-2 border-blue-500 px-2 ">
+                    IT Service
+                  </span>
+                  <span className="border-e-2 border-blue-500 px-2">
+                    IT Service
+                  </span>
+                  <span className="border-e-2 border-blue-500 px-2">
+                    IT Service
+                  </span>
+                </p>
+              </div>
+            </div>
+            <div className="bg-black text-white text-center">
+              <h1 className="text-sm">FEE RECEIPT</h1>
+            </div>
+            <h1 className="text-center text-lg ">Parent Copy</h1>
+            <div className="flex justify-between text-[12px]">
+              <div>
+                <p>
+                  <span className="font-bold"> Name : </span>
+                  {studentData.fullName}
+                </p>
+                <p>
+                  <span className="font-bold">F/Name : </span>
+                  {studentData.fatherName}
+                </p>
+                <p>
+                  <span className="font-bold">Email : </span>
+                  {studentData.email}
+                </p>
+                <p>
+                  <span className="font-bold">Class : </span>
+                  {studentData.class}
+                </p>
+                <p>
+                  <span className="font-bold">Phone : </span>
+                  {studentData.contact}
+                </p>
+                <p>
+                  <span className="font-bold">DOB : </span>
+                  {new Date(studentData.dateOfBirth).toLocaleDateString(
+                    "en-US"
+                  )}
+                </p>
+                <p>
+                  <span className="font-bold">Address : </span>
+                  {studentData.address}
+                </p>
+              </div>
+              <div>
+                <p>
+                  <span className="font-bold">Receipt No. :</span>Jitender
+                </p>
+                <p>
+                  <span className="font-bold">Payment Date :</span>Jitender
+                </p>
+                <p>
+                  <span className="font-bold">Payment Mode :</span>Ramesh
+                </p>
+                <p>
+                  <span className="font-bold">Collected By :</span>June 2023
+                </p>
+              </div>
+            </div>
 
-      <div className="mt-8">
-        <h2 className="text-2xl font-semibold mb-4 text-indigo-600">
-          Fee Details
-        </h2>
-        <div className="overflow-x-auto bg-gray-100 rounded-lg p-4">
-          <table className="w-full border-collapse table-auto">
-            <thead>
-              <tr className="bg-cyan-700 text-white text-center">
-                <th className="border  px-4 py-2 ">Months</th>
-                <th className="border  px-4 py-2">Status</th>
-                <th className="border  px-4 py-2">Paid Amount</th>
-                <th className="border  px-4 py-2">Fee Paid Date</th>
-              </tr>
-            </thead>
-            <tbody>
-              {examData.map((data, index) => (
-                <tr key={index} className="text-center">
-                  <td className="border px-4 py-2">{data.month}</td>
-                  <td className="border px-4 py-2">{data.status}</td>
-                  <td className="border px-4 py-2">{data.paidAmount}</td>
-                  <td className="border px-4 py-2">
-                    {new Date(data.date).toLocaleDateString("en-GB")}
-                  </td>{" "}
-                </tr>
-              ))}
-            </tbody>
-          </table>
+            <div>
+              <div>
+                <div className="-mx-4 sm:-mx-8  sm:px-8 py-4 overflow-x-auto">
+                  <div class="inline-block min-w-full shadow-md rounded-lg overflow-hidden">
+                    <table class="min-w-full leading-normal">
+                      <thead>
+                        <tr className=" bg-red-400 p-1">
+                          <th class="px-1  py-3 border-b-2 border-r-2 border-gray-200 bg-gray-100 text-left text-[10px] text-bold font-semibold text-gray-700 uppercase tracking-wider">
+                            Months
+                          </th>
+                          <th class="px-1  py-3 border-b-2 border-r-2 border-gray-200 bg-gray-100 text-left text-[10px] text-bold font-semibold text-gray-700 uppercase tracking-wider">
+                            Fee Type
+                          </th>
+                          <th class="px-1  py-3 border-b-2 border-r-2 border-gray-200 bg-gray-100 text-left text-[10px] text-bold font-semibold text-gray-700 uppercase tracking-wider">
+                            Status
+                          </th>
+
+                          <th class="px-1  py-3 border-b-2  border-r-2  border-gray-200 bg-gray-100 text-left text-[10px] text-bold font-semibold text-gray-700 uppercase tracking-wider">
+                            Amount
+                          </th>
+                          <th class="px-1  py-3 border-b-2 border-r-2 border-gray-200 bg-gray-100 text-left text-[10px] text-bold font-semibold text-gray-700 uppercase tracking-wider">
+                            Discount
+                          </th>
+                          <th class="px-1  py-3 border-b-2 border-r-2 border-gray-200 bg-gray-100 text-left text-[10px] text-bold font-semibold text-gray-700 uppercase tracking-wider">
+                            Due Amount
+                          </th>
+                          <th class="px-1  py-3 border-b-2 border-r-2 border-gray-200 bg-gray-100 text-left text-[10px] text-bold font-semibold text-gray-700 uppercase tracking-wider">
+                            Payment Date
+                          </th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        {examData.map((data, index) => (
+                          <tr key={index}>
+                            <td class="px-1  py-1 border-b border-gray-200 bg-white text-sm">
+                              <p class="text-gray-900 whitespace-no-wrap">
+                                {data.month}
+                              </p>
+                            </td>
+                            <td class="px-1  py-1 border-b border-gray-200 bg-white text-sm">
+                              <p class="text-gray-900 whitespace-no-wrap">
+                                Fee Type
+                              </p>
+                            </td>
+                            <td class="px-1  py-1 border-b border-gray-200 bg-white text-sm">
+                              <p class="text-gray-900 whitespace-no-wrap">
+                                {data.status}
+                              </p>
+                            </td>
+                            <td class="px-1  py-1 border-b border-gray-200 bg-white text-sm">
+                              <p class="text-gray-900 whitespace-no-wrap">
+                                {data.paidAmount}
+                              </p>
+                            </td>
+                            <td class="px-1  py-1 border-b border-gray-200 bg-white text-sm">
+                              <p class="text-gray-900 whitespace-no-wrap"></p>
+                            </td>
+                            <td class="px-1  py-1 border-b border-gray-200 bg-white text-sm">
+                              <p class="text-gray-900 whitespace-no-wrap">
+                                {+getFee - data.paidAmount}
+                              </p>
+                            </td>
+                            <td class="px-1  py-1 border-b border-gray-200 bg-white text-sm">
+                              <p class="text-gray-900 whitespace-no-wrap">
+                                {new Date(data.date).toLocaleDateString(
+                                  "en-GB"
+                                )}
+                              </p>
+                            </td>
+                          </tr>
+                        ))}
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+              <div className="flex justify-between">
+                <div>Signature</div>
+                <div>
+                  {/* Dues:{sumOfDues} */}
+                  
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="rounded-sm p-2">
+            <div className="flex justify-between border-b-2 border-red-600 mb-1 ">
+              <div className=" h-24 w-24 ">
+                <img className="h-[100%] w-[100%]" src={""} alt="logo" />
+              </div>
+              <div className="text-end  ">
+                <h1 className="font-semibold">{schoolName}</h1>
+                <p className="text-sm">Address: {schoolAddress} </p>
+                <p className="text-sm">Contact: {schoolContact}</p>
+             
+                <p className="mb-2 text-sm">
+                  <span className="border-e-2 border-blue-500 px-2 ">
+                    IT Service
+                  </span>
+                  <span className="border-e-2 border-blue-500 px-2">
+                    IT Service
+                  </span>
+                  <span className="border-e-2 border-blue-500 px-2">
+                    IT Service
+                  </span>
+                </p>
+              </div>
+            </div>
+            <div className="bg-black text-white text-center">
+              <h1 className="text-sm">FEE RECEIPT</h1>
+            </div>
+            <h1 className="text-center text-lg ">Office Copy</h1>
+            <div className="flex justify-between text-[12px]">
+              <div>
+                <p>
+                  <span className="font-bold"> Name : </span>
+                  {studentData.fullName}
+                </p>
+                <p>
+                  <span className="font-bold">F/Name : </span>
+                  {studentData.fatherName}
+                </p>
+                <p>
+                  <span className="font-bold">Email : </span>
+                  {studentData.email}
+                </p>
+                <p>
+                  <span className="font-bold">Class : </span>
+                  {studentData.class}
+                </p>
+                <p>
+                  <span className="font-bold">Phone : </span>
+                  {studentData.contact}
+                </p>
+                <p>
+                  <span className="font-bold">DOB : </span>
+                  {new Date(studentData.dateOfBirth).toLocaleDateString(
+                    "en-US"
+                  )}
+                </p>
+                <p>
+                  <span className="font-bold">Address : </span>
+                  {studentData.address}
+                </p>
+              </div>
+              <div>
+                <p>
+                  <span className="font-bold">Receipt No. :</span>Jitender
+                </p>
+                <p>
+                  <span className="font-bold">Payment Date :</span>Jitender
+                </p>
+                <p>
+                  <span className="font-bold">Payment Mode :</span>Ramesh
+                </p>
+                <p>
+                  <span className="font-bold">Collected By :</span>June 2023
+                </p>
+              </div>
+            </div>
+
+            <div>
+              <div>
+                <div className="-mx-4 sm:-mx-8  sm:px-8 py-4 overflow-x-auto">
+                  <div class="inline-block min-w-full shadow-md rounded-lg overflow-hidden">
+                    <table class="min-w-full leading-normal">
+                      <thead>
+                        <tr className=" bg-red-400 p-1">
+                          <th class="px-1  py-3 border-b-2 border-r-2 border-gray-200 bg-gray-100 text-left text-[10px] text-bold font-semibold text-gray-700 uppercase tracking-wider">
+                            Months
+                          </th>
+                          <th class="px-1  py-3 border-b-2 border-r-2 border-gray-200 bg-gray-100 text-left text-[10px] text-bold font-semibold text-gray-700 uppercase tracking-wider">
+                            Fee Type
+                          </th>
+                          <th class="px-1  py-3 border-b-2 border-r-2 border-gray-200 bg-gray-100 text-left text-[10px] text-bold font-semibold text-gray-700 uppercase tracking-wider">
+                            Status
+                          </th>
+
+                          <th class="px-1  py-3 border-b-2  border-r-2  border-gray-200 bg-gray-100 text-left text-[10px] text-bold font-semibold text-gray-700 uppercase tracking-wider">
+                            Amount
+                          </th>
+                          <th class="px-1  py-3 border-b-2 border-r-2 border-gray-200 bg-gray-100 text-left text-[10px] text-bold font-semibold text-gray-700 uppercase tracking-wider">
+                            Discount
+                          </th>
+                          <th class="px-1  py-3 border-b-2 border-r-2 border-gray-200 bg-gray-100 text-left text-[10px] text-bold font-semibold text-gray-700 uppercase tracking-wider">
+                            Due Amount
+                          </th>
+                          <th class="px-1  py-3 border-b-2 border-r-2 border-gray-200 bg-gray-100 text-left text-[10px] text-bold font-semibold text-gray-700 uppercase tracking-wider">
+                            Payment Date
+                          </th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        {examData.map((data, index) => (
+                          <tr key={index}>
+                            <td class="px-1  py-1 border-b border-gray-200 bg-white text-sm">
+                              <p class="text-gray-900 whitespace-no-wrap">
+                                {data.month}
+                              </p>
+                            </td>
+                            <td class="px-1  py-1 border-b border-gray-200 bg-white text-sm">
+                              <p class="text-gray-900 whitespace-no-wrap">
+                                Fee Type
+                              </p>
+                            </td>
+                            <td class="px-1  py-1 border-b border-gray-200 bg-white text-sm">
+                              <p class="text-gray-900 whitespace-no-wrap">
+                                {data.status}
+                              </p>
+                            </td>
+                            <td class="px-1  py-1 border-b border-gray-200 bg-white text-sm">
+                              <p class="text-gray-900 whitespace-no-wrap">
+                                {data.paidAmount}
+                              </p>
+                            </td>
+                            <td class="px-1  py-1 border-b border-gray-200 bg-white text-sm">
+                              <p class="text-gray-900 whitespace-no-wrap"></p>
+                            </td>
+                            <td class="px-1  py-1 border-b border-gray-200 bg-white text-sm">
+                              <p class="text-gray-900 whitespace-no-wrap">
+                                {+getFee - data.paidAmount}
+                              </p>
+                            </td>
+                            <td class="px-1  py-1 border-b border-gray-200 bg-white text-sm">
+                              <p class="text-gray-900 whitespace-no-wrap">
+                                {new Date(data.date).toLocaleDateString(
+                                  "en-GB"
+                                )}
+                              </p>
+                            </td>
+                          </tr>
+                        ))}
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+              <div className="flex justify-between">
+                <div>Signature</div>
+                <div>
+                  {/* Dues:{sumOfDues} */}
+                  
+                </div>
+              </div>
+            </div>
+          </div>
+         
         </div>
       </div>
     </div>

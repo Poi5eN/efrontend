@@ -31,7 +31,7 @@ const ParentResults = () => {
   useEffect(() => {
     axios
       .get(
-        `http://localhost:4000/api/v1/adminRoute/myKids`,
+        `https://ebackend-iasf.onrender.com/api/v1/adminRoute/myKids`,
         {
           withCredentials: true,
           headers: {
@@ -60,7 +60,7 @@ const ParentResults = () => {
   useEffect(() => {
     axios
       .get(
-        "http://localhost:4000/api/v1/exam/getAllExams",
+        "https://ebackend-iasf.onrender.com/api/v1/exam/getAllExams",
         {
           withCredentials: true,
           headers: {
@@ -105,7 +105,7 @@ const ParentResults = () => {
   useEffect(() => {
     axios
       .get(
-        `http://localhost:4000/api/v1/adminRoute/getAdminInfo`,
+        `https://ebackend-iasf.onrender.com/api/v1/adminRoute/getAdminInfo`,
         {
           withCredentials: true,
           headers: {
@@ -136,7 +136,7 @@ const ParentResults = () => {
       }
       axios
         .get(
-          `http://localhost:4000/api/v1/results/getResults?examName=${selectedExam}&studentId=${userId}`,
+          `https://ebackend-iasf.onrender.com/api/v1/results/getResults?examName=${selectedExam}&studentId=${userId}`,
           {
             withCredentials: true,
             headers: {

@@ -52,7 +52,7 @@ function Create_Book() {
     // Fetch data from the server when the component mounts
     axios
       .get(
-        "http://localhost:4000/api/v1/adminRoute/getAllBooks",
+        "https://ebackend-iasf.onrender.com/api/v1/adminRoute/getAllBooks",
         {
           withCredentials: true,
           headers: {
@@ -101,7 +101,7 @@ function Create_Book() {
     try {
       setLoading(true);
       const response = await axios.post(
-        "http://localhost:4000/api/v1/adminRoute/createBook",
+        "https://ebackend-iasf.onrender.com/api/v1/adminRoute/createBook",
         formData,
         {
           withCredentials: true,
@@ -140,7 +140,7 @@ function Create_Book() {
     try {
       // Make an API request to delete the row from the server
       const response = await axios.delete(
-        `http://localhost:4000/api/v1/adminRoute/deleteBook/${_id}`,
+        `https://ebackend-iasf.onrender.com/api/v1/adminRoute/deleteBook/${_id}`,
         {
           withCredentials: true,
           headers: {

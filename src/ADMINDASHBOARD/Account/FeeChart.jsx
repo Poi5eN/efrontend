@@ -13,7 +13,7 @@ const FeeChart = () => {
   useEffect(() => {
     axios
       .get(
-        `http://localhost:4000/api/v1/fees/getFeeStatus`,
+        `https://ebackend-iasf.onrender.com/api/v1/fees/getFeeStatus`,
         {
           withCredentials: true,
       headers: {

@@ -46,7 +46,7 @@ function Create_Staff() {
 
   useEffect(() => {
     // Fetch data from the server when the component mounts
-    axios.get('http://localhost:4000/api/v1/adminRoute/getAllEmployees', {
+    axios.get('https://ebackend-iasf.onrender.com/api/v1/adminRoute/getAllEmployees', {
       withCredentials: true,
       headers: {
         Authorization: `Bearer ${authToken}`,
@@ -98,7 +98,7 @@ function Create_Staff() {
     try {
       setLoading(true)
       const response = await axios.post(
-        "http://localhost:4000/api/v1/adminRoute/createEmployee",
+        "https://ebackend-iasf.onrender.com/api/v1/adminRoute/createEmployee",
         formDataToSend,
         {
           withCredentials: true,
@@ -122,7 +122,7 @@ function Create_Staff() {
   };
 
   const handleDelete = (email) => {
-    axios.put(`http://localhost:4000/api/v1/adminRoute/deactivateEmployee`, { email }, {
+    axios.put(`https://ebackend-iasf.onrender.com/api/v1/adminRoute/deactivateEmployee`, { email }, {
       withCredentials: true,
       headers: {
         Authorization: `Bearer ${authToken}`,

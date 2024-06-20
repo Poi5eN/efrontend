@@ -51,7 +51,7 @@ function CreateStudent() {
   useEffect(() => {
     // Fetch data from the server when the component mounts
     axios
-      .get("http://localhost:4000/api/v1/adminRoute/getAllStudents", {
+      .get("https://ebackend-iasf.onrender.com/api/v1/adminRoute/getAllStudents", {
         withCredentials: true,
         headers: {
           Authorization: `Bearer ${authToken}`,
@@ -115,7 +115,7 @@ function CreateStudent() {
     try {
       setLoading(true);
       const response = await axios.post(
-        "http://localhost:4000/api/v1/adminRoute/createStudentParent",
+        "https://ebackend-iasf.onrender.com/api/v1/adminRoute/createStudentParent",
         formDataToSend,
         {
           withCredentials: true,
@@ -164,7 +164,7 @@ function CreateStudent() {
   const handleDelete = (email) => {
     axios
       .put(
-        `http://localhost:4000/api/v1/adminRoute/deactivateStudent`,
+        `https://ebackend-iasf.onrender.com/api/v1/adminRoute/deactivateStudent`,
         { email },
         {
           withCredentials: true,

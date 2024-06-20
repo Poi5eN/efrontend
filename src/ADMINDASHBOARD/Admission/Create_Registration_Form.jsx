@@ -98,7 +98,7 @@ function Create_Registration_Form() {
     try {
       setLoading(true);
       const response = await axios.post(
-        "http://localhost:4000/api/v1/adminRoute/createStudentParent",
+        "https://ebackend-iasf.onrender.com/api/v1/adminRoute/createStudentParent",
         formDataToSend,
         {
           withCredentials: true,
@@ -147,7 +147,7 @@ function Create_Registration_Form() {
   const handleDelete = (email) => {
     axios
       .put(
-        `http://localhost:4000/api/v1/adminRoute/deactivateStudent`,
+        `https://ebackend-iasf.onrender.com/api/v1/adminRoute/deactivateStudent`,
         { email },
         {
           withCredentials: true,
@@ -349,7 +349,7 @@ function Create_Registration_Form() {
     // Fetch data from the server when the component mounts
     axios
       .get(
-        "http://localhost:4000/api/v1/adminRoute/getLastYearStudents",
+        "https://ebackend-iasf.onrender.com/api/v1/adminRoute/getLastYearStudents",
         {
           withCredentials: true,
           headers: {

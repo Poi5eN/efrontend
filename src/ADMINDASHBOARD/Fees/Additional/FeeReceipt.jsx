@@ -1,17 +1,42 @@
-import React from "react";
+import React, { useState,useEffect } from "react";
+import logo from "../../../ShikshMitraWebsite/assets/SHIKSHAMITRA_logo.png";
+import axios from "axios";
 
 const FeeReceipt = () => {
+  const [studentData,setStudentData]=useState([]);
+
+  useEffect(()=>{
+   const fetchData=async()=>{
+    try {
+      await axios.get(``)
+    } catch (error) {
+      
+    }
+   }
+  },[])
+
+  
+
+
+
+
   return (
     <>
       <div className="w-full overflow-scroll">
         <div className="w-full flex px-3  gap-3">
-          <div className="   rounded-sm p-2">
-            <div className="text-end border-b-2 border-red-600 mb-1 ">
-              <h1 className="text-xl">Technical Help India</h1>
-              <p>Address: </p>
-              <p>Contact: 0123456789</p>
-              <p>Location</p>
-              <p className="mb-2">
+          <div className=" border-dashed border-e-2 pe-5 border-gray-800   rounded-sm p-2">
+            <div className="flex justify-between border-b-2 border-red-600 mb-1 ">
+
+            <div className=" h-24 w-24 ">
+              <img className="h-[100%] w-[100%]" src={logo} alt="logo"/>
+            </div>
+            <div className="text-end  ">
+              
+              <h1 className="font-semibold">Technical Help India</h1>
+              <p className="text-sm">Address: faridabad </p>
+              <p className="text-sm">Contact: 0123456789</p>
+              <p className="text-sm">Location</p>
+              <p className="mb-2 text-sm">
                 <span className="border-e-2 border-blue-500 px-2 ">
                   IT Service
                 </span>
@@ -23,10 +48,11 @@ const FeeReceipt = () => {
                 </span>
               </p>
             </div>
-            <div className="bg-black text-white text-center">
-              <h1>FEE RECEIPT</h1>
             </div>
-            <h1 className="text-center text-xl ">Parent Copy</h1>
+            <div className="bg-black text-white text-center">
+              <h1 className="text-sm">FEE RECEIPT</h1>
+            </div>
+            <h1 className="text-center text-lg ">Parent Copy</h1>
             <div className="flex justify-between text-[12px]">
               <div>
                 <p>
@@ -61,10 +87,10 @@ const FeeReceipt = () => {
               </div>
             </div>
 
-            <div class="">
-              <div class="">
+            <div >
+              <div>
                 
-                <div class="-mx-4 sm:-mx-8  sm:px-8 py-4 overflow-x-auto">
+                <div className="-mx-4 sm:-mx-8  sm:px-8 py-4 overflow-x-auto">
                   <div class="inline-block min-w-full shadow-md rounded-lg overflow-hidden">
                     <table class="min-w-full leading-normal">
                       <thead>
@@ -208,13 +234,19 @@ const FeeReceipt = () => {
               </div>
             </div>
           </div>
-          <div className="   rounded-sm p-2">
-            <div className="text-end border-b-2 border-red-600 mb-1 ">
-              <h1 className="text-xl">Technical Help India</h1>
-              <p>Address: </p>
-              <p>Contact: 0123456789</p>
-              <p>Location</p>
-              <p className="mb-2">
+          <div className=" rounded-sm p-2">
+            <div className="flex justify-between border-b-2 border-red-600 mb-1 ">
+
+            <div className=" h-24 w-24 ">
+              <img className="h-[100%] w-[100%]" src={logo} alt="logo"/>
+            </div>
+            <div className="text-end  ">
+              
+              <h1 className="font-semibold">Technical Help India</h1>
+              <p className="text-sm">Address: faridabad </p>
+              <p className="text-sm">Contact: 0123456789</p>
+              <p className="text-sm">Location</p>
+              <p className="mb-2 text-sm">
                 <span className="border-e-2 border-blue-500 px-2 ">
                   IT Service
                 </span>
@@ -226,10 +258,11 @@ const FeeReceipt = () => {
                 </span>
               </p>
             </div>
-            <div className="bg-black text-white text-center">
-              <h1>FEE RECEIPT</h1>
             </div>
-            <h1 className="text-center text-xl ">Parent Copy</h1>
+            <div className="bg-black text-white text-center">
+              <h1 className="text-sm">FEE RECEIPT</h1>
+            </div>
+            <h1 className="text-center text-lg ">Office Copy</h1>
             <div className="flex justify-between text-[12px]">
               <div>
                 <p>
@@ -264,10 +297,10 @@ const FeeReceipt = () => {
               </div>
             </div>
 
-            <div class="">
-              <div class="">
+            <div >
+              <div>
                 
-                <div class="-mx-4 sm:-mx-8  sm:px-8 py-4 overflow-x-auto">
+                <div className="-mx-4 sm:-mx-8  sm:px-8 py-4 overflow-x-auto">
                   <div class="inline-block min-w-full shadow-md rounded-lg overflow-hidden">
                     <table class="min-w-full leading-normal">
                       <thead>
@@ -411,7 +444,7 @@ const FeeReceipt = () => {
               </div>
             </div>
           </div>
-
+        
         </div>
       </div>
     </>

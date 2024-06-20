@@ -227,7 +227,7 @@ function App() {
           <Route path="allstudent" element={<Allstudent />} />
           <Route
             path="/admin/allstudent/viewstudent/view-profile/:email"
-            element={<StudentIdCard />}
+            element={<StudentIdCardNew />}
           />
           <Route
             path="/admin/allstudent/editstudent/edit-profile/:email"

@@ -26,7 +26,7 @@ const AdmitCard = () => {
   const [submittedData, setSubmittedData] = useState([]);
 
   useEffect(() => {
-    axios.get("http://localhost:4000/api/v1/adminRoute/getAllStudents", {
+    axios.get("https://ebackend-iasf.onrender.com/api/v1/adminRoute/getAllStudents", {
 
       withCredentials: true,
       headers: {

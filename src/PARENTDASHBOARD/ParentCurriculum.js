@@ -19,7 +19,7 @@ const ParentCurriculum = () => {
   useEffect(() => {
     axios
       .get(
-       ` http://localhost:4000/api/v1/adminRoute/myKids`,
+       ` https://ebackend-iasf.onrender.com/api/v1/adminRoute/myKids`,
         {
           withCredentials: true,
           headers: {
@@ -46,7 +46,7 @@ const ParentCurriculum = () => {
     if (studentData.class) {
       axios
         .get(
-         ` http://localhost:4000/api/v1/adminRoute/getAllCurriculum?className=${studentData.class}`,
+         ` https://ebackend-iasf.onrender.com/api/v1/adminRoute/getAllCurriculum?className=${studentData.class}`,
           {
             withCredentials: true,
           headers: {

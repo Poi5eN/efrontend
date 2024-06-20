@@ -30,7 +30,7 @@ function AdmissionStatus({ data }) {
     // Fetch data from the server when the component mounts
     axios
       .get(
-        "http://localhost:4000/api/v1/adminRoute/getLastYearStudents",
+        "https://ebackend-iasf.onrender.com/api/v1/adminRoute/getLastYearStudents",
         {
           withCredentials: true,
           headers: {

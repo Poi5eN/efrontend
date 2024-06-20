@@ -14,7 +14,7 @@ const ViewStaff = () => {
 
   useEffect(() => {
     axios.get(
-      `http://localhost:4000/api/v1/adminRoute/getAllEmployees?email=${email}`,
+      `https://ebackend-iasf.onrender.com/api/v1/adminRoute/getAllEmployees?email=${email}`,
       {
         withCredentials: true,
       headers: {

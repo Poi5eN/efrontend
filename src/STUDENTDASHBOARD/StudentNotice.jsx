@@ -4,7 +4,7 @@ import Cookies from "js-cookie";
 const authToken = Cookies.get("token");
 
 const API_GET_DATA =
-  "http://localhost:4000/api/v1/adminRoute/getAllNotice";
+  "https://ebackend-iasf.onrender.com/api/v1/adminRoute/getAllNotice";
 
 const StudentNotice = () => {
   const [notice, setNotices] = useState([]);

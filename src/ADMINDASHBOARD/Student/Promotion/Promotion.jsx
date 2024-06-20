@@ -43,7 +43,7 @@ const Promotion = () => {
     // Fetch data from the server when the component mounts
     axios
       .get(
-        "http://localhost:4000/api/v1/adminRoute/getAllClass",
+        "https://ebackend-iasf.onrender.com/api/v1/adminRoute/getAllClass",
         {
           withCredentials: true,
           headers: {
@@ -196,7 +196,7 @@ const Promotion = () => {
     // Make the PUT request
     await axios
       .put(
-        "http://localhost:4000/api/v1/adminRoute/promotionOfStudent",
+        "https://ebackend-iasf.onrender.com/api/v1/adminRoute/promotionOfStudent",
         dataToUpdate,
         {
           withCredentials: true,

@@ -6,8 +6,8 @@ import { useStateContext } from "../contexts/ContextProvider";
 import Cookies from 'js-cookie';
 const authToken = Cookies.get('token');
 
-const Api_GetAll = "http://localhost:4000/api/v1/adminRoute/getAllCurriculum";
-const Delete_API ="http://localhost:4000/api/v1/adminRoute/deleteCurriculum";
+const Api_GetAll = "https://ebackend-iasf.onrender.com/api/v1/adminRoute/getAllCurriculum";
+const Delete_API ="https://ebackend-iasf.onrender.com/api/v1/adminRoute/deleteCurriculum";
 
 const Curriculum = () => {
   const { currentColor} = useStateContext();
@@ -56,7 +56,7 @@ const Curriculum = () => {
     formDataToSend.append("image", formData.image);
 
     axios
-      .post("http://localhost:4000/api/v1/adminRoute/createCurriculum", formDataToSend, {
+      .post("https://ebackend-iasf.onrender.com/api/v1/adminRoute/createCurriculum", formDataToSend, {
         withCredentials: true,
       headers: {
         Authorization: `Bearer ${authToken}`,
@@ -75,7 +75,7 @@ const Curriculum = () => {
   };
  
   useEffect(() => {
-    axios.get("http://localhost:4000/api/v1/adminRoute/getAllCurriculum", {
+    axios.get("https://ebackend-iasf.onrender.com/api/v1/adminRoute/getAllCurriculum", {
       withCredentials: true,
       headers: {
         Authorization: `Bearer ${authToken}`,
@@ -95,7 +95,7 @@ const Curriculum = () => {
  
  
   useEffect(() => {
-    axios.get("http://localhost:4000/api/v1/adminRoute/getAllClass", {
+    axios.get("https://ebackend-iasf.onrender.com/api/v1/adminRoute/getAllClass", {
       withCredentials: true,
       headers: {
         Authorization: `Bearer ${authToken}`,
@@ -114,7 +114,7 @@ const Curriculum = () => {
   const handleDeleteCurriculum = (index) => {
     const curriculumId = curriculumData[index]._id; 
     axios
-      .delete("http://localhost:4000/api/v1/adminRoute/deleteCurriculum/" + curriculumId, {
+      .delete("https://ebackend-iasf.onrender.com/api/v1/adminRoute/deleteCurriculum/" + curriculumId, {
         withCredentials: true,
       headers: {
         Authorization: `Bearer ${authToken}`,

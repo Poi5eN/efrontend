@@ -40,7 +40,7 @@ const EditStaff = () => {
 
   useEffect(() => {
     axios.get(
-      `http://localhost:4000/api/v1/adminRoute/getAllEmployees?email=${email}`,
+      `https://ebackend-iasf.onrender.com/api/v1/adminRoute/getAllEmployees?email=${email}`,
       {
         withCredentials: true,
       headers: {
@@ -78,7 +78,7 @@ const EditStaff = () => {
       }
     }
   
-    axios.put(`http://localhost:4000/api/v1/adminRoute/updateEmployee`, data, {
+    axios.put(`https://ebackend-iasf.onrender.com/api/v1/adminRoute/updateEmployee`, data, {
       withCredentials: true,
       headers: {
         Authorization: `Bearer ${authToken}`,

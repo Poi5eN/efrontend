@@ -55,7 +55,7 @@ const EditAdmission = () => {
   useEffect(() => {
     axios
       .get(
-        `http://localhost:4000/api/v1/adminRoute/getAllStudents?email=${email}`,
+        `https://ebackend-iasf.onrender.com/api/v1/adminRoute/getAllStudents?email=${email}`,
         {
           withCredentials: true,
           headers: {
@@ -116,7 +116,7 @@ const EditAdmission = () => {
       data.append("image", image);
     }
 
-    axios.put(`http://localhost:4000/api/v1/adminRoute/updateStudent`, data, {
+    axios.put(`https://ebackend-iasf.onrender.com/api/v1/adminRoute/updateStudent`, data, {
       withCredentials: true,
       headers: {
         Authorization: `Bearer ${authToken}`,

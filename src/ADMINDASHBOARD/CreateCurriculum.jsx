@@ -4,7 +4,7 @@ import Cookies from "js-cookie";
 const authToken = Cookies.get("token");
 
 const Api_GetAll =
-  "http://localhost:4000/api/v1/adminRoute/getAllClass";
+  "https://ebackend-iasf.onrender.com/api/v1/adminRoute/getAllClass";
 
 const CreateCurriculum = () => {
   const [selectedGrade, setSelectedGrade] = useState("Select Class");
@@ -24,7 +24,7 @@ const CreateCurriculum = () => {
   useEffect(() => {
     axios
       .get(
-        "http://localhost:4000/api/v1/adminRoute/getAllClass",
+        "https://ebackend-iasf.onrender.com/api/v1/adminRoute/getAllClass",
         {
           withCredentials: true,
           headers: {
@@ -48,7 +48,7 @@ const CreateCurriculum = () => {
         setLoading(true);
         try {
           const response = await axios.get(
-            "http://localhost:4000/api/v1/adminRoute/getAllCurriculum",
+            "https://ebackend-iasf.onrender.com/api/v1/adminRoute/getAllCurriculum",
             {
               withCredentials: true,
               headers: {

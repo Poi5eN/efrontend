@@ -22,7 +22,7 @@ const SalaryStatus = () => {
   useEffect(() => {
     axios
       .get(
-        `http://localhost:4000/api/v1/adminRoute/getTeachers?email=${email}`,
+        `https://ebackend-iasf.onrender.com/api/v1/adminRoute/getTeachers?email=${email}`,
         {
           withCredentials: true,
           headers: {
@@ -50,7 +50,7 @@ const SalaryStatus = () => {
     // Fetch salary data based on the selected year
     axios
       .get(
-        `http://localhost:4000/api/v1/teacher/getPaymentHistory?teacherId=${teacherId}&year=${selectedYear}`,
+        `https://ebackend-iasf.onrender.com/api/v1/teacher/getPaymentHistory?teacherId=${teacherId}&year=${selectedYear}`,
         {
           withCredentials: true,
           headers: {
@@ -118,7 +118,7 @@ const SalaryStatus = () => {
       })),
     };
 
-    const apiUrl = `http://localhost:4000/api/v1/teacher/salaryPay`;
+    const apiUrl = `https://ebackend-iasf.onrender.com/api/v1/teacher/salaryPay`;
     axios
       .post(apiUrl, newSalaryData, {
         withCredentials: true,
@@ -131,7 +131,7 @@ const SalaryStatus = () => {
         // setSalaryData(response.data.salaryHistory);
         axios
           .get(
-            `http://localhost:4000/api/v1/teacher/getPaymentHistory?teacherId=${teacherId}`,
+            `https://ebackend-iasf.onrender.com/api/v1/teacher/getPaymentHistory?teacherId=${teacherId}`,
             {
               withCredentials: true,
               headers: {

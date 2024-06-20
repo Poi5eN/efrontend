@@ -40,7 +40,7 @@ function Create_SecondaryClass() {
     // Fetch data from the server when the component mounts
     axios
       .get(
-        `http://localhost:4000/api/v1/adminRoute/getAllClass?primary=${false}`,
+        `https://ebackend-iasf.onrender.com/api/v1/adminRoute/getAllClass?primary=${false}`,
         {
           withCredentials: true,
           headers: {
@@ -90,7 +90,7 @@ function Create_SecondaryClass() {
     try {
       setLoading(true);
       const response = axios.post(
-        "http://localhost:4000/api/v1/adminRoute/createClass",
+        "https://ebackend-iasf.onrender.com/api/v1/adminRoute/createClass",
         formData,
         {
           withCredentials: true,
@@ -120,7 +120,7 @@ function Create_SecondaryClass() {
   const handleDelete = async (className) => {
     try {
       const re = await axios.get(
-        `http://localhost:4000/api/v1/adminRoute/getAllClass?className=${className}`,
+        `https://ebackend-iasf.onrender.com/api/v1/adminRoute/getAllClass?className=${className}`,
         {
           withCredentials: true,
           headers: {
@@ -131,7 +131,7 @@ function Create_SecondaryClass() {
 
       // Make an API request to delete the row from the server
       const response = await axios.delete(
-        `http://localhost:4000/api/v1/adminRoute/deleteClass?_id=${re.data.classList[0]._id}`,
+        `https://ebackend-iasf.onrender.com/api/v1/adminRoute/deleteClass?_id=${re.data.classList[0]._id}`,
         {
           withCredentials: true,
           headers: {

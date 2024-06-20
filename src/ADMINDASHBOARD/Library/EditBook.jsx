@@ -39,7 +39,7 @@ const EditBook = () => {
   useEffect(() => {
     axios
     .get(
-      `http://localhost:4000/api/v1/adminRoute/getAllBooks?_id=${_id}`,
+      `https://ebackend-iasf.onrender.com/api/v1/adminRoute/getAllBooks?_id=${_id}`,
       {withCredentials: true,
         headers: {
           Authorization: `Bearer ${authToken}`,
@@ -61,7 +61,7 @@ const EditBook = () => {
   const handleFormSubmit = (e) => {
     e.preventDefault();
     axios
-      .put(`http://localhost:4000/api/v1/adminRoute/updateBook/${_id}`, formData, 
+      .put(`https://ebackend-iasf.onrender.com/api/v1/adminRoute/updateBook/${_id}`, formData, 
       {
         withCredentials: true,
         headers: {

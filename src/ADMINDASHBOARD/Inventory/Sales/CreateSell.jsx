@@ -47,7 +47,7 @@ const modalStyle = {
 
   useEffect(() => {
 
-    axios.get('http://localhost:4000/api/v1/adminRoute/getAllItems', {
+    axios.get('https://ebackend-iasf.onrender.com/api/v1/adminRoute/getAllItems', {
       withCredentials: true,
       headers: {
         Authorization: `Bearer ${authToken}`,

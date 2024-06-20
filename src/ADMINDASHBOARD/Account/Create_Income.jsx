@@ -46,7 +46,7 @@ const Create_Income = () => {
   useEffect(() => {
     axios
       .get(
-        "http://localhost:4000/api/v1/adminRoute/getAdminInfo",
+        "https://ebackend-iasf.onrender.com/api/v1/adminRoute/getAdminInfo",
         {
           withCredentials: true,
           headers: {
@@ -73,7 +73,7 @@ const Create_Income = () => {
   useEffect(() => {
     axios
       .get(
-        "http://localhost:4000/api/v1/adminRoute/getTeachers",
+        "https://ebackend-iasf.onrender.com/api/v1/adminRoute/getTeachers",
         {
           withCredentials: true,
           headers: {
@@ -98,7 +98,7 @@ const Create_Income = () => {
   useEffect(() => {
     axios
       .get(
-        "http://localhost:4000/api/v1/adminRoute/getAllStudents",
+        "https://ebackend-iasf.onrender.com/api/v1/adminRoute/getAllStudents",
         {
           withCredentials: true,
           headers: {
@@ -121,7 +121,7 @@ const Create_Income = () => {
   useEffect(() => {
     axios
       .get(
-        "http://localhost:4000/api/v1/adminRoute/getAllParents",
+        "https://ebackend-iasf.onrender.com/api/v1/adminRoute/getAllParents",
         {
           withCredentials: true,
           headers: {
