@@ -117,6 +117,7 @@ import TermsAndCondition from "./ShikshMitraWebsite/component/PrivacyPolicy/Term
 import StudentIdCard from "./ADMINDASHBOARD/Student/AllStudent/StudentIdCard";
 import StudentIdCardNew from "./ADMINDASHBOARD/Student/AllStudent/StudentIdCardNew";
 import FeeReceipt from "./ADMINDASHBOARD/Fees/Additional/FeeReceipt";
+import AdmissioReceipt from "./ADMINDASHBOARD/Admission/AdmissioReceipt";
 
 // import EmployeeSalaryStatus from './ADMINDASHBOARD/Employee/SalaryStatus';
 
@@ -266,6 +267,10 @@ function App() {
           <Route
             path="/admin/registration/view-admission/:email"
             element={<ViewAdmission />}
+          />
+          <Route
+            path="/admin/ad"
+            element={<AdmissioReceipt />}
           />
           <Route
             path="/admin/registration/edit-admission/:email"

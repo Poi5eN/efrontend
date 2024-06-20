@@ -519,9 +519,7 @@ console.log("dueAmount", dueAmount);
                 <p>
                   <span className="font-bold">Receipt No. :</span>Jitender
                 </p>
-                <p>
-                  <span className="font-bold">Payment Date :</span>Jitender
-                </p>
+               
                 <p>
                   <span className="font-bold">Payment Mode :</span>Ramesh
                 </p>
@@ -680,9 +678,7 @@ console.log("dueAmount", dueAmount);
                 <p>
                   <span className="font-bold">Receipt No. :</span>Jitender
                 </p>
-                <p>
-                  <span className="font-bold">Payment Date :</span>Jitender
-                </p>
+               
                 <p>
                   <span className="font-bold">Payment Mode :</span>Ramesh
                 </p>
