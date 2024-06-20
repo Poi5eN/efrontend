@@ -8,10 +8,11 @@ import Cookies from "js-cookie";
 import Spinner from "./Spinner";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { IoIosEyeOff,IoIosEye } from "react-icons/io";
 
 function Login() {
   const [loading, setLoading] = useState(false);
-
+   const [showPassword,setShowPassword] =useState(false)
   const [isClosed, setIsClosed] = useState(true);
   const [formdata, setformdata] = useState({
     Username: "",
@@ -120,17 +121,24 @@ function Login() {
                         onChange={onclickHandler}
                       />
 
-                      <input
+                    <div  className="relative">
+                    <input
                         className="rounded-md  bg-[#000102a1] text-white border-2 border-white w-full py-2 outline-none  px-3"
                         required
                         placeholder="Password"
-                        type="password"
+                        type={showPassword ? 'text' : 'password'}
                         name="Password"
                         id="Password"
                         value={formdata.Password}
                         onChange={onclickHandler}
                       />
+                      <span onClick={()=>setShowPassword(!showPassword)} className="text-2xl text-white absolute right-3 top-[10px] cursor-pointer">
+                        {showPassword ?  <IoIosEyeOff /> :  <IoIosEye />}
+                      
+                     
+                      </span>
 
+                    </div>
                       <input
                         type="submit"
                         className="rounded-md w-full py-2 text-white cursor-pointer outline-none border-none px-3 bg-cyan-700"
