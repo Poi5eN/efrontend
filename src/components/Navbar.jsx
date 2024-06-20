@@ -60,7 +60,7 @@ const Navbar = () => {
   const schoolName = localStorage.getItem("schoolName");
 
   return (
-    <div className="fixed z-[99] mb-10 bg-gray-100">
+    // <div className="fixed z-[99] mb-10 bg-gray-100 w-full">
       <div className="flex   justify-between  md:ml-6 md:mr-6 relative">
       <NavButton
         title="Menu"
@@ -120,7 +120,7 @@ const Navbar = () => {
         {isClicked.userProfile && <UserProfile />}
       </div>
     </div>
-    </div>
+    // </div>
   );
 };
 

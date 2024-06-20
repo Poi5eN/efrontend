@@ -57,16 +57,16 @@ const AdminDashboard = () => {
               </div>
             )}
             <div
-            className={
-              activeMenu
-                ? "dark:bg-main-dark-bg md:ml-72 w-full overflow-x-hidden bg-[#fafbfb]"
-                : "dark:bg-main-dark-bg w-full  flex-2 overflow-x-hidden bg-[#fafbfb]"
-            }
-              // className={
-              //   activeMenu
-              //     ? "dark:bg-main-dark-bg min-h-screen md:ml-72 w-full overflow-x-hidden bg-[#fafbfb]"
-              //     : "dark:bg-main-dark-bg w-full min-h-screen flex-2 overflow-x-hidden bg-[#fafbfb]"
-              // }
+            // className={
+            //   activeMenu
+            //     ? "dark:bg-main-dark-bg md:ml-72 w-full overflow-x-hidden bg-[#fafbfb]"
+            //     : "dark:bg-main-dark-bg w-full  flex-2 overflow-x-hidden bg-[#fafbfb]"
+            // }
+              className={
+                activeMenu
+                  ? "dark:bg-main-dark-bg min-h-screen md:ml-72 w-full overflow-x-hidden bg-[#fafbfb]"
+                  : "dark:bg-main-dark-bg w-full min-h-screen flex-2 overflow-x-hidden bg-[#fafbfb]"
+              }
             >
               <div className="fixed md:static bg-main-bg dark:bg-main-dark-bg navbar w-full ">
                 <Navbar />
