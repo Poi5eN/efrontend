@@ -75,7 +75,7 @@ function DynamicDataTable({ data, handleDelete }) {
     : [];
   return (
     // <div className="h-[350px]  mx-auto  bg-white mt-2 rounded-md">
-    <div className="h-[450px] dark:text-white dark:bg-secondary-dark-bg mx-auto bg-white mt-2 rounded-md overflow-scroll w-full">
+    <div className="h-[300px] dark:text-white dark:bg-secondary-dark-bg mx-auto bg-white mt-2 rounded-md overflow-auto w-full">
       <div className=" min-w-[1000px]  w-full">
         <DataGrid rows={dataWithIds} columns={columns} className="dark:text-white dark:bg-secondary-dark-bg  mx-auto bg-white" />
       </div>

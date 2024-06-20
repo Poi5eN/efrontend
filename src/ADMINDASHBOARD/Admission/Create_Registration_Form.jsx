@@ -187,42 +187,42 @@ function Create_Registration_Form() {
       name: "studentFullName",
       type: "text",
       value: formData.studentFullName,
-      required: true,
+     // required={field.required}
     },
     {
       label: "Email",
       name: "studentEmail",
       type: "email",
       value: formData.studentEmail,
-      required: true,
+     // required={field.required}
     },
     {
       label: "Password",
       name: "studentPassword",
       type: "password",
       value: formData.studentPassword,
-      required: true,
+     // required={field.required}
     },
     {
       label: "Date of Birth",
       name: "studentDateOfBirth",
       type: "date",
       value: formData.studentDateOfBirth,
-      required: true,
+     // required={field.required}
     },
     {
       label: "Roll No",
       name: "studentRollNo",
       type: "text",
       value: formData.studentRollNo,
-      required: true,
+     // required={field.required}
     },
     {
       label: "Gender",
       name: "studentGender",
       type: "select",
       value: formData.studentGender,
-      required: true,
+     // required={field.required}
       selectOptions: ["Gender", "Male", "Female", "Other"],
     },
     {
@@ -230,28 +230,28 @@ function Create_Registration_Form() {
       name: "studentJoiningDate",
       type: "date",
       value: formData.studentJoiningDate,
-      required: true,
+     // required={field.required}
     },
     {
       label: "Address",
       name: "studentAddress",
       type: "text",
       value: formData.studentAddress,
-      required: true,
+     // required={field.required}
     },
     {
       label: "Contact",
       name: "studentContact",
       type: "tel",
       value: formData.studentContact,
-      required: true,
+     // required={field.required}
     },
     {
       label: "Class Of Student",
       name: "studentClass",
       type: "select",
       value: formData.studentClass,
-      required: true,
+     // required={field.required}
       selectOptions: [
         "Class",
         "1",
@@ -273,7 +273,7 @@ function Create_Registration_Form() {
       name: "studentSection",
       type: "select",
       value: formData.studentSection,
-      required: true,
+     // required={field.required}
       selectOptions: ["Section", "A", "B", "C"],
     },
     {
@@ -281,63 +281,63 @@ function Create_Registration_Form() {
       name: "studentCountry",
       type: "text",
       value: formData.studentCountry,
-      required: true,
+     // required={field.required}
     },
     {
       label: "Subject",
       name: "studentSubject",
       type: "text",
       value: formData.studentSubject,
-      required: true,
+     // required={field.required}
     },
     {
       label: "Father's Name",
       name: "fatherName",
       type: "text",
       value: formData.fatherName,
-      required: true,
+     // required={field.required}
     },
     {
       label: "Mother's Name",
       name: "motherName",
       type: "text",
       value: formData.motherName,
-      required: true,
+     // required={field.required}
     },
     {
       label: "Parent Email",
       name: "parentEmail",
       type: "email",
       value: formData.parentEmail,
-      required: true,
+     // required={field.required}
     },
     {
       label: "Parent Password",
       name: "parentPassword",
       type: "password",
       value: formData.parentPassword,
-      required: true,
+     // required={field.required}
     },
     {
       label: "Parent Contact",
       name: "parentContact",
       type: "tel",
       value: formData.parentContact,
-      required: true,
+     // required={field.required}
     },
     {
       label: "Student Pic",
       name: "studentImage",
       type: "file",
       accept: "image/*",
-      required: true,
+     // required={field.required}
     },
     {
       label: "Parent Pic",
       name: "parentImage",
       type: "file",
       accept: "image/*",
-      required: true,
+     // required={field.required}
     },
   ];
 

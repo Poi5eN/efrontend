@@ -163,84 +163,84 @@ const modalStyle = {
       name: "fullName",
       type: "text",
       value: formData.fullName,
-      required: true,
+     // required={field.required}
     },
     {
       label: "Employee ID",
       name: "employeeId",
       type: "text",
       value: formData.employeeId,
-      required: true,
+     // required={field.required}
     },
     {
       label: "Email",
       name: "email",
       type: "email",
       value: formData.email,
-      required: true,
+     // required={field.required}
     },
     {
       label: "Password",
       name: "password",
       type: "password",
       value: formData.password,
-      required: true,
+     // required={field.required}
     },
     {
       label: "Date of Birth",
       name: "dateOfBirth",
       type: "date",
       value: formData.dateOfBirth,
-      required: true,
+     // required={field.required}
     },
     {
       label: "Qualification",
       name: "qualification",
       type: "text",
       value: formData.qualification,
-      required: true,
+     // required={field.required}
     },
     {
       label: "Salary",
       name: "salary",
       type: "number",
       value: formData.salary,
-      required: true,
+     // required={field.required}
     },
     {
       label: "Subject",
       name: "subject",
       type: "text",
       value: formData.subject,
-      required: true,
+     // required={field.required}
     },
     {
       label: "Joining Date",
       name: "joiningDate",
       type: "date",
       value: formData.joiningDate,
-      required: true,
+     // required={field.required}
     },
     {
       label: "Address",
       name: "address",
       type: "text",
       value: formData.address,
-      required: true,
+     // required={field.required}
     },
     {
       label: "Contact",
       name: "contact",
       type: "tel",
       value: formData.contact,
-      required: true,
+     // required={field.required}
     },
     {
       label: "Experience",
       name: "experience",
       type: "select",
       value: formData.experience,
-      required: true,
+     // required={field.required}
       selectOptions: ["Experience", "0", "1", "2", "3", "4", "5"],
     },
     {
@@ -248,7 +248,7 @@ const modalStyle = {
       name: "gender",
       type: "select",
       value: formData.gender,
-      required: true,
+     // required={field.required}
       selectOptions: ["Gender", "Male", "Female", "Other"],
     },
     {
@@ -256,7 +256,7 @@ const modalStyle = {
       name: "section",
       type: "select",
       value: formData.section,
-      required: true,
+     // required={field.required}
       selectOptions: ["Section", "A", "B", "C"],
     },
     {
@@ -264,7 +264,7 @@ const modalStyle = {
       name: "classTeacher",
       type: "select",
       value: formData.classTeacher,
-      required: true,
+     // required={field.required}
       selectOptions: ["Class", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"],
     },
     {
@@ -272,25 +272,33 @@ const modalStyle = {
       name: "image",
       type: "file",
       accept: "image/*",
-      required: true,
+     // required={field.required}
     },
   ];
   
   return (
-    <div className=" mt-12 md:mt-1  mx-auto p-3 ">
-    <h1 
-    className="text-4xl font-bold mb-4 uppercase text-center  hover-text "
-    style={{color:currentColor}}
-      >All Teacher </h1>
+    <div className=" mt-12 md:mt-1  mx-auto p-3   ">
+    <div className="relative">
+    
       <button
         onClick={openModal}
-        className="dark:text-white dark:bg-secondary-dark-bg text-gray-800  neu-btn border-2 "
+        className="dark:text-white dark:bg-secondary-dark-bg text-gray-800 absolute  neu-btn border-2 "
         style={{border:`2px solid ${currentColor} `,color:currentColor}}
       >
         Add Teacher
       </button>
+      <h1 
+    className="text-4xl font-bold mb-4 uppercase text-center  hover-text "
+    style={{color:currentColor}}
+      >All Teacher </h1>
+    </div>
      <div className="">
-     {isModalOpen && <div className="modal-blur"></div>}
+     {isModalOpen && 
+     
+     <div
+      className="modal-blur"
+     ></div>
+     }
       <Modal
         isOpen={isModalOpen}
         onRequestClose={closeModal}
@@ -298,14 +306,14 @@ const modalStyle = {
         style={modalStyle}
         overlayClassName="overlay"
       >
-       <div className=" p-4">
-       <h1 
-          className="hover-text text-center text-2xl pt-2 dark:text-white text-gray-100 pb-3 "
+       <div className="">
+       <p
+          className="mt-0 text-center text-2xl  dark:text-white text-gray-100 pb-3 "
           style={{color:currentColor}}
         >
           Create Teacher
-        </h1>
-     <div className="dark:text-white dark:bg-secondary-dark-bg text-gray-800 bg-gray-100">
+        </p>
+     <div className="dark:text-white dark:bg-secondary-dark-bg text-gray-800 ">
      <InputForm
           fields={formFields}
           handleChange={handleFieldChange}

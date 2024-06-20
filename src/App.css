@@ -18,7 +18,7 @@
 .e-dlg-center-center, .e-quick-popup-wrapper.e-device{
   z-index: 1000000 !important;
 }
-
+/* 
 ::-webkit-scrollbar {
   width: 6px;
 }
@@ -28,7 +28,7 @@
 }
 ::-webkit-scrollbar-track {
   background-color: transparent;
-} 
+}  */
 
 /* color-picker style  */
 

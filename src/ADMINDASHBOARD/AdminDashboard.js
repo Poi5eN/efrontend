@@ -29,10 +29,12 @@ const AdminDashboard = () => {
   }, [singleLog, setisLoggedIn]);
 
   return (
-    <div className={currentMode === "Dark" ? "dark" : ""}>
+    <div 
+    className={currentMode === "Dark" ? "dark" : ""}
+    >
       {isLoggedIn && (isLoggedIn === 'admin' || singleLog === 'admin') && (
         <>
-          <div className="flex relative dark:bg-main-dark-bg">
+          <div className="flex relative dark:bg-main-dark-bg ">
             <div className="fixed right-4 bottom-4" style={{ zIndex: "1000" }}>
               <TooltipComponent content="Settings" position="Top">
                 <button
@@ -55,11 +57,16 @@ const AdminDashboard = () => {
               </div>
             )}
             <div
-              className={
-                activeMenu
-                  ? "dark:bg-main-dark-bg min-h-screen md:ml-72 w-full overflow-x-hidden bg-[#fafbfb]"
-                  : "dark:bg-main-dark-bg w-full min-h-screen flex-2 overflow-x-hidden bg-[#fafbfb]"
-              }
+            className={
+              activeMenu
+                ? "dark:bg-main-dark-bg md:ml-72 w-full overflow-x-hidden bg-[#fafbfb]"
+                : "dark:bg-main-dark-bg w-full  flex-2 overflow-x-hidden bg-[#fafbfb]"
+            }
+              // className={
+              //   activeMenu
+              //     ? "dark:bg-main-dark-bg min-h-screen md:ml-72 w-full overflow-x-hidden bg-[#fafbfb]"
+              //     : "dark:bg-main-dark-bg w-full min-h-screen flex-2 overflow-x-hidden bg-[#fafbfb]"
+              // }
             >
               <div className="fixed md:static bg-main-bg dark:bg-main-dark-bg navbar w-full ">
                 <Navbar />
@@ -67,7 +74,9 @@ const AdminDashboard = () => {
               <div>
                 {themeSettings && <ThemeSettings />}
               </div>
-              <Outlet />
+            <div className="mt-14 ">
+            <Outlet />
+            </div>
               <Footer />
             </div>
           </div>

@@ -167,8 +167,7 @@ const StudentFeeStatus = () => {
       dues: dues,
     };
 
-    const apiUrl =
-      "https://ebackend-iasf.onrender.com/api/v1/fees/createFeeStatus";
+    const apiUrl = "https://ebackend-iasf.onrender.com/api/v1/fees/createFeeStatus";
     axios
       .post(apiUrl, newExamData, {
         withCredentials: true,
@@ -267,15 +266,12 @@ const StudentFeeStatus = () => {
   useEffect(() => {
     // Fetch data from the server when the component mounts
     axios
-      .get(
-        "https://ebackend-iasf.onrender.com/api/v1/adminRoute/getAdditionalFees",
-        {
-          withCredentials: true,
-          headers: {
-            Authorization: `Bearer ${authToken}`,
-          },
-        }
-      )
+      .get("https://ebackend-iasf.onrender.com/api/v1/adminRoute/getAdditionalFees", {
+        withCredentials: true,
+      headers: {
+        Authorization: `Bearer ${authToken}`,
+      },
+      })
       .then((response) => {
         // Assuming response.data is an array of fees
         const feesData = response.data.map((fee) => {

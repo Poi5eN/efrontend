@@ -13,8 +13,10 @@ function CreateStudent() {
   const { currentColor } = useStateContext();
   const modalStyle = {
     content: {
+      // width:"100%",
+      height:"100%",
       zIndex: 1000,
-      background: currentColor,
+      // background: currentColor,
       marginTop: "50px",
     },
   };
@@ -382,9 +384,9 @@ function CreateStudent() {
         style={modalStyle}
         overlayClassName="overlay"
       >
-        <div className="bg-gray-100 rounded-md overflow-auto">
+        <div className=" rounded-md overflow-auto">
           <h1
-            className="hover-text text-center text-2xl pt-2"
+            className=" text-center text-2xl pb-2"
             style={{ color: currentColor }}
           >
             Create Student and Parent
@@ -395,12 +397,7 @@ function CreateStudent() {
             handleImageChange={handleImageChange}
           />
           <div
-            style={{
-              display: "flex",
-              justifyContent: "flex-end",
-              padding: "10px",
-            }}
-          >
+          className="flex justify-end">
             <button
               onClick={handleSubmit}
               className="dark:text-white dark:bg-secondary-dark-bg text-gray-800  neu-btn border-2 "

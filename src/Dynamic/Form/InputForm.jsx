@@ -30,17 +30,18 @@ const InputForm = ({ fields, handleChange, handleImageChange }) => {
     // <div className=" p-1 h-[390px]  sm:h-[350px]  overflow-y-auto">
     <div className=" overflow-hidden dark:text-white dark:bg-secondary-dark-bg ">
       <form
-        className={` p-2 rounded-md sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-4  dark:text-white dark:bg-secondary-dark-bg
-        ${
-          // useGrid ? "grid  grid-cols-3 gap-4 " : ""
-          useGrid ? "grid  gap-2 " : ""
-        }`}
+      className="flex gap-4 w-full flex-wrap items-center p-2"
+        // className={`rounded-md sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-4  dark:text-white dark:bg-secondary-dark-bg
+        // ${
+        //   // useGrid ? "grid  grid-cols-3 gap-4 " : ""
+        //   useGrid ? "grid  gap-2 " : ""
+        // }`}
         encType="multipart/form-data"
       >
         {fields.map((field, index) => (
-          <div key={index} className={`mb-4 dark:text-white dark:bg-secondary-dark-bg ${useGrid ? "" : "col-span-2"}`}>
+          <div key={index} className={`mb-2 dark:text-white dark:bg-secondary-dark-bg ${useGrid ? "" : "col-span-2"}`}>
             <label
-              className="block  text-sm font-bold mb-2 dark:text-white dark:bg-secondary-dark-bg"
+              className="block  text-sm text-gray-600 font-bold mb-2 dark:text-white dark:bg-secondary-dark-bg"
               htmlFor={field.name}
             >
               {field.label}
@@ -48,7 +49,7 @@ const InputForm = ({ fields, handleChange, handleImageChange }) => {
 
             {/* Check if the field has an error and display the error message */}
             {field.required && fieldErrors[field.name] && (
-              <p className="text-red-500 text-xs mt-1">
+              <p className="text-red-500 text-xs ">
                 {fieldErrors[field.name]}
               </p>
             )}
@@ -58,21 +59,23 @@ const InputForm = ({ fields, handleChange, handleImageChange }) => {
                 type="file"
                 accept={field.accept}
                 onChange={handleImageChange}
-                required={field.required}
+                // required={field.required}
                 name={field.name}
               />
             ) : field.type === "select" ? (
               <select
-                className="rounded-md w-full py-2 px-3 outline-none"
+                className="rounded-md w-full py-1 px-3 outline text-start outline-1"
+                // className="rounded-md w-full py-2 px-3 outline-none"
                 id={field.name}
                 name={field.name}
                 value={field.value}
                 onChange={(e) => handleInputChange(field.name, e.target.value)}
-                required={field.required}
+                // required={field.required}
               >
                 {field.selectOptions.map((option) => (
-                  <option key={option} value={option}>
+                  <option key={option} value={option } >
                     {option}
+
                   </option>
                 ))}
               </select>

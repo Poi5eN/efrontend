@@ -57,14 +57,35 @@ const Navbar = () => {
 
   const handleActiveMenu = () => setActiveMenu(!activeMenu);
 
+  const schoolName = localStorage.getItem("schoolName");
+
   return (
-    <div className="flex justify-between p-2 md:ml-6 md:mr-6 relative">
+    <div className="fixed z-[99] mb-10 bg-gray-100">
+      <div className="flex   justify-between  md:ml-6 md:mr-6 relative">
       <NavButton
         title="Menu"
         customFunc={handleActiveMenu}
         color={currentColor}
         icon={<AiOutlineMenu />}
       />
+      <div className=" w-full text-center">
+        
+          <h1 className="text-2xl hover-text font-bold text-[#03c9d7]">{schoolName}</h1>
+       
+        
+          <marquee
+            class="html-marquee"
+            direction="left"
+            behavior="scroll"
+            scrollamount="6"
+          >
+            <p>
+              Technical Support and Query Helpline Numbers : +91 9650388201 /
+              corplyxtechnologies@gmail.com{" "}
+            </p>
+          </marquee>
+       
+      </div>
       <div className="flex">
         <NavButton
           title="Notification"
@@ -75,7 +96,7 @@ const Navbar = () => {
         />
         <TooltipComponent content="Profile" position="BottomCenter">
           <div
-            className="flex items-center gap-2 cursor-pointer p-1 hover:bg-light-gray rounded-lg"
+            className="flex  items-center gap-2 cursor-pointer p-1 hover:bg-light-gray rounded-lg"
             onClick={() => handleClick("userProfile")}
           >
             <img
@@ -98,6 +119,7 @@ const Navbar = () => {
         {/* {isClicked.notification && <Notification />} */}
         {isClicked.userProfile && <UserProfile />}
       </div>
+    </div>
     </div>
   );
 };
