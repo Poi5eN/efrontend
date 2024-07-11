@@ -12,7 +12,7 @@
 //     const handleSubmit=(e)=>{
 //       e.preventDefault(
 //         axios.post("http://localhost:3030/users",inputData)
-//         // axios.post("https://ebackend-iasf.onrender.com/api/v1/adminRoute/createBook",inputData)
+//         // axios.post("/api/api/v1/adminRoute/createBook",inputData)
 //         .then(res=>{
 //             alert("data post seccessfully!")
 //             navigate("/allstudent")

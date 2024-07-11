@@ -3,15 +3,12 @@ import { toast } from "react-toastify";
 
 import Modal from "react-modal";
 import axios from "axios";
-// import "../../Dynamic/Form/FormStyle.css";
 import "../../../Dynamic/Form/FormStyle.css";
 import DynamicDataTable from "./DataTable";
-// import InputForm from "../../../Dynamic/Form/FormData";
 import InputForm from "../../../Dynamic/Form/InputForm";
 import { useStateContext } from "../../../contexts/ContextProvider";
 import Cookies from "js-cookie";
 const authToken = Cookies.get("token");
-
 
 
 function Create_PrimaryClass() {
@@ -45,10 +42,9 @@ function Create_PrimaryClass() {
     return formData.className && formData.subject && formData.section;
   };
   useEffect(() => {
-    // Fetch data from the server when the component mounts
     axios
       .get(
-        `https://ebackend-iasf.onrender.com/api/v1/adminRoute/getAllClass?primary=${true}`,
+        `/api/api/v1/adminRoute/getAllClass?primary=${true}`,
         {
           withCredentials: true,
           headers: {
@@ -58,12 +54,10 @@ function Create_PrimaryClass() {
       )
       .then((response) => {
         if (Array.isArray(response.data.classList)) {
-          // Update the state with the array
           const filteredData = response.data.classList.filter(
             (item) => item.className <= 5
           );
 
-          // Update the state with the filtered array
           setSubmittedData(filteredData);
           console.log(filteredData);
         } else {
@@ -77,15 +71,12 @@ function Create_PrimaryClass() {
 
   const handleFieldChange = (fieldName, value) => {
     if (fieldName === "section") {
-      // Create a copy of the array (section) and add or remove the selected section
       const updatedSections = [...formData.section];
 
       if (updatedSections.includes(value)) {
-        // If the section is already selected, remove it
         const index = updatedSections.indexOf(value);
         updatedSections.splice(index, 1);
       } else {
-        // If the section is not selected, add it
         updatedSections.push(value);
       }
 
@@ -94,7 +85,6 @@ function Create_PrimaryClass() {
         section: updatedSections,
       });
     } else {
-      // For other fields, update the state as usual
       setFormData({
         ...formData,
         [fieldName]: value,
@@ -121,8 +111,8 @@ function Create_PrimaryClass() {
 
     try {
       setLoading(true);
-      const response = axios.post(
-        "https://ebackend-iasf.onrender.com/api/v1/adminRoute/createClass",
+      axios.post(
+        "/api/api/v1/adminRoute/createClass",
         formData,
         {
           withCredentials: true,
@@ -152,7 +142,7 @@ function Create_PrimaryClass() {
   const handleDelete = async (className) => {
     try {
       const re = await axios.get(
-        `https://ebackend-iasf.onrender.com/api/v1/adminRoute/getAllClass?className=${className}`,
+        `http://localhost:4000/api/v1/adminRoute/getAllClass?className=${className}`,
         {
           withCredentials: true,
           headers: {
@@ -161,9 +151,8 @@ function Create_PrimaryClass() {
         }
       );
 
-      // Make an API request to delete the row from the server
-      const response = await axios.delete(
-        `https://ebackend-iasf.onrender.com/api/v1/adminRoute/deleteClass?_id=${re.data.classList[0]._id}`,
+       await axios.delete(
+        `http://localhost:4000/api/v1/adminRoute/deleteClass?_id=${re.data.classList[0]._id}`,
         {
           withCredentials: true,
           headers: {
@@ -173,7 +162,6 @@ function Create_PrimaryClass() {
       );
       console.log("Class data deleted successfully");
 
-      // Update the state to remove the deleted data from the data table
       setSubmittedData((prevData) =>
         prevData.filter((item) => item._id !== re.data.classList[0]._id)
       );

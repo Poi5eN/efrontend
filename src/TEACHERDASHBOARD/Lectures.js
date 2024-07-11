@@ -40,7 +40,7 @@ const Lectures = () => {
 
 
   useEffect(() => {
-    axios.get(`https://ebackend-iasf.onrender.com/api/v1/timeTable/getClassTimeTable?className=${data.classTeacher}&section=${data.section}` , {
+    axios.get(`/api/api/v1/timeTable/getClassTimeTable?className=${data.classTeacher}&section=${data.section}` , {
       withCredentials: true,
           headers: {
             Authorization: `Bearer ${authToken}`,
@@ -106,7 +106,7 @@ const Lectures = () => {
       console.log(formattedTimetable);
 
       await axios
-      .post("https://ebackend-iasf.onrender.com/api/v1/timeTable/createClassTimeTable", formattedTimetable, {
+      .post("/api/api/v1/timeTable/createClassTimeTable", formattedTimetable, {
         withCredentials: true,
       headers: {
         Authorization: `Bearer ${authToken}`,
@@ -130,9 +130,9 @@ const Lectures = () => {
     // const timetableId = data._id;
     const timetableId = teacherid;
     console.log(timetableId);
-    // https://ebackend-iasf.onrender.com/api/v1/timeTable/deleteClassTimeTable/65449334131ddb58cb6de7f6
+    // /api/api/v1/timeTable/deleteClassTimeTable/65449334131ddb58cb6de7f6
     await axios
-      .delete(`https://ebackend-iasf.onrender.com/api/v1/timeTable/deleteClassTimeTable/${timetableId}`, {
+      .delete(`/api/api/v1/timeTable/deleteClassTimeTable/${timetableId}`, {
         withCredentials: true,
       headers: {
         Authorization: `Bearer ${authToken}`,
@@ -288,7 +288,7 @@ export default Lectures;
 //       console.log(formattedTimetable);
 
 //       await axios
-//       .post("https://ebackend-iasf.onrender.com/api/v1/timeTable/createClassTimeTable", formattedTimetable, {
+//       .post("/api/api/v1/timeTable/createClassTimeTable", formattedTimetable, {
 //         withCredentials: true,
       // headers: {
       //   Authorization: `Bearer ${authToken}`,

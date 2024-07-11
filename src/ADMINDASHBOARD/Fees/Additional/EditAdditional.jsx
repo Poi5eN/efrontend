@@ -37,7 +37,7 @@ function EditAdditional() {
 
     try {
       const response = await axios.put(
-        `https://ebackend-iasf.onrender.com/api/v1/adminRoute/updateFees/${_id}`,
+        `/api/api/v1/adminRoute/updateFees/${_id}`,
         formDataToSend,
         {
           withCredentials: true,
@@ -60,7 +60,7 @@ function EditAdditional() {
   useEffect(() => {
     axios
       .get(
-        `https://ebackend-iasf.onrender.com/api/v1/adminRoute/getAdditionalFees?_id=${_id}`,
+        `/api/api/v1/adminRoute/getAdditionalFees?_id=${_id}`,
         {
           withCredentials: true,
           headers: {

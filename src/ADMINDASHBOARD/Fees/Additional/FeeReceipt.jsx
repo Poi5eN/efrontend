@@ -91,140 +91,140 @@ const FeeReceipt = () => {
               <div>
                 
                 <div className="-mx-4 sm:-mx-8  sm:px-8 py-4 overflow-x-auto">
-                  <div class="inline-block min-w-full shadow-md rounded-lg overflow-hidden">
-                    <table class="min-w-full leading-normal">
+                  <div className="inline-block min-w-full shadow-md rounded-lg overflow-hidden">
+                    <table className="min-w-full leading-normal">
                       <thead>
                         <tr className=" bg-red-400 p-1">
-                          <th class="px-1  py-3 border-b-2 border-r-2 border-gray-200 bg-gray-100 text-left text-[10px] text-bold font-semibold text-gray-700 uppercase tracking-wider">
+                          <th className="px-1  py-3 border-b-2 border-r-2 border-gray-200 bg-gray-100 text-left text-[10px] text-bold font-semibold text-gray-700 uppercase tracking-wider">
                             Name
                           </th>
-                          <th class="px-1  py-3 border-b-2 border-r-2 border-gray-200 bg-gray-100 text-left text-[10px] text-bold font-semibold text-gray-700 uppercase tracking-wider">
+                          <th className="px-1  py-3 border-b-2 border-r-2 border-gray-200 bg-gray-100 text-left text-[10px] text-bold font-semibold text-gray-700 uppercase tracking-wider">
                             Class / Section
                           </th>
-                          <th class="px-1  py-3 border-b-2  border-r-2  border-gray-200 bg-gray-100 text-left text-[10px] text-bold font-semibold text-gray-700 uppercase tracking-wider">
+                          <th className="px-1  py-3 border-b-2  border-r-2  border-gray-200 bg-gray-100 text-left text-[10px] text-bold font-semibold text-gray-700 uppercase tracking-wider">
                             Amount
                           </th>
-                          <th class="px-1  py-3 border-b-2 border-r-2 border-gray-200 bg-gray-100 text-left text-[10px] text-bold font-semibold text-gray-700 uppercase tracking-wider">
+                          <th className="px-1  py-3 border-b-2 border-r-2 border-gray-200 bg-gray-100 text-left text-[10px] text-bold font-semibold text-gray-700 uppercase tracking-wider">
                             Discount
                           </th>
-                          <th class="px-1  py-3 border-b-2 border-r-2 border-gray-200 bg-gray-100 text-left text-[10px] text-bold font-semibold text-gray-700 uppercase tracking-wider">
+                          <th className="px-1  py-3 border-b-2 border-r-2 border-gray-200 bg-gray-100 text-left text-[10px] text-bold font-semibold text-gray-700 uppercase tracking-wider">
                             Penalty / Fine
                           </th>
-                          <th class="px-1  py-3 border-b-2 border-r-2 border-gray-200 bg-gray-100 text-left text-[10px] text-bold font-semibold text-gray-700 uppercase tracking-wider">
+                          <th className="px-1  py-3 border-b-2 border-r-2 border-gray-200 bg-gray-100 text-left text-[10px] text-bold font-semibold text-gray-700 uppercase tracking-wider">
                             Pay Amount
                           </th>
-                          <th class="px-1  py-3 border-b-2 border-r-2 border-gray-200 bg-gray-100 text-left text-[10px] text-bold font-semibold text-gray-700 uppercase tracking-wider">
+                          <th className="px-1  py-3 border-b-2 border-r-2 border-gray-200 bg-gray-100 text-left text-[10px] text-bold font-semibold text-gray-700 uppercase tracking-wider">
                             Due Amount
                           </th>
                         </tr>
                       </thead>
                       <tbody>
                         <tr>
-                          <td class="px-1  py-1 border-b border-gray-200 bg-white text-sm">
-                            <p class="text-gray-900 whitespace-no-wrap">
+                          <td className="px-1  py-1 border-b border-gray-200 bg-white text-sm">
+                            <p className="text-gray-900 whitespace-no-wrap">
                               Hemant Singh
                             </p>
                           </td>
-                          <td class="px-1  py-1 border-b border-gray-200 bg-white text-sm">
-                            <p class="text-gray-900 whitespace-no-wrap">
+                          <td className="px-1  py-1 border-b border-gray-200 bg-white text-sm">
+                            <p className="text-gray-900 whitespace-no-wrap">
                               One/A
                             </p>
                           </td>
-                          <td class="px-1  py-1 border-b border-gray-200 bg-white text-sm">
-                            <p class="text-gray-900 whitespace-no-wrap">6709</p>
+                          <td className="px-1  py-1 border-b border-gray-200 bg-white text-sm">
+                            <p className="text-gray-900 whitespace-no-wrap">6709</p>
                           </td>
-                          <td class="px-1  py-1 border-b border-gray-200 bg-white text-sm">
-                            <p class="text-gray-900 whitespace-no-wrap">0</p>
+                          <td className="px-1  py-1 border-b border-gray-200 bg-white text-sm">
+                            <p className="text-gray-900 whitespace-no-wrap">0</p>
                           </td>
-                          <td class="px-1  py-1 border-b border-gray-200 bg-white text-sm">
-                            <p class="text-gray-900 whitespace-no-wrap">765</p>
+                          <td className="px-1  py-1 border-b border-gray-200 bg-white text-sm">
+                            <p className="text-gray-900 whitespace-no-wrap">765</p>
                           </td>
-                          <td class="px-1  py-1 border-b border-gray-200 bg-white text-sm">
-                            <p class="text-gray-900 whitespace-no-wrap">765</p>
+                          <td className="px-1  py-1 border-b border-gray-200 bg-white text-sm">
+                            <p className="text-gray-900 whitespace-no-wrap">765</p>
                           </td>
-                          <td class="px-1  py-1 border-b border-gray-200 bg-white text-sm">
-                            <p class="text-gray-900 whitespace-no-wrap">765</p>
+                          <td className="px-1  py-1 border-b border-gray-200 bg-white text-sm">
+                            <p className="text-gray-900 whitespace-no-wrap">765</p>
                           </td>
                         </tr>
                         <tr>
-                          <td class="px-1  py-1 border-b border-gray-200 bg-white text-sm">
-                            <p class="text-gray-900 whitespace-no-wrap">
+                          <td className="px-1  py-1 border-b border-gray-200 bg-white text-sm">
+                            <p className="text-gray-900 whitespace-no-wrap">
                               Hemant Singh
                             </p>
                           </td>
-                          <td class="px-1  py-1 border-b border-gray-200 bg-white text-sm">
-                            <p class="text-gray-900 whitespace-no-wrap">
+                          <td className="px-1  py-1 border-b border-gray-200 bg-white text-sm">
+                            <p className="text-gray-900 whitespace-no-wrap">
                               One/A
                             </p>
                           </td>
-                          <td class="px-1  py-1 border-b border-gray-200 bg-white text-sm">
-                            <p class="text-gray-900 whitespace-no-wrap">6709</p>
+                          <td className="px-1  py-1 border-b border-gray-200 bg-white text-sm">
+                            <p className="text-gray-900 whitespace-no-wrap">6709</p>
                           </td>
-                          <td class="px-1  py-1 border-b border-gray-200 bg-white text-sm">
-                            <p class="text-gray-900 whitespace-no-wrap">0</p>
+                          <td className="px-1  py-1 border-b border-gray-200 bg-white text-sm">
+                            <p className="text-gray-900 whitespace-no-wrap">0</p>
                           </td>
-                          <td class="px-1  py-1 border-b border-gray-200 bg-white text-sm">
-                            <p class="text-gray-900 whitespace-no-wrap">765</p>
+                          <td className="px-1  py-1 border-b border-gray-200 bg-white text-sm">
+                            <p className="text-gray-900 whitespace-no-wrap">765</p>
                           </td>
-                          <td class="px-1  py-1 border-b border-gray-200 bg-white text-sm">
-                            <p class="text-gray-900 whitespace-no-wrap">765</p>
+                          <td className="px-1  py-1 border-b border-gray-200 bg-white text-sm">
+                            <p className="text-gray-900 whitespace-no-wrap">765</p>
                           </td>
-                          <td class="px-1  py-1 border-b border-gray-200 bg-white text-sm">
-                            <p class="text-gray-900 whitespace-no-wrap">765</p>
+                          <td className="px-1  py-1 border-b border-gray-200 bg-white text-sm">
+                            <p className="text-gray-900 whitespace-no-wrap">765</p>
                           </td>
                         </tr>
                         <tr>
-                          <td class="px-1  py-1 border-b border-gray-200 bg-white text-sm">
-                            <p class="text-gray-900 whitespace-no-wrap">
+                          <td className="px-1  py-1 border-b border-gray-200 bg-white text-sm">
+                            <p className="text-gray-900 whitespace-no-wrap">
                               Hemant Singh
                             </p>
                           </td>
-                          <td class="px-1  py-1 border-b border-gray-200 bg-white text-sm">
-                            <p class="text-gray-900 whitespace-no-wrap">
+                          <td className="px-1  py-1 border-b border-gray-200 bg-white text-sm">
+                            <p className="text-gray-900 whitespace-no-wrap">
                               One/A
                             </p>
                           </td>
-                          <td class="px-1  py-1 border-b border-gray-200 bg-white text-sm">
-                            <p class="text-gray-900 whitespace-no-wrap">6709</p>
+                          <td className="px-1  py-1 border-b border-gray-200 bg-white text-sm">
+                            <p className="text-gray-900 whitespace-no-wrap">6709</p>
                           </td>
-                          <td class="px-1  py-1 border-b border-gray-200 bg-white text-sm">
-                            <p class="text-gray-900 whitespace-no-wrap">0</p>
+                          <td className="px-1  py-1 border-b border-gray-200 bg-white text-sm">
+                            <p className="text-gray-900 whitespace-no-wrap">0</p>
                           </td>
-                          <td class="px-1  py-1 border-b border-gray-200 bg-white text-sm">
-                            <p class="text-gray-900 whitespace-no-wrap">765</p>
+                          <td className="px-1  py-1 border-b border-gray-200 bg-white text-sm">
+                            <p className="text-gray-900 whitespace-no-wrap">765</p>
                           </td>
-                          <td class="px-1  py-1 border-b border-gray-200 bg-white text-sm">
-                            <p class="text-gray-900 whitespace-no-wrap">765</p>
+                          <td className="px-1  py-1 border-b border-gray-200 bg-white text-sm">
+                            <p className="text-gray-900 whitespace-no-wrap">765</p>
                           </td>
-                          <td class="px-1  py-1 border-b border-gray-200 bg-white text-sm">
-                            <p class="text-gray-900 whitespace-no-wrap">765</p>
+                          <td className="px-1  py-1 border-b border-gray-200 bg-white text-sm">
+                            <p className="text-gray-900 whitespace-no-wrap">765</p>
                           </td>
                         </tr>
                         <tr>
-                          <td class="px-1  py-1 border-b border-gray-200 bg-white text-sm">
-                            <p class="text-gray-900 whitespace-no-wrap">
+                          <td className="px-1  py-1 border-b border-gray-200 bg-white text-sm">
+                            <p className="text-gray-900 whitespace-no-wrap">
                               Hemant Singh
                             </p>
                           </td>
-                          <td class="px-1  py-1 border-b border-gray-200 bg-white text-sm">
-                            <p class="text-gray-900 whitespace-no-wrap">
+                          <td className="px-1  py-1 border-b border-gray-200 bg-white text-sm">
+                            <p className="text-gray-900 whitespace-no-wrap">
                               One/A
                             </p>
                           </td>
-                          <td class="px-1  py-1 border-b border-gray-200 bg-white text-sm">
-                            <p class="text-gray-900 whitespace-no-wrap">6709</p>
+                          <td className="px-1  py-1 border-b border-gray-200 bg-white text-sm">
+                            <p className="text-gray-900 whitespace-no-wrap">6709</p>
                           </td>
-                          <td class="px-1  py-1 border-b border-gray-200 bg-white text-sm">
-                            <p class="text-gray-900 whitespace-no-wrap">0</p>
+                          <td className="px-1  py-1 border-b border-gray-200 bg-white text-sm">
+                            <p className="text-gray-900 whitespace-no-wrap">0</p>
                           </td>
-                          <td class="px-1  py-1 border-b border-gray-200 bg-white text-sm">
-                            <p class="text-gray-900 whitespace-no-wrap">765</p>
+                          <td className="px-1  py-1 border-b border-gray-200 bg-white text-sm">
+                            <p className="text-gray-900 whitespace-no-wrap">765</p>
                           </td>
-                          <td class="px-1  py-1 border-b border-gray-200 bg-white text-sm">
-                            <p class="text-gray-900 whitespace-no-wrap">765</p>
+                          <td className="px-1  py-1 border-b border-gray-200 bg-white text-sm">
+                            <p className="text-gray-900 whitespace-no-wrap">765</p>
                           </td>
-                          <td class="px-1  py-1 border-b border-gray-200 bg-white text-sm">
-                            <p class="text-gray-900 whitespace-no-wrap">765</p>
+                          <td className="px-1  py-1 border-b border-gray-200 bg-white text-sm">
+                            <p className="text-gray-900 whitespace-no-wrap">765</p>
                           </td>
                         </tr>
                       </tbody>
@@ -301,140 +301,140 @@ const FeeReceipt = () => {
               <div>
                 
                 <div className="-mx-4 sm:-mx-8  sm:px-8 py-4 overflow-x-auto">
-                  <div class="inline-block min-w-full shadow-md rounded-lg overflow-hidden">
-                    <table class="min-w-full leading-normal">
+                  <div className="inline-block min-w-full shadow-md rounded-lg overflow-hidden">
+                    <table className="min-w-full leading-normal">
                       <thead>
                         <tr className=" bg-red-400 p-1">
-                          <th class="px-1  py-3 border-b-2 border-r-2 border-gray-200 bg-gray-100 text-left text-[10px] text-bold font-semibold text-gray-700 uppercase tracking-wider">
+                          <th className="px-1  py-3 border-b-2 border-r-2 border-gray-200 bg-gray-100 text-left text-[10px] text-bold font-semibold text-gray-700 uppercase tracking-wider">
                             Name
                           </th>
-                          <th class="px-1  py-3 border-b-2 border-r-2 border-gray-200 bg-gray-100 text-left text-[10px] text-bold font-semibold text-gray-700 uppercase tracking-wider">
+                          <th className="px-1  py-3 border-b-2 border-r-2 border-gray-200 bg-gray-100 text-left text-[10px] text-bold font-semibold text-gray-700 uppercase tracking-wider">
                             Class / Section
                           </th>
-                          <th class="px-1  py-3 border-b-2  border-r-2  border-gray-200 bg-gray-100 text-left text-[10px] text-bold font-semibold text-gray-700 uppercase tracking-wider">
+                          <th className="px-1  py-3 border-b-2  border-r-2  border-gray-200 bg-gray-100 text-left text-[10px] text-bold font-semibold text-gray-700 uppercase tracking-wider">
                             Amount
                           </th>
-                          <th class="px-1  py-3 border-b-2 border-r-2 border-gray-200 bg-gray-100 text-left text-[10px] text-bold font-semibold text-gray-700 uppercase tracking-wider">
+                          <th className="px-1  py-3 border-b-2 border-r-2 border-gray-200 bg-gray-100 text-left text-[10px] text-bold font-semibold text-gray-700 uppercase tracking-wider">
                             Discount
                           </th>
-                          <th class="px-1  py-3 border-b-2 border-r-2 border-gray-200 bg-gray-100 text-left text-[10px] text-bold font-semibold text-gray-700 uppercase tracking-wider">
+                          <th className="px-1  py-3 border-b-2 border-r-2 border-gray-200 bg-gray-100 text-left text-[10px] text-bold font-semibold text-gray-700 uppercase tracking-wider">
                             Penalty / Fine
                           </th>
-                          <th class="px-1  py-3 border-b-2 border-r-2 border-gray-200 bg-gray-100 text-left text-[10px] text-bold font-semibold text-gray-700 uppercase tracking-wider">
+                          <th className="px-1  py-3 border-b-2 border-r-2 border-gray-200 bg-gray-100 text-left text-[10px] text-bold font-semibold text-gray-700 uppercase tracking-wider">
                             Pay Amount
                           </th>
-                          <th class="px-1  py-3 border-b-2 border-r-2 border-gray-200 bg-gray-100 text-left text-[10px] text-bold font-semibold text-gray-700 uppercase tracking-wider">
+                          <th className="px-1  py-3 border-b-2 border-r-2 border-gray-200 bg-gray-100 text-left text-[10px] text-bold font-semibold text-gray-700 uppercase tracking-wider">
                             Due Amount
                           </th>
                         </tr>
                       </thead>
                       <tbody>
                         <tr>
-                          <td class="px-1  py-1 border-b border-gray-200 bg-white text-sm">
-                            <p class="text-gray-900 whitespace-no-wrap">
+                          <td className="px-1  py-1 border-b border-gray-200 bg-white text-sm">
+                            <p className="text-gray-900 whitespace-no-wrap">
                               Hemant Singh
                             </p>
                           </td>
-                          <td class="px-1  py-1 border-b border-gray-200 bg-white text-sm">
-                            <p class="text-gray-900 whitespace-no-wrap">
+                          <td className="px-1  py-1 border-b border-gray-200 bg-white text-sm">
+                            <p className="text-gray-900 whitespace-no-wrap">
                               One/A
                             </p>
                           </td>
-                          <td class="px-1  py-1 border-b border-gray-200 bg-white text-sm">
-                            <p class="text-gray-900 whitespace-no-wrap">6709</p>
+                          <td className="px-1  py-1 border-b border-gray-200 bg-white text-sm">
+                            <p className="text-gray-900 whitespace-no-wrap">6709</p>
                           </td>
-                          <td class="px-1  py-1 border-b border-gray-200 bg-white text-sm">
-                            <p class="text-gray-900 whitespace-no-wrap">0</p>
+                          <td className="px-1  py-1 border-b border-gray-200 bg-white text-sm">
+                            <p className="text-gray-900 whitespace-no-wrap">0</p>
                           </td>
-                          <td class="px-1  py-1 border-b border-gray-200 bg-white text-sm">
-                            <p class="text-gray-900 whitespace-no-wrap">765</p>
+                          <td className="px-1  py-1 border-b border-gray-200 bg-white text-sm">
+                            <p className="text-gray-900 whitespace-no-wrap">765</p>
                           </td>
-                          <td class="px-1  py-1 border-b border-gray-200 bg-white text-sm">
-                            <p class="text-gray-900 whitespace-no-wrap">765</p>
+                          <td className="px-1  py-1 border-b border-gray-200 bg-white text-sm">
+                            <p className="text-gray-900 whitespace-no-wrap">765</p>
                           </td>
-                          <td class="px-1  py-1 border-b border-gray-200 bg-white text-sm">
-                            <p class="text-gray-900 whitespace-no-wrap">765</p>
+                          <td className="px-1  py-1 border-b border-gray-200 bg-white text-sm">
+                            <p className="text-gray-900 whitespace-no-wrap">765</p>
                           </td>
                         </tr>
                         <tr>
-                          <td class="px-1  py-1 border-b border-gray-200 bg-white text-sm">
-                            <p class="text-gray-900 whitespace-no-wrap">
+                          <td className="px-1  py-1 border-b border-gray-200 bg-white text-sm">
+                            <p className="text-gray-900 whitespace-no-wrap">
                               Hemant Singh
                             </p>
                           </td>
-                          <td class="px-1  py-1 border-b border-gray-200 bg-white text-sm">
-                            <p class="text-gray-900 whitespace-no-wrap">
+                          <td className="px-1  py-1 border-b border-gray-200 bg-white text-sm">
+                            <p className="text-gray-900 whitespace-no-wrap">
                               One/A
                             </p>
                           </td>
-                          <td class="px-1  py-1 border-b border-gray-200 bg-white text-sm">
-                            <p class="text-gray-900 whitespace-no-wrap">6709</p>
+                          <td className="px-1  py-1 border-b border-gray-200 bg-white text-sm">
+                            <p className="text-gray-900 whitespace-no-wrap">6709</p>
                           </td>
-                          <td class="px-1  py-1 border-b border-gray-200 bg-white text-sm">
-                            <p class="text-gray-900 whitespace-no-wrap">0</p>
+                          <td className="px-1  py-1 border-b border-gray-200 bg-white text-sm">
+                            <p className="text-gray-900 whitespace-no-wrap">0</p>
                           </td>
-                          <td class="px-1  py-1 border-b border-gray-200 bg-white text-sm">
-                            <p class="text-gray-900 whitespace-no-wrap">765</p>
+                          <td className="px-1  py-1 border-b border-gray-200 bg-white text-sm">
+                            <p className="text-gray-900 whitespace-no-wrap">765</p>
                           </td>
-                          <td class="px-1  py-1 border-b border-gray-200 bg-white text-sm">
-                            <p class="text-gray-900 whitespace-no-wrap">765</p>
+                          <td className="px-1  py-1 border-b border-gray-200 bg-white text-sm">
+                            <p className="text-gray-900 whitespace-no-wrap">765</p>
                           </td>
-                          <td class="px-1  py-1 border-b border-gray-200 bg-white text-sm">
-                            <p class="text-gray-900 whitespace-no-wrap">765</p>
+                          <td className="px-1  py-1 border-b border-gray-200 bg-white text-sm">
+                            <p className="text-gray-900 whitespace-no-wrap">765</p>
                           </td>
                         </tr>
                         <tr>
-                          <td class="px-1  py-1 border-b border-gray-200 bg-white text-sm">
-                            <p class="text-gray-900 whitespace-no-wrap">
+                          <td className="px-1  py-1 border-b border-gray-200 bg-white text-sm">
+                            <p className="text-gray-900 whitespace-no-wrap">
                               Hemant Singh
                             </p>
                           </td>
-                          <td class="px-1  py-1 border-b border-gray-200 bg-white text-sm">
-                            <p class="text-gray-900 whitespace-no-wrap">
+                          <td className="px-1  py-1 border-b border-gray-200 bg-white text-sm">
+                            <p className="text-gray-900 whitespace-no-wrap">
                               One/A
                             </p>
                           </td>
-                          <td class="px-1  py-1 border-b border-gray-200 bg-white text-sm">
-                            <p class="text-gray-900 whitespace-no-wrap">6709</p>
+                          <td className="px-1  py-1 border-b border-gray-200 bg-white text-sm">
+                            <p className="text-gray-900 whitespace-no-wrap">6709</p>
                           </td>
-                          <td class="px-1  py-1 border-b border-gray-200 bg-white text-sm">
-                            <p class="text-gray-900 whitespace-no-wrap">0</p>
+                          <td className="px-1  py-1 border-b border-gray-200 bg-white text-sm">
+                            <p className="text-gray-900 whitespace-no-wrap">0</p>
                           </td>
-                          <td class="px-1  py-1 border-b border-gray-200 bg-white text-sm">
-                            <p class="text-gray-900 whitespace-no-wrap">765</p>
+                          <td className="px-1  py-1 border-b border-gray-200 bg-white text-sm">
+                            <p className="text-gray-900 whitespace-no-wrap">765</p>
                           </td>
-                          <td class="px-1  py-1 border-b border-gray-200 bg-white text-sm">
-                            <p class="text-gray-900 whitespace-no-wrap">765</p>
+                          <td className="px-1  py-1 border-b border-gray-200 bg-white text-sm">
+                            <p className="text-gray-900 whitespace-no-wrap">765</p>
                           </td>
-                          <td class="px-1  py-1 border-b border-gray-200 bg-white text-sm">
-                            <p class="text-gray-900 whitespace-no-wrap">765</p>
+                          <td className="px-1  py-1 border-b border-gray-200 bg-white text-sm">
+                            <p className="text-gray-900 whitespace-no-wrap">765</p>
                           </td>
                         </tr>
                         <tr>
-                          <td class="px-1  py-1 border-b border-gray-200 bg-white text-sm">
-                            <p class="text-gray-900 whitespace-no-wrap">
+                          <td className="px-1  py-1 border-b border-gray-200 bg-white text-sm">
+                            <p className="text-gray-900 whitespace-no-wrap">
                               Hemant Singh
                             </p>
                           </td>
-                          <td class="px-1  py-1 border-b border-gray-200 bg-white text-sm">
-                            <p class="text-gray-900 whitespace-no-wrap">
+                          <td className="px-1  py-1 border-b border-gray-200 bg-white text-sm">
+                            <p className="text-gray-900 whitespace-no-wrap">
                               One/A
                             </p>
                           </td>
-                          <td class="px-1  py-1 border-b border-gray-200 bg-white text-sm">
-                            <p class="text-gray-900 whitespace-no-wrap">6709</p>
+                          <td className="px-1  py-1 border-b border-gray-200 bg-white text-sm">
+                            <p className="text-gray-900 whitespace-no-wrap">6709</p>
                           </td>
-                          <td class="px-1  py-1 border-b border-gray-200 bg-white text-sm">
-                            <p class="text-gray-900 whitespace-no-wrap">0</p>
+                          <td className="px-1  py-1 border-b border-gray-200 bg-white text-sm">
+                            <p className="text-gray-900 whitespace-no-wrap">0</p>
                           </td>
-                          <td class="px-1  py-1 border-b border-gray-200 bg-white text-sm">
-                            <p class="text-gray-900 whitespace-no-wrap">765</p>
+                          <td className="px-1  py-1 border-b border-gray-200 bg-white text-sm">
+                            <p className="text-gray-900 whitespace-no-wrap">765</p>
                           </td>
-                          <td class="px-1  py-1 border-b border-gray-200 bg-white text-sm">
-                            <p class="text-gray-900 whitespace-no-wrap">765</p>
+                          <td className="px-1  py-1 border-b border-gray-200 bg-white text-sm">
+                            <p className="text-gray-900 whitespace-no-wrap">765</p>
                           </td>
-                          <td class="px-1  py-1 border-b border-gray-200 bg-white text-sm">
-                            <p class="text-gray-900 whitespace-no-wrap">765</p>
+                          <td className="px-1  py-1 border-b border-gray-200 bg-white text-sm">
+                            <p className="text-gray-900 whitespace-no-wrap">765</p>
                           </td>
                         </tr>
                       </tbody>

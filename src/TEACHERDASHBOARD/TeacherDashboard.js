@@ -1,25 +1,13 @@
 import React, { useState, useEffect } from "react";
-// import { useStateContext } from './contexts/ContextProvider'
-
-import {
-  Routes,
-  Route,
-  Outlet,
-  useLocation,
-  useNavigate,
-} from "react-router-dom";
+import { Outlet } from "react-router-dom";
 import { FiSettings } from "react-icons/fi";
 import { TooltipComponent } from "@syncfusion/ej2-react-popups";
-
 import { Navbar, Footer, Sidebar, ThemeSettings } from "../components";
-// import { DashboardHome, Employees } from "./pages";
 import ".././App.css";
-
 import { useStateContext } from "../contexts/ContextProvider";
-
 function TeacherDashboard() {
-  const location = useLocation();
-  const navigate = useNavigate();
+  // const location = useLocation();
+  // const navigate = useNavigate();
 
   const {
     setCurrentColor,
@@ -57,7 +45,6 @@ function TeacherDashboard() {
       }
     };
 
-    // Disable the back button in the browser's address bar
     const handlePopstate = (event) => {
       event.preventDefault();
       window.history.pushState(null, null, window.location.pathname);
@@ -67,7 +54,6 @@ function TeacherDashboard() {
     window.addEventListener("popstate", handlePopstate);
 
     return () => {
-      // Clean up event listeners when the component unmounts
       window.removeEventListener("keydown", handleKeyDown);
       window.removeEventListener("popstate", handlePopstate);
     };
@@ -75,7 +61,6 @@ function TeacherDashboard() {
 
   return (
     <div className={currentMode === "Dark" ? "dark" : ""}>
-      {/* {isLoggedIn == "teacher" && (singleLog == 'teacher') && ( */}
       {isLoggedIn == "teacher" && singleLog == "teacher" && (
         <>
           <div className="flex relative dark:bg-main-dark-bg">

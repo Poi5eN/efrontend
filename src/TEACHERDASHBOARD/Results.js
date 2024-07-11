@@ -5,13 +5,13 @@ import { useStateContext } from "../contexts/ContextProvider";
 const authToken = Cookies.get("token");
 
 export const GET_ALL_EXAMS_API =
-  "https://ebackend-iasf.onrender.com/api/v1/exam/getAllExams";
+  "/api/api/v1/exam/getAllExams";
 export const GET_ALL_STUDENTS_API =
-  "https://ebackend-iasf.onrender.com/api/v1/adminRoute/getAllStudents?studentclassName=11&studentSection=A";
+  "/api/api/v1/adminRoute/getAllStudents?studentclassName=11&studentSection=A";
 export const CREATE_RESULTS_API =
-  "https://ebackend-iasf.onrender.com/api/v1/results/createResults";
+  "/api/api/v1/results/createResults";
 export const GET_RESULTS_API =
-  "https://ebackend-iasf.onrender.com/api/v1/results/getResults";
+  "/api/api/v1/results/getResults";
 
 const Results = () => {
 
@@ -157,7 +157,7 @@ const Results = () => {
 
       axios
         .get(
-          `https://ebackend-iasf.onrender.com/api/v1/adminRoute/getAllStudents?studentclassName=${classTeacher}&studentSection=${section}`,
+          `/api/api/v1/adminRoute/getAllStudents?studentclassName=${classTeacher}&studentSection=${section}`,
           {
             withCredentials: true,
             headers: {

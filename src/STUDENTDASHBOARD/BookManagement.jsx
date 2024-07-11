@@ -14,7 +14,7 @@ const BookManagement = () => {
   useEffect(() => {
     axios
       .get(
-        `https://ebackend-iasf.onrender.com/api/v1/adminRoute/getIssueBookToMe`,
+        `/api/api/v1/adminRoute/getIssueBookToMe`,
         {
           withCredentials: true,
           headers: {

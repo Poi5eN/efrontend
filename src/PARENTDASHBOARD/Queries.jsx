@@ -12,7 +12,7 @@ const Queries = () => {
   useEffect(() => {
     axios
       .get(
-        "https://ebackend-iasf.onrender.com/api/v1/adminRoute/getAdminInfo",
+        "/api/api/v1/adminRoute/getAdminInfo",
         {
           withCredentials: true,
           headers: {

@@ -70,7 +70,7 @@ const modalStyle = {
 
   useEffect(() => {
     // Fetch data from the server when the component mounts
-    axios.get('https://ebackend-iasf.onrender.com/api/v1/adminRoute/getAllStudents', {
+    axios.get('/api/api/v1/adminRoute/getAllStudents', {
       withCredentials: true,
       headers: {
         Authorization: `Bearer ${authToken}`,
@@ -147,7 +147,7 @@ const modalStyle = {
     try {
       setLoading(true);
       const response = await axios.post(
-        "https://ebackend-iasf.onrender.com/api/v1/adminRoute/createStudentParent",
+        "/api/api/v1/adminRoute/createStudentParent",
         formDataToSend,
         {
           withCredentials: true,
@@ -202,7 +202,7 @@ const modalStyle = {
   
 
   const handleDelete = (email) => {
-    axios.put(`https://ebackend-iasf.onrender.com/api/v1/adminRoute/deactivateStudent`, {email}, {
+    axios.put(`/api/api/v1/adminRoute/deactivateStudent`, {email}, {
       withCredentials: true,
       headers: {
         Authorization: `Bearer ${authToken}`,

@@ -32,7 +32,7 @@ const CreateExams = () => {
 
     console.log("use effect");
 
-    axios.get(`https://ebackend-iasf.onrender.com/api/v1/exam/getAllExams?className=${data.classTeacher}&section=${data.section}`, {
+    axios.get(`/api/api/v1/exam/getAllExams?className=${data.classTeacher}&section=${data.section}`, {
       withCredentials: true,
           headers: {
             Authorization: `Bearer ${authToken}`,
@@ -106,7 +106,7 @@ const CreateExams = () => {
   const handleDelete= async (id)=>{
 
     try {
-      const response = await axios.delete(`https://ebackend-iasf.onrender.com/api/v1/exam/deleteExam/${id}`, {
+      const response = await axios.delete(`/api/api/v1/exam/deleteExam/${id}`, {
         withCredentials: true,
           headers: {
             Authorization: `Bearer ${authToken}`,
@@ -127,7 +127,7 @@ const CreateExams = () => {
   const handleSubmit = async () => {
     try {
   
-      await axios.post("https://ebackend-iasf.onrender.com/api/v1/exam/createExam", formData, {
+      await axios.post("/api/api/v1/exam/createExam", formData, {
         withCredentials: true,
       headers: {
         Authorization: `Bearer ${authToken}`,

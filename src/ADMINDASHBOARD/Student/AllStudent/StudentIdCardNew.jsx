@@ -44,7 +44,7 @@ const StudentIdCardNew = () => {
     // Fetch teacher data based on the email parameter
     axios
       .get(
-        `https://ebackend-iasf.onrender.com/api/v1/adminRoute/getAllStudents?email=${email}`,
+        `/api/api/v1/adminRoute/getAllStudents?email=${email}`,
         {
           withCredentials: true,
           headers: {

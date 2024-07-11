@@ -15,7 +15,7 @@ const Expenses = () => {
   useEffect(() => {
     axios
       .get(
-        `https://ebackend-iasf.onrender.com/api/v1/adminRoute/myKids`,
+        `/api/api/v1/adminRoute/myKids`,
         {
           withCredentials: true,
           headers: {
@@ -37,7 +37,7 @@ const Expenses = () => {
   useEffect(() => {
     axios
       .get(
-        "https://ebackend-iasf.onrender.com/api/v1/adminRoute/getFees",
+        "/api/api/v1/adminRoute/getFees",
         {
           withCredentials: true,
           headers: {
@@ -60,7 +60,7 @@ const Expenses = () => {
   useEffect(() => {
     axios
       .get(
-        "https://ebackend-iasf.onrender.com/api/v1/adminRoute/getAdditionalFees",
+        "/api/api/v1/adminRoute/getAdditionalFees",
         {
           withCredentials: true,
           headers: {

@@ -73,7 +73,7 @@ function Create_Classes() {
 
     try {
       const response = await axios.post(
-        "https://ebackend-iasf.onrender.com/api/v1/adminRoute/createTeacher",
+        "/api/api/v1/adminRoute/createTeacher",
         formDataToSend,
         {
           headers: {

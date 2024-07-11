@@ -27,7 +27,7 @@ const StudentFeeStatus = () => {
   useEffect(() => {
     axios
       .get(
-        `https://ebackend-iasf.onrender.com/api/v1/adminRoute/getAllStudents?email=${email}`,
+        `http://localhost:4000/api/v1/adminRoute/getAllStudents?email=${email}`,
         {
           withCredentials: true,
           headers: {
@@ -69,7 +69,7 @@ const StudentFeeStatus = () => {
 
   const handleModalOpen = () => {
     axios
-      .get(`https://ebackend-iasf.onrender.com/api/v1/adminRoute/getFees`, {
+      .get(`http://localhost:4000/api/v1/adminRoute/getFees`, {
         withCredentials: true,
         headers: {
           Authorization: `Bearer ${authToken}`,
@@ -167,7 +167,7 @@ const StudentFeeStatus = () => {
       dues: dues,
     };
 
-    const apiUrl = "https://ebackend-iasf.onrender.com/api/v1/fees/createFeeStatus";
+    const apiUrl = "http://localhost:4000/api/v1/fees/createFeeStatus";
     axios
       .post(apiUrl, newExamData, {
         withCredentials: true,
@@ -180,7 +180,7 @@ const StudentFeeStatus = () => {
 
         axios
           .get(
-            `https://ebackend-iasf.onrender.com/api/v1/fees/getFeeStatus?studentId=${studentId}`,
+            `http://localhost:4000/api/v1/fees/getFeeStatus?studentId=${studentId}`,
             {
               withCredentials: true,
               headers: {
@@ -219,7 +219,7 @@ const StudentFeeStatus = () => {
     if (studentId && Object.keys(studentData).length > 0) {
       axios
         .get(
-          `https://ebackend-iasf.onrender.com/api/v1/fees/getFeeStatus?studentId=${studentId}`,
+          `http://localhost:4000/api/v1/fees/getFeeStatus?studentId=${studentId}`,
           {
             withCredentials: true,
             headers: {
@@ -266,7 +266,7 @@ const StudentFeeStatus = () => {
   useEffect(() => {
     // Fetch data from the server when the component mounts
     axios
-      .get("https://ebackend-iasf.onrender.com/api/v1/adminRoute/getAdditionalFees", {
+      .get("http://localhost:4000/api/v1/adminRoute/getAdditionalFees", {
         withCredentials: true,
       headers: {
         Authorization: `Bearer ${authToken}`,
@@ -532,30 +532,30 @@ console.log("dueAmount", dueAmount);
             <div>
               <div>
                 <div className="-mx-4 sm:-mx-8  sm:px-8 py-4 overflow-x-auto">
-                  <div class="inline-block min-w-full shadow-md rounded-lg overflow-hidden">
-                    <table class="min-w-full leading-normal">
+                  <div className="inline-block min-w-full shadow-md rounded-lg overflow-hidden">
+                    <table className="min-w-full leading-normal">
                       <thead>
                         <tr className=" bg-red-400 p-1">
-                          <th class="px-1  py-3 border-b-2 border-r-2 border-gray-200 bg-gray-100 text-left text-[10px] text-bold font-semibold text-gray-700 uppercase tracking-wider">
+                          <th className="px-1  py-3 border-b-2 border-r-2 border-gray-200 bg-gray-100 text-left text-[10px] text-bold font-semibold text-gray-700 uppercase tracking-wider">
                             Months
                           </th>
-                          <th class="px-1  py-3 border-b-2 border-r-2 border-gray-200 bg-gray-100 text-left text-[10px] text-bold font-semibold text-gray-700 uppercase tracking-wider">
+                          <th className="px-1  py-3 border-b-2 border-r-2 border-gray-200 bg-gray-100 text-left text-[10px] text-bold font-semibold text-gray-700 uppercase tracking-wider">
                             Fee Type
                           </th>
-                          <th class="px-1  py-3 border-b-2 border-r-2 border-gray-200 bg-gray-100 text-left text-[10px] text-bold font-semibold text-gray-700 uppercase tracking-wider">
+                          <th className="px-1  py-3 border-b-2 border-r-2 border-gray-200 bg-gray-100 text-left text-[10px] text-bold font-semibold text-gray-700 uppercase tracking-wider">
                             Status
                           </th>
 
-                          <th class="px-1  py-3 border-b-2  border-r-2  border-gray-200 bg-gray-100 text-left text-[10px] text-bold font-semibold text-gray-700 uppercase tracking-wider">
+                          <th className="px-1  py-3 border-b-2  border-r-2  border-gray-200 bg-gray-100 text-left text-[10px] text-bold font-semibold text-gray-700 uppercase tracking-wider">
                             Amount
                           </th>
-                          <th class="px-1  py-3 border-b-2 border-r-2 border-gray-200 bg-gray-100 text-left text-[10px] text-bold font-semibold text-gray-700 uppercase tracking-wider">
+                          <th className="px-1  py-3 border-b-2 border-r-2 border-gray-200 bg-gray-100 text-left text-[10px] text-bold font-semibold text-gray-700 uppercase tracking-wider">
                             Discount
                           </th>
-                          <th class="px-1  py-3 border-b-2 border-r-2 border-gray-200 bg-gray-100 text-left text-[10px] text-bold font-semibold text-gray-700 uppercase tracking-wider">
+                          <th className="px-1  py-3 border-b-2 border-r-2 border-gray-200 bg-gray-100 text-left text-[10px] text-bold font-semibold text-gray-700 uppercase tracking-wider">
                             Due Amount
                           </th>
-                          <th class="px-1  py-3 border-b-2 border-r-2 border-gray-200 bg-gray-100 text-left text-[10px] text-bold font-semibold text-gray-700 uppercase tracking-wider">
+                          <th className="px-1  py-3 border-b-2 border-r-2 border-gray-200 bg-gray-100 text-left text-[10px] text-bold font-semibold text-gray-700 uppercase tracking-wider">
                             Payment Date
                           </th>
                         </tr>
@@ -563,36 +563,36 @@ console.log("dueAmount", dueAmount);
                       <tbody>
                         {examData.map((data, index) => (
                           <tr key={index}>
-                            <td class="px-1  py-1 border-b border-gray-200 bg-white text-sm">
-                              <p class="text-gray-900 whitespace-no-wrap">
+                            <td className="px-1  py-1 border-b border-gray-200 bg-white text-sm">
+                              <p className="text-gray-900 whitespace-no-wrap">
                                 {data.month}
                               </p>
                             </td>
-                            <td class="px-1  py-1 border-b border-gray-200 bg-white text-sm">
-                              <p class="text-gray-900 whitespace-no-wrap">
+                            <td className="px-1  py-1 border-b border-gray-200 bg-white text-sm">
+                              <p className="text-gray-900 whitespace-no-wrap">
                                 Fee Type
                               </p>
                             </td>
-                            <td class="px-1  py-1 border-b border-gray-200 bg-white text-sm">
-                              <p class="text-gray-900 whitespace-no-wrap">
+                            <td className="px-1  py-1 border-b border-gray-200 bg-white text-sm">
+                              <p className="text-gray-900 whitespace-no-wrap">
                                 {data.status}
                               </p>
                             </td>
-                            <td class="px-1  py-1 border-b border-gray-200 bg-white text-sm">
-                              <p class="text-gray-900 whitespace-no-wrap">
+                            <td className="px-1  py-1 border-b border-gray-200 bg-white text-sm">
+                              <p className="text-gray-900 whitespace-no-wrap">
                                 {data.paidAmount}
                               </p>
                             </td>
-                            <td class="px-1  py-1 border-b border-gray-200 bg-white text-sm">
-                              <p class="text-gray-900 whitespace-no-wrap"></p>
+                            <td className="px-1  py-1 border-b border-gray-200 bg-white text-sm">
+                              <p className="text-gray-900 whitespace-no-wrap"></p>
                             </td>
-                            <td class="px-1  py-1 border-b border-gray-200 bg-white text-sm">
-                              <p class="text-gray-900 whitespace-no-wrap">
+                            <td className="px-1  py-1 border-b border-gray-200 bg-white text-sm">
+                              <p className="text-gray-900 whitespace-no-wrap">
                                 {+getFee - data.paidAmount}
                               </p>
                             </td>
-                            <td class="px-1  py-1 border-b border-gray-200 bg-white text-sm">
-                              <p class="text-gray-900 whitespace-no-wrap">
+                            <td className="px-1  py-1 border-b border-gray-200 bg-white text-sm">
+                              <p className="text-gray-900 whitespace-no-wrap">
                                 {new Date(data.date).toLocaleDateString(
                                   "en-GB"
                                 )}
@@ -691,30 +691,30 @@ console.log("dueAmount", dueAmount);
             <div>
               <div>
                 <div className="-mx-4 sm:-mx-8  sm:px-8 py-4 overflow-x-auto">
-                  <div class="inline-block min-w-full shadow-md rounded-lg overflow-hidden">
-                    <table class="min-w-full leading-normal">
+                  <div className="inline-block min-w-full shadow-md rounded-lg overflow-hidden">
+                    <table className="min-w-full leading-normal">
                       <thead>
                         <tr className=" bg-red-400 p-1">
-                          <th class="px-1  py-3 border-b-2 border-r-2 border-gray-200 bg-gray-100 text-left text-[10px] text-bold font-semibold text-gray-700 uppercase tracking-wider">
+                          <th className="px-1  py-3 border-b-2 border-r-2 border-gray-200 bg-gray-100 text-left text-[10px] text-bold font-semibold text-gray-700 uppercase tracking-wider">
                             Months
                           </th>
-                          <th class="px-1  py-3 border-b-2 border-r-2 border-gray-200 bg-gray-100 text-left text-[10px] text-bold font-semibold text-gray-700 uppercase tracking-wider">
+                          <th className="px-1  py-3 border-b-2 border-r-2 border-gray-200 bg-gray-100 text-left text-[10px] text-bold font-semibold text-gray-700 uppercase tracking-wider">
                             Fee Type
                           </th>
-                          <th class="px-1  py-3 border-b-2 border-r-2 border-gray-200 bg-gray-100 text-left text-[10px] text-bold font-semibold text-gray-700 uppercase tracking-wider">
+                          <th className="px-1  py-3 border-b-2 border-r-2 border-gray-200 bg-gray-100 text-left text-[10px] text-bold font-semibold text-gray-700 uppercase tracking-wider">
                             Status
                           </th>
 
-                          <th class="px-1  py-3 border-b-2  border-r-2  border-gray-200 bg-gray-100 text-left text-[10px] text-bold font-semibold text-gray-700 uppercase tracking-wider">
+                          <th className="px-1  py-3 border-b-2  border-r-2  border-gray-200 bg-gray-100 text-left text-[10px] text-bold font-semibold text-gray-700 uppercase tracking-wider">
                             Amount
                           </th>
-                          <th class="px-1  py-3 border-b-2 border-r-2 border-gray-200 bg-gray-100 text-left text-[10px] text-bold font-semibold text-gray-700 uppercase tracking-wider">
+                          <th className="px-1  py-3 border-b-2 border-r-2 border-gray-200 bg-gray-100 text-left text-[10px] text-bold font-semibold text-gray-700 uppercase tracking-wider">
                             Discount
                           </th>
-                          <th class="px-1  py-3 border-b-2 border-r-2 border-gray-200 bg-gray-100 text-left text-[10px] text-bold font-semibold text-gray-700 uppercase tracking-wider">
+                          <th className="px-1  py-3 border-b-2 border-r-2 border-gray-200 bg-gray-100 text-left text-[10px] text-bold font-semibold text-gray-700 uppercase tracking-wider">
                             Due Amount
                           </th>
-                          <th class="px-1  py-3 border-b-2 border-r-2 border-gray-200 bg-gray-100 text-left text-[10px] text-bold font-semibold text-gray-700 uppercase tracking-wider">
+                          <th className="px-1  py-3 border-b-2 border-r-2 border-gray-200 bg-gray-100 text-left text-[10px] text-bold font-semibold text-gray-700 uppercase tracking-wider">
                             Payment Date
                           </th>
                         </tr>
@@ -722,36 +722,36 @@ console.log("dueAmount", dueAmount);
                       <tbody>
                         {examData.map((data, index) => (
                           <tr key={index}>
-                            <td class="px-1  py-1 border-b border-gray-200 bg-white text-sm">
-                              <p class="text-gray-900 whitespace-no-wrap">
+                            <td className="px-1  py-1 border-b border-gray-200 bg-white text-sm">
+                              <p className="text-gray-900 whitespace-no-wrap">
                                 {data.month}
                               </p>
                             </td>
-                            <td class="px-1  py-1 border-b border-gray-200 bg-white text-sm">
-                              <p class="text-gray-900 whitespace-no-wrap">
+                            <td className="px-1  py-1 border-b border-gray-200 bg-white text-sm">
+                              <p className="text-gray-900 whitespace-no-wrap">
                                 Fee Type
                               </p>
                             </td>
-                            <td class="px-1  py-1 border-b border-gray-200 bg-white text-sm">
-                              <p class="text-gray-900 whitespace-no-wrap">
+                            <td className="px-1  py-1 border-b border-gray-200 bg-white text-sm">
+                              <p className="text-gray-900 whitespace-no-wrap">
                                 {data.status}
                               </p>
                             </td>
-                            <td class="px-1  py-1 border-b border-gray-200 bg-white text-sm">
-                              <p class="text-gray-900 whitespace-no-wrap">
+                            <td className="px-1  py-1 border-b border-gray-200 bg-white text-sm">
+                              <p className="text-gray-900 whitespace-no-wrap">
                                 {data.paidAmount}
                               </p>
                             </td>
-                            <td class="px-1  py-1 border-b border-gray-200 bg-white text-sm">
-                              <p class="text-gray-900 whitespace-no-wrap"></p>
+                            <td className="px-1  py-1 border-b border-gray-200 bg-white text-sm">
+                              <p className="text-gray-900 whitespace-no-wrap"></p>
                             </td>
-                            <td class="px-1  py-1 border-b border-gray-200 bg-white text-sm">
-                              <p class="text-gray-900 whitespace-no-wrap">
+                            <td className="px-1  py-1 border-b border-gray-200 bg-white text-sm">
+                              <p className="text-gray-900 whitespace-no-wrap">
                                 {+getFee - data.paidAmount}
                               </p>
                             </td>
-                            <td class="px-1  py-1 border-b border-gray-200 bg-white text-sm">
-                              <p class="text-gray-900 whitespace-no-wrap">
+                            <td className="px-1  py-1 border-b border-gray-200 bg-white text-sm">
+                              <p className="text-gray-900 whitespace-no-wrap">
                                 {new Date(data.date).toLocaleDateString(
                                   "en-GB"
                                 )}

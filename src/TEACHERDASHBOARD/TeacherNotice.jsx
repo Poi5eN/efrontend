@@ -1,20 +1,18 @@
-
-
 import React, { useState, useEffect } from "react";
 import Modal from "react-modal";
 import axios from "axios";
 import { useStateContext } from "../contexts/ContextProvider";
-import Cookies from 'js-cookie';
+import Cookies from "js-cookie";
 import { CiEdit } from "react-icons/ci";
 import { TiDelete } from "react-icons/ti";
 // Ensure that the modal is accessible to screen readers
 Modal.setAppElement("#root");
 
-const API_BASE_URL = "https://ebackend-iasf.onrender.com/api/v1/adminRoute/createNotice";
-const API_EDIT = "https://ebackend-iasf.onrender.com/api/v1/adminRoute/updateNotice/";
-const API_DELETE = "https://ebackend-iasf.onrender.com/api/v1/adminRoute/deleteNotice/";
-const API_GET_DATA = "https://ebackend-iasf.onrender.com/api/v1/adminRoute/getAllNotice";
-const authToken = Cookies.get('token');
+const API_BASE_URL = "http://localhost:4000/api/v1/adminRoute/createNotice";
+const API_EDIT = "http://localhost:4000/api/v1/adminRoute/updateNotice/";
+const API_DELETE = "http://localhost:4000/api/v1/adminRoute/deleteNotice/";
+const API_GET_DATA = "http://localhost:4000/api/v1/adminRoute/getAllNotice";
+const authToken = Cookies.get("token");
 
 const TeacherNotice = () => {
   const { currentColor } = useStateContext();
@@ -59,8 +57,8 @@ const TeacherNotice = () => {
           withCredentials: true,
           headers: {
             Authorization: `Bearer ${authToken}`,
-            "Content-Type": "multipart/form-data"
-          }
+            "Content-Type": "multipart/form-data",
+          },
         })
         .then((response) => {
           // Handle success and make any necessary updates
@@ -76,8 +74,8 @@ const TeacherNotice = () => {
           withCredentials: true,
           headers: {
             Authorization: `Bearer ${authToken}`,
-            "Content-Type": "multipart/form-data"
-          }
+            "Content-Type": "multipart/form-data",
+          },
         })
         .then((response) => {
           // Handle success and make any necessary updates
@@ -98,9 +96,9 @@ const TeacherNotice = () => {
     axios
       .delete(API_DELETE + noticeId, {
         withCredentials: true,
-      headers: {
-        Authorization: `Bearer ${authToken}`,
-      },
+        headers: {
+          Authorization: `Bearer ${authToken}`,
+        },
       })
       .then(() => {
         const updatedNotices = [...notice];
@@ -117,9 +115,9 @@ const TeacherNotice = () => {
     axios
       .get(API_GET_DATA, {
         withCredentials: true,
-      headers: {
-        Authorization: `Bearer ${authToken}`,
-      },
+        headers: {
+          Authorization: `Bearer ${authToken}`,
+        },
       })
       .then((response) => {
         console.log("yes", response.data);
@@ -134,21 +132,23 @@ const TeacherNotice = () => {
 
   return (
     <div className=" p-6 rounded-lg shadow-lg dark:text-white dark:bg-secondary-dark-bg">
-      <h1 className="text-xl font-semibold text-cyan-700 mb-4 text-center">Notice Board</h1>
+      <h1 className="text-xl font-semibold text-cyan-700 mb-4 text-center">
+        Notice Board
+      </h1>
 
       {/* Create Notice Button */}
-     <div className="mb-3"> 
-     <button
-        onClick={() => {
-          setIsModalOpen(true);
-          setEditingNotice(null);
-        }}
-        style={{ backgroundColor: currentColor }}
-        className="  text-white py-2 px-4 rounded  "
-      >
-        Create Notice
-      </button>
-     </div>
+      <div className="mb-3">
+        <button
+          onClick={() => {
+            setIsModalOpen(true);
+            setEditingNotice(null);
+          }}
+          style={{ backgroundColor: currentColor }}
+          className="  text-white py-2 px-4 rounded  "
+        >
+          Create Notice
+        </button>
+      </div>
 
       {/* Modal for Creating/Editing Notice */}
       <Modal
@@ -211,53 +211,51 @@ const TeacherNotice = () => {
 
       {/* Display Notices */}
       <ul>
-        <div className="overflow-scroll h-[200px] ">
-          {notice.map((notice, index) => (
-            <li key={index} className="bg-white dark:text-white dark:bg-secondary-dark-bg p-4 rounded-lg shadow-md mb-4">
-              <div className="w-full bg-red-400 relative ">
-<div className="absolute right-0 flex space-x-3 text-2xl">
-<CiEdit
-                 onClick={() => handleEditNotice(index)}
-                //  style={{ backgroundColor: currentColor }}
-                className="cursor-pointer "/>
-                <TiDelete  
-                onClick={() => handleDeleteNotice(index)}
-                className="cursor-pointer "
-                 />
-</div>
+        <div className="overflow-auto h-[200px] ">
+          {
+            notice.length>0 ? (notice.map((notice, index) => (
+              <li
+                key={index}
+                className="bg-white dark:text-white dark:bg-secondary-dark-bg p-4 rounded-lg shadow-md mb-4"
+              >
+                <div className="w-full bg-red-400 relative ">
+                  <div className="absolute right-0 flex space-x-3 text-2xl">
+                    <CiEdit
+                      onClick={() => handleEditNotice(index)}
+                      //  style={{ backgroundColor: currentColor }}
+                      className="cursor-pointer "
+                    />
+                    <TiDelete
+                      onClick={() => handleDeleteNotice(index)}
+                      className="cursor-pointer "
+                    />
+                  </div>
+                </div>
+                <h2 className="text-xl font-semibold text-cyan-700 mb-4">
+                  {notice.title}
+                </h2>
+                <p className="text-gray-600">{notice.content}</p>
+                {notice.file && (
+                  <a
+                    href={notice.file.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-blue-500 hover:underline"
+                  >
+                    View Image
+                  </a>
+                )}
+                <div className="mt-4">
+                  
+                </div>
+              </li>
+            ))) :(
+              <div className="bg-white dark:text-white dark:bg-secondary-dark-bg p-4 rounded-lg shadow-md mb-4">
+                <p className="text-gray-600">No items created</p>
               </div>
-              <h2 className="text-xl font-semibold text-cyan-700 mb-4">
-                {notice.title}
-              </h2>
-              <p className="text-gray-600">{notice.content}</p>
-              {notice.file && (
-                <a
-                  href={notice.file.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-blue-500 hover:underline"
-                >
-                  View Image
-                </a>
-              )}
-              <div className="mt-4">
-                
-                {/* <button
-                  onClick={() => handleEditNotice(index)}
-                  style={{ backgroundColor: currentColor }}
-                  className="  text-white py-2 px-4 rounded mr-3"
-                >
-                  Edit
-                </button>
-                <button
-                  onClick={() => handleDeleteNotice(index)}
-                  className="bg-red-500 text-white px-3 py-2 rounded hover:bg-red-600"
-                >
-                  Delete
-                </button> */}
-              </div>
-            </li>
-          ))}
+            )
+          }
+        
         </div>
       </ul>
     </div>

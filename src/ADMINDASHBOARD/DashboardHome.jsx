@@ -19,6 +19,7 @@ import CreateNotice from "../CreateNotice";
 import CreateExams from "./Exams/AllExams";
 import TeacherNotice from "../TEACHERDASHBOARD/TeacherNotice";
 import Cookies from "js-cookie";
+import { Footer } from "../components";
 const authToken = Cookies.get("token");
 
 const DropDown = ({ currentMode }) => (
@@ -60,7 +61,7 @@ const DashboardHome = () => {
   useEffect(() => {
     axios
       .get(
-        "https://ebackend-iasf.onrender.com/api/v1/adminRoute/getTeachers",
+        "http://localhost:4000/api/v1/adminRoute/getTeachers",
         {
           withCredentials: true,
           headers: {
@@ -84,7 +85,7 @@ const DashboardHome = () => {
   useEffect(() => {
     axios
       .get(
-        "https://ebackend-iasf.onrender.com/api/v1/adminRoute/getAllStudents",
+        "http://localhost:4000/api/v1/adminRoute/getAllStudents",
         {
           withCredentials: true,
           headers: {
@@ -107,7 +108,7 @@ const DashboardHome = () => {
   useEffect(() => {
     axios
       .get(
-        "https://ebackend-iasf.onrender.com/api/v1/adminRoute/getAllParents",
+        "http://localhost:4000/api/v1/adminRoute/getAllParents",
         {
           withCredentials: true,
           headers: {
@@ -127,7 +128,7 @@ const DashboardHome = () => {
   useEffect(() => {
     axios
       .get(
-        "https://ebackend-iasf.onrender.com/api/v1/adminRoute/getAllItems",
+        "http://localhost:4000/api/v1/adminRoute/getAllItems",
         {
           withCredentials: true,
           headers: {
@@ -173,7 +174,7 @@ const DashboardHome = () => {
   useEffect(() => {
     axios
       .get(
-        `https://ebackend-iasf.onrender.com/api/v1/fees/getFeeStatus`,
+        `http://localhost:4000/api/v1/fees/getFeeStatus`,
         {
           withCredentials: true,
           headers: {
@@ -279,11 +280,13 @@ const DashboardHome = () => {
   }, [navigate]);
 
   return (
-    <div className="md:mt-12 mt-16">
-      <div class="relative  ">
+    <>
+    <div className="">
+    {/* <div className="md:mt-12 mt-16 "> */}
+      <div className="relative  ">
         {earningData.map((item) => (
-          <div class="w-1/2 sm:w-1/4 float-left">
-            <div class="bg-white  dark:text-gray-200 dark:bg-secondary-dark-bg  p-1 m-2 flex justify-center rounded-2xl">
+          <div className="w-1/2 sm:w-1/4 float-left">
+            <div className="bg-white  dark:text-gray-200 dark:bg-secondary-dark-bg  p-1 m-2 flex justify-center rounded-2xl">
               <Link to={item.redirect}
                 key={item.title}
                 className="bg-white h-44 dark:text-dark dark:bg-secondary-dark-bg md:w-56 p-4 pt-9 rounded-2xl text-center text-red font-semibold"
@@ -314,7 +317,7 @@ const DashboardHome = () => {
           </div>
         ))}
 
-        <div class="clearfix"></div>
+        <div className="clearfix"></div>
       </div>
 
       <div className="grid sm:grid-cols-1 md:grid-cols-2 gap-2 p-3">
@@ -341,6 +344,8 @@ const DashboardHome = () => {
         </div>
       </div>
     </div>
+    <Footer /> 
+    </>
   );
 };
 export default DashboardHome;

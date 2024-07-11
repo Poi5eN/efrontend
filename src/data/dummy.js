@@ -7,13 +7,8 @@ import {
   BsChatLeft,
   BsPersonFillAdd,
 } from "react-icons/bs";
-import { BiMaleFemale, BiSolidStoreAlt } from "react-icons/bi";
-import {
-  FcConferenceCall,
-  FcBusinesswoman,
-  FcCurrencyExchange,
-} from "react-icons/fc";
-import { MdGroups3, MdWork, MdDynamicForm } from "react-icons/md";
+import { BiSolidStoreAlt } from "react-icons/bi";
+import { MdGroups3, MdWork} from "react-icons/md";
 
 import { TiTick } from "react-icons/ti";
 import { ImManWoman } from "react-icons/im";
@@ -22,7 +17,7 @@ import {
   GiTeacher,
   GiTakeMyMoney,
   GiBookshelf,
-  GiSpellBook,
+ 
 } from "react-icons/gi";
 import avatar from "./avatar.jpeg";
 import avatar2 from "./avatar2.jpg";
@@ -250,112 +245,228 @@ export const LinePrimaryYAxis = {
 };
 
 export const links = [
+  { name: 'New Registration', link: 'newregistration' ,icon: <BsPersonFillAdd />},
+  { name: 'Check Fee', link: 'checkfee' ,icon: <BsPersonFillAdd />},
   {
-    title: "Admin Dashboard",
-    // title1: 'Student',
-    links: [
-      {
-        id: "1",
-        name: "fees",
-        icon: <GiTakeMyMoney />,
-        items: ["Classwise", "Additional"],
-        route: ["admin/classwise", "admin/additional"],
-      },
-      {
-        id: "2",
-        name: "teachers",
-        icon: <GiTeacher />,
-        items: ["All Teachers", "Payment"],
-        route: ["admin/allteachers", "admin/payment"],
-      },
-      {
-        id: "3",
-
-        name: "students",
-        icon: <PiStudentFill />,
-        items: ["All Student", "Promotion"],
-        route: ["admin/allstudent", "admin/promotion"],
-      },
-      {
-        id: "4",
-
-        name: "parents",
-        icon: <ImManWoman />,
-        items: ["All Parents", "Fees Status"],
-        route: ["admin/allparents", "admin/feestatus"],
-      },
-      {
-        id: "5",
-
-        name: "account",
-        icon: <PiPiggyBankFill />,
-        items: ["Income", "Expenditure"],
-        route: ["admin/income", "admin/expenditure"],
-      },
-      {
-        id: "6",
-
-        name: "inventory",
-        icon: <BiSolidStoreAlt />,
-        items: ["Stocks", "Sales"],
-        route: ["admin/stocks", "admin/sales"],
-      },
-      {
-        id: "7",
-
-        name: "library",
-        icon: <GiBookshelf />,
-        items: ["Books", "Issued"],
-        route: ["admin/books", "admin/issued"],
-      },
-      {
-        id: "8",
-        name: "admission",
-        icon: <BsPersonFillAdd />,
-        items: ["Registration", "Status"],
-        route: ["admin/registration", "admin/status"],
-      },
-
-      {
-        id: "9",
-
-        name: "classes",
-        icon: <MdGroups3 />,
-        items: ["Primary", "Secondary"],
-        route: ["admin/primary", "admin/secondary"],
-      },
-      {
-        id: "10",
-        name: "employee",
-        icon: <MdWork />,
-        items: ["Staff", "Wages"],
-        route: ["admin/staff", "admin/wages"],
-      },
-      {
-        id: "11",
-        name: "Results",
-        icon: <MdWork />,
-        items: ["Marks", "Admit Card"],
-        route: ["admin/results", "admin/admitcard"],
-      },
-      {
-        id: "12",
-        name: "Curriculum",
-        icon: <MdWork />,
-        items: ["Exam", "Syllabus"],
-        route: ["admin/allexam", "admin/curriculum"],
-      },
-
-      // {
-      //   id: '12',
-      //   name: 'result',
-      //   icon: <MdWork />,
-      //   items: ['Result'],
-      //   route: ['admin/studentsresult']
-      // },
-    ],
+      name: 'Fees',
+      id :2,
+      icon: <GiTakeMyMoney />,
+      children: [
+          { name: 'Classwise', link: 'classwise',id :22 , icon: <GiTakeMyMoney />,},
+          { name: 'Additional', link: 'additional' ,id :23 , icon: <GiTakeMyMoney />,},
+          
+      ],
   },
+  {
+      name: 'Teachers',
+      icon: <GiTeacher />,
+      children: [
+          { name: 'All Teachers', link: 'allteachers' },
+          { name: 'Payment', link: 'payment' },
+         
+      ],
+  },
+  {
+      name: 'Students',
+      icon: <PiStudentFill />,
+      children: [
+          { name: 'All Student', link: 'allstudent' },
+          { name: 'Promotion', link: 'promotion' },
+      ],
+  },
+  {
+      name: 'Parents',
+      icon: <ImManWoman />,
+      children: [
+          { name: 'All Parents', link: 'allparents' },
+          { name: 'Fees Status', link: 'feestatus' },
+      ],
+  },
+  {
+      name: 'Account',
+      icon: <PiPiggyBankFill />,
+      children: [
+          { name: 'Income', link: 'income' },
+          { name: 'Expenditure', link: 'expenditure' },
+      ],
+  },
+  {
+      name: 'Lnventory',
+      icon: <BiSolidStoreAlt />,
+      children: [
+          { name: 'Stocks', link: 'stocks' },
+          { name: 'Sales', link: 'sales' }, 
+        
+      ],
+  },
+  {
+      name: 'Library',
+      icon: <GiBookshelf />,
+      children: [
+          { name: 'Books', link: 'books' },
+          { name: 'Issued', link: 'issued' },
+      ],
+  },
+  {
+      name: 'Admission',
+      icon: <BsPersonFillAdd />,
+      children: [
+          { name: 'Registration', link: 'registration' },
+          { name: 'Status', link: 'status' },
+      ],
+  },
+  {
+      name: 'Classes',
+      icon: <MdGroups3 />,
+      children: [
+          { name: 'Primary', link: 'primary' },
+          { name: 'Secondary', link: 'secondary' },
+      ],
+  },
+  {
+      name: 'employee',
+      icon: <MdWork />,
+      children: [
+          { name: 'Staff', link: 'staff' },
+          { name: 'Wages', link: 'wages' },
+      ],
+  },
+  {
+      name: 'Results',
+      icon: <MdWork />,
+      
+      children: [
+          { name: 'Marks', link: 'results' },
+          { name: 'Admit Card', link: 'admitcard' },
+      ],
+  },
+  {
+      name: 'Curriculum',
+      icon: <MdWork />,
+      children: [
+          { name: 'Exam', link: ' allexam' },
+          { name: 'Syllabus', link: 'curriculum' },
+      ],
+  },
+  
+  // {
+  //     name: '',
+  //     children: [
+  //         { name: '', link: '' },
+  //         { name: '', link: '' },
+  //     ],
+  // },
+  // { name: 'Menu Item5', link: '#' },
+  // { name: 'Menu Item6', link: '#' },
 ];
+
+// export const links = [
+//   {
+//     title: "Admin Dashboard",
+//     // title1: 'Student',
+//     links: [
+//       {
+//         id: "1",
+//         name: "fees",
+//         icon: <GiTakeMyMoney />,
+//         items: ["Classwise", "Additional"],
+//         route: ["admin/classwise", "admin/additional"],
+//       },
+//       {
+//         id: "2",
+//         name: "teachers",
+//         icon: <GiTeacher />,
+//         items: ["All Teachers", "Payment"],
+//         route: ["admin/allteachers", "admin/payment"],
+//       },
+//       {
+//         id: "3",
+
+//         name: "students",
+//         icon: <PiStudentFill />,
+//         items: ["All Student", "Promotion"],
+//         route: ["admin/allstudent", "admin/promotion"],
+//       },
+//       {
+//         id: "4",
+
+//         name: "parents",
+//         icon: <ImManWoman />,
+//         items: ["All Parents", "Fees Status"],
+//         route: ["admin/allparents", "admin/feestatus"],
+//       },
+//       {
+//         id: "5",
+
+//         name: "account",
+//         icon: <PiPiggyBankFill />,
+//         items: ["Income", "Expenditure"],
+//         route: ["admin/income", "admin/expenditure"],
+//       },
+//       {
+//         id: "6",
+
+//         name: "inventory",
+//         icon: <BiSolidStoreAlt />,
+//         items: ["Stocks", "Sales"],
+//         route: ["admin/stocks", "admin/sales"],
+//       },
+//       {
+//         id: "7",
+
+//         name: "library",
+//         icon: <GiBookshelf />,
+//         items: ["Books", "Issued"],
+//         route: ["admin/books", "admin/issued"],
+//       },
+//       {
+//         id: "8",
+//         name: "admission",
+//         icon: <BsPersonFillAdd />,
+//         items: ["Registration", "Status"],
+//         route: ["admin/registration", "admin/status"],
+//       },
+
+//       {
+//         id: "9",
+
+//         name: "classes",
+//         icon: <MdGroups3 />,
+//         items: ["Primary", "Secondary"],
+//         route: ["admin/primary", "admin/secondary"],
+//       },
+//       {
+//         id: "10",
+//         name: "employee",
+//         icon: <MdWork />,
+//         items: ["Staff", "Wages"],
+//         route: ["admin/staff", "admin/wages"],
+//       },
+//       {
+//         id: "11",
+//         name: "Results",
+//         icon: <MdWork />,
+//         items: ["Marks", "Admit Card"],
+//         route: ["admin/results", "admin/admitcard"],
+//       },
+//       {
+//         id: "12",
+//         name: "Curriculum",
+//         icon: <MdWork />,
+//         items: ["Exam", "Syllabus"],
+//         route: ["admin/allexam", "admin/curriculum"],
+//       },
+
+//       // {
+//       //   id: '12',
+//       //   name: 'result',
+//       //   icon: <MdWork />,
+//       //   items: ['Result'],
+//       //   route: ['admin/studentsresult']
+//       // },
+//     ],
+//   },
+// ];
 
 export const Studentlinks = [
   {
@@ -385,14 +496,14 @@ export const Studentlinks = [
       {
         id: "4",
 
-        name: "assigments",
+        name: "Assigments",
         icon: <ImManWoman />,
         route: "student/assigments",
       },
       {
         id: "5",
 
-        name: "study Material",
+        name: "Study Material",
         icon: <PiPiggyBankFill />,
         route: "student/StudyMaterial",
       },

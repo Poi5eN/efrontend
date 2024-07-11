@@ -46,7 +46,7 @@ function CreateExams() {
     // Fetch data from the server when the component mounts
     axios
       .get(
-        "https://ebackend-iasf.onrender.com/api/v1/adminRoute/getAllEmployees",
+        "/api/api/v1/adminRoute/getAllEmployees",
         {
           withCredentials: true,
           headers: {
@@ -100,7 +100,7 @@ function CreateExams() {
     try {
       setLoading(true);
       const response = await axios.post(
-        "https://ebackend-iasf.onrender.com/api/v1/adminRoute/createEmployee",
+        "/api/api/v1/adminRoute/createEmployee",
         formDataToSend,
         {
           withCredentials: true,
@@ -127,7 +127,7 @@ function CreateExams() {
   const handleDelete = (email) => {
     axios
       .put(
-        `https://ebackend-iasf.onrender.com/api/v1/adminRoute/deactivateEmployee`,
+        `/api/api/v1/adminRoute/deactivateEmployee`,
         { email },
         {
           withCredentials: true,

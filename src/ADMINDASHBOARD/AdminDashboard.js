@@ -17,25 +17,25 @@ const AdminDashboard = () => {
     themeSettings,
     setThemeSettings,
     isLoggedIn,
-    setisLoggedIn
+    setisLoggedIn,
   } = useStateContext();
 
-  const [singleLog, setSingleLog] = useState(sessionStorage.getItem('userRole'));
+  const [singleLog, setSingleLog] = useState(
+    sessionStorage.getItem("userRole")
+  );
 
   useEffect(() => {
-    if (singleLog === 'admin') {
+    if (singleLog === "admin") {
       setisLoggedIn(true);
     }
   }, [singleLog, setisLoggedIn]);
 
   return (
-    <div 
-    className={currentMode === "Dark" ? "dark" : ""}
-    >
-      {isLoggedIn && (isLoggedIn === 'admin' || singleLog === 'admin') && (
+    <div className={currentMode === "Dark" ? "dark" : ""}>
+      {isLoggedIn && (isLoggedIn === "admin" || singleLog === "admin") && (
         <>
           <div className="flex relative dark:bg-main-dark-bg ">
-            <div className="fixed right-4 bottom-4" style={{ zIndex: "1000" }}>
+            <div className="fixed right-4 bottom-4 " style={{ zIndex: "1000" }}>
               <TooltipComponent content="Settings" position="Top">
                 <button
                   type="button"
@@ -57,27 +57,29 @@ const AdminDashboard = () => {
               </div>
             )}
             <div
-            // className={
-            //   activeMenu
-            //     ? "dark:bg-main-dark-bg md:ml-72 w-full overflow-x-hidden bg-[#fafbfb]"
-            //     : "dark:bg-main-dark-bg w-full  flex-2 overflow-x-hidden bg-[#fafbfb]"
-            // }
+              // className={
+              //   activeMenu
+              //     ? "dark:bg-main-dark-bg md:ml-72 w-full overflow-x-hidden bg-[#fafbfb]"
+              //     : "dark:bg-main-dark-bg w-full  flex-2 overflow-x-hidden bg-[#fafbfb]"
+              // }
               className={
                 activeMenu
-                  ? "dark:bg-main-dark-bg min-h-screen md:ml-72 w-full overflow-x-hidden bg-[#fafbfb]"
-                  : "dark:bg-main-dark-bg w-full min-h-screen flex-2 overflow-x-hidden bg-[#fafbfb]"
+                  ? "dark:bg-main-dark-bg  md:ml-72 w-full  bg-[#fafbfb]"
+                  : // ? "dark:bg-main-dark-bg min-h-screen md:ml-72 w-full overflow-x-hidden bg-[#fafbfb]"
+                    "dark:bg-main-dark-bg w-full  flex-2 overflow-x-hidden bg-[#fafbfb]"
+                // : "dark:bg-main-dark-bg w-full min-h-screen flex-2 overflow-x-hidden bg-[#fafbfb]"
               }
             >
-              <div className="fixed md:static bg-main-bg dark:bg-main-dark-bg navbar w-full ">
+              <div className="fixed md:static   dark:bg-main-dark-bg navbar w-full ">
+                {/* <div className="fixed md:static bg-main-bg dark:bg-main-dark-bg navbar w-full "> */}
                 <Navbar />
               </div>
-              <div>
-                {themeSettings && <ThemeSettings />}
+              <div>{themeSettings && <ThemeSettings />}</div>
+              <div className=" ">
+                {/* <div className="mt-14 "> */}
+                <Outlet />
               </div>
-            <div className="mt-14 ">
-            <Outlet />
-            </div>
-              <Footer />
+              {/* <Footer /> */}
             </div>
           </div>
         </>
@@ -87,9 +89,6 @@ const AdminDashboard = () => {
 };
 
 export default AdminDashboard;
-
-
-
 
 // import React, { useEffect, useState } from "react";
 // import { Routes, Route, Outlet } from "react-router-dom";
@@ -124,7 +123,7 @@ export default AdminDashboard;
 //   return (
 //     <div className={currentMode === "Dark" ? "dark" : ""}>
 //       {/* (isLoggedIn  ) && */}
-      
+
 //       { (( isLoggedIn == 'admin' || (singleLog=='admin'))  ) && (
 //         <>
 //           <div className="flex relative dark:bg-main-dark-bg">

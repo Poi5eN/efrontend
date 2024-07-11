@@ -32,7 +32,7 @@ function IssueBookCreate() {
 
   useEffect(() => {
     axios
-      .get("https://ebackend-iasf.onrender.com/api/v1/adminRoute/getAllBooks", {
+      .get("/api/api/v1/adminRoute/getAllBooks", {
         withCredentials: true,
       headers: {
         Authorization: `Bearer ${authToken}`,

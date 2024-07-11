@@ -10,14 +10,14 @@ const authToken = Cookies.get('token');
 
 const ViewAdmission = () => {
   const { email } = useParams();
-  console.log(email)
+  // console.log(email)
   const [studentData, setStudentData] = useState({});
 
   useEffect(() => {
     // Fetch teacher data based on the email parameter
     axios
       .get(
-        `https://ebackend-iasf.onrender.com/api/v1/adminRoute/getAllStudents?email=${email}`,
+        `http://localhost:4000/api/v1/adminRoute/getAllStudents?email=${email}`,
         {
           withCredentials: true,
       headers: {

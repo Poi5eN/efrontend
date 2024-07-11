@@ -62,7 +62,7 @@ const ActivePieChart = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get('https://ebackend-iasf.onrender.com/api/v1/adminRoute/getAllStudentStatus', {
+        const response = await axios.get('http://localhost:4000/api/v1/adminRoute/getAllStudentStatus', {
           withCredentials: true,
       headers: {
         Authorization: `Bearer ${authToken}`,

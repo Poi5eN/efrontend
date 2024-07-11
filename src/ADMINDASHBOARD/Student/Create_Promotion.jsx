@@ -78,7 +78,7 @@ function Create_Promotion() {
 
     try {
       const response = await axios.post(
-        "https://ebackend-iasf.onrender.com/api/v1/adminRoute/createTeacher",
+        "/api/api/v1/adminRoute/createTeacher",
         formDataToSend,
         {
           headers: {

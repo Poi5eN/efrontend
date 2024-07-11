@@ -7,15 +7,15 @@ const authToken = Cookies.get("token");
 
 
 const Api_Create =
-  "https://ebackend-iasf.onrender.com/api/v1/adminRoute/createAssignment";
+  "/api/api/v1/adminRoute/createAssignment";
 const Api_Update =
-  "https://ebackend-iasf.onrender.com/api/v1/adminRoute/updateAssignment/";
+  "/api/api/v1/adminRoute/updateAssignment/";
 const Api_GetAssiignment =
-  "https://ebackend-iasf.onrender.com/api/v1/adminRoute/getAllAssignment";
+  "/api/api/v1/adminRoute/getAllAssignment";
 const Api_GetAll =
-  "https://ebackend-iasf.onrender.com/api/v1/adminRoute/getAllClass";
+  "/api/api/v1/adminRoute/getAllClass";
 const API_DELETE =
-  "https://ebackend-iasf.onrender.com/api/v1/adminRoute/deleteAssignment/6538e0fb0c6aa38bbddec27b";
+  "/api/api/v1/adminRoute/deleteAssignment/6538e0fb0c6aa38bbddec27b";
 
 const Assignments = () => {
   const { currentColor} = useStateContext();
@@ -105,7 +105,7 @@ const Assignments = () => {
   useEffect(() => {
     axios
       .get(
-        "https://ebackend-iasf.onrender.com/api/v1/adminRoute/getAllClass",
+        "/api/api/v1/adminRoute/getAllClass",
         {
           withCredentials: true,
           headers: {
@@ -127,7 +127,7 @@ const Assignments = () => {
   useEffect(() => {
     axios
       .get(
-        "https://ebackend-iasf.onrender.com/api/v1/adminRoute/getAllAssignment",
+        "/api/api/v1/adminRoute/getAllAssignment",
         {
           withCredentials: true,
           headers: {
@@ -150,7 +150,7 @@ const Assignments = () => {
     const assignmentId = assignmentData[index]._id;
     axios
       .delete(
-        "https://ebackend-iasf.onrender.com/api/v1/adminRoute/deleteAssignment/" +
+        "/api/api/v1/adminRoute/deleteAssignment/" +
           assignmentId,
         {
           withCredentials: true,

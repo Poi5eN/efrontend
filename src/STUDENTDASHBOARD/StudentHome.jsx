@@ -31,7 +31,7 @@ const StudentHome = () => {
     // GET Request to fetch existing notices
     axios
       .get(
-        `https://ebackend-iasf.onrender.com/api/v1/adminRoute/getAllStudents?email=${email}`,
+        `/api/api/v1/adminRoute/getAllStudents?email=${email}`,
         {
           withCredentials: true,
           headers: {
@@ -55,7 +55,7 @@ const StudentHome = () => {
   useEffect(() => {
     axios
       .get(
-        `https://ebackend-iasf.onrender.com/api/v1/adminRoute/getAllIssuedBookStudent?bookId=${_id}`,
+        `/api/api/v1/adminRoute/getAllIssuedBookStudent?bookId=${_id}`,
         {
           withCredentials: true,
           headers: {

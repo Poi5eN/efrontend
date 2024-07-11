@@ -19,7 +19,7 @@ function ReturnBook() {
 
   useEffect(() => {
     axios
-      .get(`https://ebackend-iasf.onrender.com/api/v1/adminRoute/getAllIssuedBookStudent?bookId=${_id}`, {
+      .get(`/api/api/v1/adminRoute/getAllIssuedBookStudent?bookId=${_id}`, {
         withCredentials: true,
         headers: {
           Authorization: `Bearer ${authToken}`,

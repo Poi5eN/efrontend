@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { DataGrid } from "@mui/x-data-grid";
@@ -43,7 +44,7 @@ const Promotion = () => {
     // Fetch data from the server when the component mounts
     axios
       .get(
-        "https://ebackend-iasf.onrender.com/api/v1/adminRoute/getAllClass",
+        "/api/api/v1/adminRoute/getAllClass",
         {
           withCredentials: true,
           headers: {
@@ -196,7 +197,7 @@ const Promotion = () => {
     // Make the PUT request
     await axios
       .put(
-        "https://ebackend-iasf.onrender.com/api/v1/adminRoute/promotionOfStudent",
+        "/api/api/v1/adminRoute/promotionOfStudent",
         dataToUpdate,
         {
           withCredentials: true,

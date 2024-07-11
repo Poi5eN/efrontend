@@ -66,7 +66,7 @@ const ParentFees = () => {
   useEffect(() => {
     axios
       .get(
-        `https://ebackend-iasf.onrender.com/api/v1/adminRoute/myKids`,
+        `/api/api/v1/adminRoute/myKids`,
         {
           withCredentials: true,
           headers: {
@@ -91,7 +91,7 @@ const ParentFees = () => {
   useEffect(() => {
     axios
       .get(
-        `https://ebackend-iasf.onrender.com/api/v1/adminRoute/getAdminInfo`,
+        `/api/api/v1/adminRoute/getAdminInfo`,
         {
           withCredentials: true,
           headers: {
@@ -116,7 +116,7 @@ const ParentFees = () => {
   useEffect(() => {
     axios
       .get(
-        `https://ebackend-iasf.onrender.com/api/v1/fees/getFeeStatus?studentId=${studentData._id}`,
+        `/api/api/v1/fees/getFeeStatus?studentId=${studentData._id}`,
         {
           withCredentials: true,
           headers: {

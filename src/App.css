@@ -51,3 +51,8 @@
 
 
 
+.transition-height {
+  transition: height 2s ease-out;
+  /* background-color: aquamarine; */
+  overflow: hidden;
+}

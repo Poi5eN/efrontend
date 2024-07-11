@@ -8,3 +8,22 @@ body {
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* styles.css */
+@layer utilities {
+  input[type="number"]::-webkit-outer-spin-button,
+  input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
+  input[type="number"] {
+    -moz-appearance: textfield; /* For Firefox */
+  }
+}
+
+.custom-select option:hover {
+  background-color: red;
+  color: white; /* Optional: to make the text color white for better contrast */
+}
+

@@ -49,7 +49,7 @@ function StockTable({ data, handleDelete, updateDependency }) {
 
     };
     console.log("POSTDATA---->", postData)
-    axios.post("https://ebackend-iasf.onrender.com/api/v1/inventory/createsellItem", postData,
+    axios.post("/api/api/v1/inventory/createsellItem", postData,
       {
         withCredentials: true,
         headers: {

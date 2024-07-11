@@ -16,7 +16,7 @@ const StudentExams = () => {
     // GET Request to fetch existing notices
     axios
       .get(
-        `https://ebackend-iasf.onrender.com/api/v1/adminRoute/getAllStudents?email=${email}`,
+        `/api/api/v1/adminRoute/getAllStudents?email=${email}`,
         {
           withCredentials: true,
           headers: {
@@ -38,7 +38,7 @@ const StudentExams = () => {
     if (studentData.class && studentData.section) {
       axios
         .get(
-          `https://ebackend-iasf.onrender.com/api/v1/exam/getAllExams?className=${studentData.class}&section=${studentData.section}`,
+          `/api/api/v1/exam/getAllExams?className=${studentData.class}&section=${studentData.section}`,
           {
             withCredentials: true,
             headers: {

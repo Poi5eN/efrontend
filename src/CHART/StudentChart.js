@@ -24,7 +24,7 @@ const StudentChart = () => {
         const fetchData = async () => {
           try {
             const response = await axios.get(
-              "https://ebackend-iasf.onrender.com/api/v1/adminRoute/getAllStudents",
+              "http://localhost:4000/api/v1/adminRoute/getAllStudents",
               {
                 withCredentials: true,
       headers: {

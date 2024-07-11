@@ -6,7 +6,7 @@ import Footer from "./component/Footer/Footer";
 
 function LandingPage() {
   return (
-    <div className=" overflow-x-hidden">
+    <div className="overflow-hidden">
       <Nav />
       <Outlet />
       <Footer />

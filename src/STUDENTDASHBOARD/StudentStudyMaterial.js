@@ -16,7 +16,7 @@ const StudentStudyMaterial = () => {
     image: null,
   });
 
-  const API_BASE_URL = "https://ebackend-iasf.onrender.com/api/v1/teacher";
+  const API_BASE_URL = "/api/api/v1/teacher";
 
   useEffect(() => {
     // Fetch materials from the server using a GET request

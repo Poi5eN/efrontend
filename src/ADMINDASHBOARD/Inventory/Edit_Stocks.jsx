@@ -37,7 +37,7 @@ function Edit_Stocks() {
 
     try {
       const response = await axios.put(
-        `https://ebackend-iasf.onrender.com/api/v1/adminRoute/updateItem/${_id}`,
+        `/api/api/v1/adminRoute/updateItem/${_id}`,
         formDataToSend,
         {
           withCredentials: true,
@@ -62,7 +62,7 @@ function Edit_Stocks() {
 
   useEffect(() => {
     axios
-      .get(`https://ebackend-iasf.onrender.com/api/v1/adminRoute/getAllItems?_id=${_id}`, {
+      .get(`/api/api/v1/adminRoute/getAllItems?_id=${_id}`, {
         withCredentials: true,
         headers: {
           Authorization: `Bearer ${authToken}`,

@@ -29,7 +29,7 @@ const StudentAdmitCard = () => {
   useEffect(() => {
     axios
       .get(
-        "https://ebackend-iasf.onrender.com/api/v1/adminRoute/getAdminInfo",
+        "/api/api/v1/adminRoute/getAdminInfo",
         {
           withCredentials: true,
           headers: {
@@ -52,7 +52,7 @@ const StudentAdmitCard = () => {
 
   useEffect(() => {
     axios
-      .get("https://ebackend-iasf.onrender.com/api/v1/exam/getAllExams", {
+      .get("/api/api/v1/exam/getAllExams", {
         withCredentials: true,
         headers: {
           Authorization: `Bearer ${authToken}`,

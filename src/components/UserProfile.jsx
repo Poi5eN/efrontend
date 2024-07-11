@@ -13,7 +13,7 @@ const UserProfile = () => {
   const responseString = localStorage.getItem("response");
   const response = JSON.parse(responseString);
   const schoolName = response.schoolName;
-  // console.log(schoolName);
+ 
   const image = localStorage.getItem("image");
   const email = localStorage.getItem("email");
   const userRole = sessionStorage.getItem("userRole");
@@ -26,25 +26,19 @@ const UserProfile = () => {
   });
 
   const handleLogout = () => {
-    // You can make an Axios request to your server to log the user out
     axios
-      .get("https://ebackend-iasf.onrender.com/api/v1/logout")
+      .get("http://localhost:4000/api/v1/logout")
       .then((response) => {
-        // Handle successful logout, such as clearing user data and redirecting to the login page
         localStorage.removeItem("fullName"); // Clear user data from localStorage
         localStorage.removeItem("image");
         localStorage.removeItem("email");
         sessionStorage.removeItem("userRole");
-        // You can also remove the user's token or other relevant data
-
-        // Redirect the user to the login page or wherever is appropriate
+       
         navigate("/");
 
-        // Log a success message (optional)
         console.log("Logout Success", response);
       })
       .catch((error) => {
-        // Handle any errors that occur during the logout process
         console.error("Logout error", error);
       });
   };
@@ -52,7 +46,7 @@ const UserProfile = () => {
   useEffect(() => {
     axios
       .get(
-        "https://ebackend-iasf.onrender.com/api/v1/adminRoute/getAdminInfo",
+        "http://localhost:4000/api/v1/adminRoute/getAdminInfo",
         {
           withCredentials: true,
           headers: {
@@ -61,21 +55,16 @@ const UserProfile = () => {
         }
       )
       .then((response) => {
-        // console.log("Response Success", response);
         const schoolImage = response.data.admin.image.url;
         const schoolName = response.data.admin.schoolName;
         const schoolContact=response.data.admin.contact;
         const schooladdress=response.data.admin.address;
         const role = response.data.admin.role;
-        console.log("adminnnn",response.data)
-
-
-        console.log("schooladdress",schooladdress)
-        console.log("schoolContact",schoolContact)
-
+   
         localStorage.setItem("schoolName",schoolName)
         localStorage.setItem("schoolContact",schoolContact)
         localStorage.setItem("schooladdress",schooladdress)
+        localStorage.setItem("contact",schoolContact)
 
         setSchoolInfo({
           schoolName,
@@ -85,7 +74,6 @@ const UserProfile = () => {
       })
       
       .catch((error) => {
-        // Handle any errors that occur during the logout process
         console.error("Response error", error);
       });
   }, []);

@@ -118,6 +118,14 @@ import StudentIdCard from "./ADMINDASHBOARD/Student/AllStudent/StudentIdCard";
 import StudentIdCardNew from "./ADMINDASHBOARD/Student/AllStudent/StudentIdCardNew";
 import FeeReceipt from "./ADMINDASHBOARD/Fees/Additional/FeeReceipt";
 import AdmissioReceipt from "./ADMINDASHBOARD/Admission/AdmissioReceipt";
+import NewRegistration from "./ADMINDASHBOARD/NewRegistration/NewRegistration";
+import EditNewRegistration from "./ADMINDASHBOARD/NewRegistration/EditNewRegistration";
+import Form from "./ADMINDASHBOARD/NewRegistration/Form";
+import ViewReg from "./ADMINDASHBOARD/NewRegistration/ViewReg";
+import Newegistrations from "./ADMINDASHBOARD/NewRegistration/Newegistrations";
+import RegistrationForm from "./ADMINDASHBOARD/NewRegistration/RegistrationForm";
+import CheakFee from "./ADMINDASHBOARD/Fees/CheakFee";
+
 
 // import EmployeeSalaryStatus from './ADMINDASHBOARD/Employee/SalaryStatus';
 
@@ -263,6 +271,16 @@ function App() {
             element={<ReturnBook />}
           />
 
+          <Route path="newregistration" element={<Newegistrations />} />
+         
+          {/* <Route path="newregistration" element={<NewRegistration />} /> */}
+          <Route path="newregistration/registrationform" element={<RegistrationForm />} />
+          <Route
+            path="/admin/newregistration/:registrationNumber"
+            element={<ViewReg />}
+          />
+           <Route path="checkfee" element={<CheakFee />} />
+
           <Route path="registration" element={<Registration />} />
           <Route
             path="/admin/registration/view-admission/:email"
@@ -337,6 +355,7 @@ function App() {
             element={<ViewAdmitCard />}
           />
           <Route path="studentsresult" element={<StudentsResult />} />
+         
           <Route
             path="/admin/viewresultcard/:email"
             element={<ViewResultCard />}

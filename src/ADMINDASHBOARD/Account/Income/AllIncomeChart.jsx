@@ -10,7 +10,7 @@ const AllIncomeChart = () => {
 
   useEffect(() => {
 
-    axios.get('https://ebackend-iasf.onrender.com/api/v1/fees/feeIncomeMonths', 
+    axios.get('/api/api/v1/fees/feeIncomeMonths', 
     {
       withCredentials: true,
       headers: {

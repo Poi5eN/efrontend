@@ -15,7 +15,7 @@ const Issue = ({ isOpen, onClose, bookId, bookName, updateIssueDependency }) => 
 
     try {
 
-      const response = await axios.post("https://ebackend-iasf.onrender.com/api/v1/adminRoute/issueBook", {
+      const response = await axios.post("/api/api/v1/adminRoute/issueBook", {
         studentId,
         bookId,
         bookName

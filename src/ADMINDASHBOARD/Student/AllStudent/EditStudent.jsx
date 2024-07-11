@@ -58,7 +58,7 @@ const EditStudent = () => {
   useEffect(() => {
     axios
       .get(
-        `https://ebackend-iasf.onrender.com/api/v1/adminRoute/getAllStudents?email=${email}`,
+        `/api/api/v1/adminRoute/getAllStudents?email=${email}`,
         {
           withCredentials: true,
       headers: {
@@ -100,7 +100,7 @@ const EditStudent = () => {
     }
   
     axios
-      .put(`https://ebackend-iasf.onrender.com/api/v1/adminRoute/updateStudent`, data, {
+      .put(`/api/api/v1/adminRoute/updateStudent`, data, {
         withCredentials: true,
         headers: {
           Authorization: `Bearer ${authToken}`,

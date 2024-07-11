@@ -30,7 +30,7 @@ const Lectures = () => {
   useEffect(() => {
     axios
       .get(
-        `https://ebackend-iasf.onrender.com/api/v1/timeTable/getClassTimeTable?className=${data.class}&section=${data.section}`,
+        `/api/api/v1/timeTable/getClassTimeTable?className=${data.class}&section=${data.section}`,
         {
           withCredentials: true,
           headers: {

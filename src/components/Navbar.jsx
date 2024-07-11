@@ -3,8 +3,7 @@ import { AiOutlineMenu } from "react-icons/ai";
 import { RiNotification3Line } from "react-icons/ri";
 import { MdKeyboardArrowDown } from "react-icons/md";
 import { TooltipComponent } from "@syncfusion/ej2-react-popups";
-import avatar from "../data/avatar.jpeg";
-import { Notification, UserProfile } from ".";
+import { UserProfile } from ".";
 import { useStateContext } from "../contexts/ContextProvider";
 
 const NavButton = ({ title, customFunc, icon, color, dotColor }) => (
@@ -61,30 +60,27 @@ const Navbar = () => {
 
   return (
     // <div className="fixed z-[99] mb-10 bg-gray-100 w-full">
-      <div className="flex   justify-between  md:ml-6 md:mr-6 relative">
+    <div className="flex justify-between relative ">
+      {/* <div className="flex   justify-between  md:ml-6 md:mr-6 relative bg-yellow-400"> */}
       <NavButton
         title="Menu"
         customFunc={handleActiveMenu}
         color={currentColor}
         icon={<AiOutlineMenu />}
       />
-      <div className=" w-full text-center">
-        
-          <h1 className="text-2xl hover-text font-bold text-[#03c9d7]">{schoolName}</h1>
-       
-        
-          <marquee
-            class="html-marquee"
-            direction="left"
-            behavior="scroll"
-            scrollamount="6"
-          >
-            <p>
-              Technical Support and Query Helpline Numbers : +91 9650388201 /
-              corplyxtechnologies@gmail.com{" "}
-            </p>
-          </marquee>
-       
+      <div className=" w-full text-center dark:text-white ">
+        <h1 className="text-xl ">{schoolName}</h1>
+        <marquee
+          className="html-marquee"
+          direction="left"
+          behavior="scroll"
+          scrollamount="6"
+        >
+          <p style={{ color: currentColor }}>
+            Technical Support and Query Helpline Numbers : +91 9650388201 /
+            corplyxtechnologies@gmail.com{" "}
+          </p>
+        </marquee>
       </div>
       <div className="flex">
         <NavButton
@@ -96,7 +92,7 @@ const Navbar = () => {
         />
         <TooltipComponent content="Profile" position="BottomCenter">
           <div
-            className="flex  items-center gap-2 cursor-pointer p-1 hover:bg-light-gray rounded-lg"
+            className="flex  items-center gap-2 cursor-pointer p-1 hover:bg-gray-900 rounded-lg"
             onClick={() => handleClick("userProfile")}
           >
             <img
@@ -105,10 +101,10 @@ const Navbar = () => {
               alt="user-profile"
             />
             <p>
-              <span className="text-black-400 text-14 font-bold  dark:text-white ">
+              <span className="text-black-400 text-[12px] font-bold  dark:text-white ">
                 Hi,
               </span>{" "}
-              <span className="text-black-400 font-bold ml-1 text-14 dark:text-white">
+              <span className="text-black-400 font-bold ml-1 text-[12px] dark:text-white">
                 {fullName}
               </span>
             </p>

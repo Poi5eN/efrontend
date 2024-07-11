@@ -13,7 +13,7 @@ const StudentAssigments = () => {
     // GET Request to fetch existing notices
     axios
       .get(
-        `https://ebackend-iasf.onrender.com/api/v1/adminRoute/getAllStudents?email=${email}`,
+        `/api/api/v1/adminRoute/getAllStudents?email=${email}`,
         {
           withCredentials: true,
           headers: {
@@ -34,7 +34,7 @@ const StudentAssigments = () => {
     if (studentData.class) {
       axios
         .get(
-          `https://ebackend-iasf.onrender.com/api/v1/adminRoute/getAllAssignment?className=${studentData.class}&section=${studentData.section}`,
+          `/api/api/v1/adminRoute/getAllAssignment?className=${studentData.class}&section=${studentData.section}`,
           {
             withCredentials: true,
             headers: {

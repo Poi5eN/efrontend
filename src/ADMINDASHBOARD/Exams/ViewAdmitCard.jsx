@@ -26,7 +26,7 @@ const ViewAdmitCard = () => {
   useEffect(() => {
     axios
       .get(
-        `https://ebackend-iasf.onrender.com/api/v1/adminRoute/getAllStudents?email=${email}`,
+        `/api/api/v1/adminRoute/getAllStudents?email=${email}`,
         {
           withCredentials: true,
           headers: {
@@ -46,7 +46,7 @@ const ViewAdmitCard = () => {
   useEffect(() => {
     axios
       .get(
-        "https://ebackend-iasf.onrender.com/api/v1/exam/getAllExams",
+        "/api/api/v1/exam/getAllExams",
         {
           withCredentials: true,
           headers: {

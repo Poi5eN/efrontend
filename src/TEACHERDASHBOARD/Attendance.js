@@ -41,7 +41,7 @@ const Attendance = () => {
     const fetchStudentData = async () => {
       try {
         const response = await axios.get(
-          "https://ebackend-iasf.onrender.com/api/v1/adminRoute/getAllStudents",
+          "/api/api/v1/adminRoute/getAllStudents",
           {
             withCredentials: true,
             headers: {
@@ -104,7 +104,7 @@ const Attendance = () => {
 
     try {
       const response = await axios.post(
-        "https://ebackend-iasf.onrender.com/api/v1/teacher/createAttendance",
+        "/api/api/v1/teacher/createAttendance",
         {
           attendanceRecords: studentInfo,
         },
@@ -144,7 +144,7 @@ const Attendance = () => {
     const month = selectedDate.getMonth() + 1;
     try {
       const response = await axios.get(
-        "https://ebackend-iasf.onrender.com/api/v1/teacher/getAttendance",
+        "/api/api/v1/teacher/getAttendance",
         {
           params: {
             year: year,

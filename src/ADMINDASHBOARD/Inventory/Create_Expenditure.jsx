@@ -56,7 +56,7 @@
 
 //     try {
 //       const response = await axios.post(
-//         "https://ebackend-iasf.onrender.com/api/v1/adminRoute/createItem",
+//         "/api/api/v1/adminRoute/createItem",
 //         formDataToSend,
 //         {
 //           headers: {

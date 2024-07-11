@@ -10,7 +10,7 @@ const EmployeeChart = () => {
   useEffect(() => {
     axios
       .get(
-        `https://ebackend-iasf.onrender.com/api/v1/teacher/getPaymentHistory`,
+        `/api/api/v1/teacher/getPaymentHistory`,
         {
           withCredentials: true,
       headers: {
@@ -39,7 +39,7 @@ const EmployeeChart = () => {
         // Fetch and extract month-wise paid amounts for employees
         axios
           .get(
-            `https://ebackend-iasf.onrender.com/api/v1/employee/getPaymentHistory`,
+            `/api/api/v1/employee/getPaymentHistory`,
             {
               withCredentials: true,
       headers: {

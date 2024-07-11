@@ -1,54 +1,32 @@
 import React, { useEffect, useState } from "react";
-import { DropDownListComponent } from "@syncfusion/ej2-react-dropdowns";
-import { dropdownData } from "../data/dummy";
-import PieChart from "../pages/Charts/PieChart";
+
+
 import {
   FcConferenceCall,
   FcBusinesswoman,
   FcCurrencyExchange,
 } from "react-icons/fc";
-import { BiMaleFemale, BiSolidStoreAlt } from "react-icons/bi";
-import { useNavigate, useLocation } from "react-router-dom";
-
+import { BiMaleFemale} from "react-icons/bi";
 import Calendar from "../pages/Calendar";
 import axios from "axios";
-import ActivePieChart from "../pages/Charts/ActivePieChart";
 import EarningChart from "../CHART/EarningChart";
-
-import CreateNotice from "../CreateNotice";
 import StudentApexChart from "../CHART/StudentApexChart";
 import ExamChart from "../CHART/ExamChart";
 import TeacherNotice from "./TeacherNotice";
 import Cookies from "js-cookie";
 const authToken = Cookies.get("token");
 
-const DropDown = ({ currentMode }) => (
-  <div className="w-28 border-1 border-color px-2 py-1 rounded-md">
-    <DropDownListComponent
-      id="time"
-      fields={{ text: "Time", value: "Id" }}
-      style={{ border: "none", color: currentMode === "Dark" && "white" }}
-      value="1"
-      dataSource={dropdownData}
-      popupHeight="220px"
-      popupWidth="120px"
-    />
-  </div>
-);
-
 const TeacherHome = () => {
   const [teacherCount, setTeacherCount] = useState([]);
   const [studentCount, setStudentCount] = useState([]);
   const [parentCount, setParentCount] = useState([]);
   const [earningData, setEarningData] = useState([]);
-  const location = useLocation();
-  const navigate = useNavigate();
-
-  // Fetch teacher count
+  // const location = useLocation();
+  // const navigate = useNavigate();
   useEffect(() => {
     axios
       .get(
-        "https://ebackend-iasf.onrender.com/api/v1/adminRoute/getTeachers",
+        "/api/api/v1/adminRoute/getTeachers",
         {
           withCredentials: true,
           headers: {
@@ -69,11 +47,11 @@ const TeacherHome = () => {
       });
   }, []);
 
-  // Fetch student count
+
   useEffect(() => {
     axios
       .get(
-        "https://ebackend-iasf.onrender.com/api/v1/adminRoute/getAllStudents",
+        "/api/api/v1/adminRoute/getAllStudents",
         {
           withCredentials: true,
           headers: {
@@ -94,17 +72,16 @@ const TeacherHome = () => {
       });
   }, []);
 
-  // Fetch Parents
   useEffect(() => {
-    // Fetch data from the server when the component mounts
+   
     axios
       .get(
-        "https://ebackend-iasf.onrender.com/api/v1/adminRoute/getAllParents",
+        "/api/api/v1/adminRoute/getAllParents",
         {
           withCredentials: true,
           headers: {
             Authorization: `Bearer ${authToken}`,
-          }, // Set withCredentials to true
+          }, 
         }
       )
       .then((response) => {
@@ -116,8 +93,6 @@ const TeacherHome = () => {
       });
   }, []);
 
-  console.log(studentCount);
-  // Generate earning data based on teacher and student count
   useEffect(() => {
     const newEarningData = [
       {
@@ -166,8 +141,6 @@ const TeacherHome = () => {
         event.preventDefault();
       }
     };
-
-    // Disable the back button in the browser's address bar
     const handlePopstate = (event) => {
       event.preventDefault();
       window.history.pushState(null, null, window.location.pathname);
@@ -177,7 +150,6 @@ const TeacherHome = () => {
     window.addEventListener("popstate", handlePopstate);
 
     return () => {
-      // Clean up event listeners when the component unmounts
       window.removeEventListener("keydown", handleKeyDown);
       window.removeEventListener("popstate", handlePopstate);
     };

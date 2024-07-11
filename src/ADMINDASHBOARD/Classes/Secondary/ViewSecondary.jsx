@@ -19,7 +19,7 @@ const ViewSecondary = () => {
     // Fetch teacher data based on the email parameter
     axios
       .get(
-        `https://ebackend-iasf.onrender.com/api/v1/adminRoute/getAllClass?className=${className}`,
+        `/api/api/v1/adminRoute/getAllClass?className=${className}`,
         { withCredentials: true,
           headers: {
             Authorization: `Bearer ${authToken}`,

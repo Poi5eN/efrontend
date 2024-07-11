@@ -35,7 +35,7 @@ const EditPrimary = () => {
   useEffect(() => {
     axios
     .get(
-      `https://ebackend-iasf.onrender.com/api/v1/adminRoute/getAllClass?className=${className}`,
+      `/api/api/v1/adminRoute/getAllClass?className=${className}`,
         { withCredentials: true,
           headers: {
             Authorization: `Bearer ${authToken}`,
@@ -58,7 +58,7 @@ const EditPrimary = () => {
   const handleFormSubmit = (e) => {
     e.preventDefault();
     axios
-      .put(`https://ebackend-iasf.onrender.com/api/v1/adminRoute/updateClass`, formData, { withCredentials: true,
+      .put(`/api/api/v1/adminRoute/updateClass`, formData, { withCredentials: true,
       headers: {
         Authorization: `Bearer ${authToken}`,
       },})
